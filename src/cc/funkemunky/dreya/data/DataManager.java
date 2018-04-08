@@ -1,6 +1,7 @@
 package cc.funkemunky.dreya.data;
 
 import cc.funkemunky.dreya.check.Check;
+import cc.funkemunky.dreya.check.combat.Criticals;
 import cc.funkemunky.dreya.check.movement.Example;
 import org.bukkit.entity.Player;
 
@@ -21,7 +22,7 @@ public class DataManager {
     }
 
     private void addChecks() {
-        addCheck(new Example());
+        addCheck(new Criticals());
     }
 
     public void removeCheck(Check check) {

@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb28e782-da92-4ad7-9226-de5456802d80" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/Dreya.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/Dreya.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Dreya_jar/Dreya.jar" afterPath="$PROJECT_DIR$/out/artifacts/Dreya_jar/Dreya.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,13 +40,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dreya.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Dreya.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/Dreya.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#586#587#0" expanded="true" />
+                <element signature="e#627#628#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -149,13 +161,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityMoveEvent.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/combat/Criticals.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityJoinQuitEvent.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/Dreya.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java" />
       </list>
     </option>
   </component>
@@ -564,20 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#535#536#0" expanded="true" />
-            <element signature="e#574#575#0" expanded="true" />
-            <element signature="e#1863#1864#0" expanded="true" />
-            <element signature="e#1914#1915#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Example.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -669,10 +667,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/Dreya.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#627#628#0" expanded="true" />
           </folding>
         </state>
       </provider>

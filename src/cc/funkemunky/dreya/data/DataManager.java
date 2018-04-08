@@ -10,11 +10,12 @@ public class DataManager {
 
     public List<Check> checks;
     private Map<Player, Map<Check, Integer>> violations;
+    public List<PlayerData> players;
 
     public DataManager() {
         checks = new ArrayList<>();
-
         violations = new WeakHashMap<>();
+        players = new ArrayList<>();
 
         addChecks();
     }
@@ -64,6 +65,28 @@ public class DataManager {
             vlMap.put(check, 1);
 
             violations.put(player, vlMap);
+        }
+    }
+
+    public void addPlayerData(Player player) {
+        players.add(new PlayerData(player));
+    }
+
+    public PlayerData getData(Player player) {
+        for(PlayerData dataLoop : Collections.synchronizedList(players)) {
+            if(dataLoop.getPlayer() == player) {
+                return dataLoop;
+            }
+        }
+        return null;
+    }
+
+    public void removePlayerData(Player player) {
+        for(PlayerData dataLoop : Collections.synchronizedList(players)) {
+            if(dataLoop.getPlayer() == player) {
+                players.remove(dataLoop);
+                break;
+            }
         }
     }
 

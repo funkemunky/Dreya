@@ -2,6 +2,8 @@ package cc.funkemunky.dreya;
 
 import cc.funkemunky.dreya.command.DreyaCommand;
 import cc.funkemunky.dreya.data.DataManager;
+import cc.funkemunky.dreya.events.UtilityJoinQuitEvent;
+import cc.funkemunky.dreya.events.UtilityMoveEvent;
 import cc.funkemunky.dreya.util.Ping;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,11 +17,17 @@ public class Dreya extends JavaPlugin {
         dataManager = new DataManager();
 
         registerCommands();
+        registerListeners();
         new Ping(this);
     }
 
     private void registerCommands() {
         getCommand("dreya").setExecutor(new DreyaCommand());
+    }
+
+    private void registerListeners() {
+        getServer().getPluginManager().registerEvents(new UtilityMoveEvent(), this);
+        getServer().getPluginManager().registerEvents(new UtilityJoinQuitEvent(), this);
     }
 
     public static Dreya getInstance() {

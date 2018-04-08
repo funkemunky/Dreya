@@ -80,9 +80,11 @@ public class Speed extends Check {
         if (((YSpeed == 0.25D || (YSpeed >= 0.58D && YSpeed < 0.581D))
                 || (YSpeed > 0.2457D && YSpeed < 0.24582D) || (YSpeed > 0.329 && YSpeed < 0.33) || YSpeed == 0.4200000000000017)
                 && !p.getLocation().clone().subtract(0.0D, 0.1, 0.0D).getBlock().getType().equals(Material.SNOW)) {
-            flag(p,"Type: B - Player Moved Too Fast.");
-            setBack(p);
-            SetBackSystem.setBack(p);
+            if (p.getNoDamageTicks() == 0) {
+                flag(p, "Type: B - Player Moved Too Fast.");
+                setBack(p);
+                SetBackSystem.setBack(p);
+            }
         }
             //Type C
             Location l = p.getLocation();
@@ -120,7 +122,7 @@ public class Speed extends Check {
                     && above.getBlock().getType() == Material.AIR && above3.getBlock().getType() == Material.AIR
                     && blockLoc.getBlock().getType() != Material.AIR && !NEW_Velocity_Utils.didTakeVel(p) && !BlockUtils.isNearStiar(p)) {
                 if (!NEW_Velocity_Utils.didTakeVel(p)) {
-                    if (data.getSpeed2Verbose() >= 3) {
+                    if (data.getSpeed2Verbose() >= 3 || p.getNoDamageTicks() == 0 == false) {
                         flag(p, "Type: C [1] - Player Moved Too Fast.");
                         setBack(p);
                     } else {

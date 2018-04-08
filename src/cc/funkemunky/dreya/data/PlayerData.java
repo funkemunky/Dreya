@@ -33,17 +33,17 @@ public class PlayerData {
     private long GoingUp_MS;
     private double GoingUp_Blocks;
     private double LastY_Gravity;
+    private int Gravity_VL;
+    private int AntiCactus_VL;
     private double lastVelocityFlyY = 0;
     private double lastKillauraPitch = 0;
     private double lastKillauraYaw = 0;
     private long lastPacket = 0;
     private long lastAimTime = System.currentTimeMillis();
-
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
     private int flyVelocityVerbose = 0;
-    private int Gravity_VL = 0;
     private int GroundSpoofVL = 0;
     private int PingSpoof_VL2 = 0;
     private int SlowPingSpoof_Count = 0;
@@ -385,5 +385,13 @@ public class PlayerData {
 
     public void setGravity_VL(int gravity_VL) {
         Gravity_VL = gravity_VL;
+    }
+
+    public int getAntiCactus_VL() {
+        return AntiCactus_VL;
+    }
+
+    public void setAntiCactus_VL(int antiCactus_VL) {
+        AntiCactus_VL = antiCactus_VL;
     }
 }

@@ -1,14 +1,15 @@
 package cc.funkemunky.dreya.data;
 
 import cc.funkemunky.dreya.check.Check;
+import cc.funkemunky.dreya.check.combat.Criticals;
 import cc.funkemunky.dreya.check.combat.KillAura;
 import cc.funkemunky.dreya.check.combat.Reach;
 import cc.funkemunky.dreya.check.movement.Fly;
 import cc.funkemunky.dreya.check.movement.Gravity;
+import cc.funkemunky.dreya.check.movement.ImpossibleMovements;
 import cc.funkemunky.dreya.check.player.GroundSpoofCheck;
 import cc.funkemunky.dreya.check.player.ImpossiblePitch;
 import cc.funkemunky.dreya.check.player.LineOfSight;
-import cc.funkemunky.dreya.check.combat.Criticals;
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -35,6 +36,8 @@ public class DataManager {
         addCheck(new GroundSpoofCheck());
         addCheck(new Reach());
         addCheck(new Gravity());
+        addCheck(new ImpossibleMovements());
+        addCheck(new KillAura());
         addCheck(new KillAura());
     }
 

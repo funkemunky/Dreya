@@ -5,14 +5,15 @@ import cc.funkemunky.dreya.check.CheckType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerMoveEvent;
 
-public class Test extends Check {
+public class Example extends Check {
 
-    public Test() {
-        super("Test", CheckType.MOVEMENT, true);
+    public Example() {
+        super("Example", CheckType.MOVEMENT, true);
     }
 
     @EventHandler
     public void onMove(PlayerMoveEvent e) {
-        if(e.getPlayer().getName().equalsIgnoreCase("funkemunky")) e.getPlayer().sendMessage("works");
+        flag(e.getPlayer(), "Test data");
     }
+
 }

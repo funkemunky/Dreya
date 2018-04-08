@@ -2,6 +2,7 @@ package cc.funkemunky.dreya;
 
 import cc.funkemunky.dreya.command.DreyaCommand;
 import cc.funkemunky.dreya.data.DataManager;
+import cc.funkemunky.dreya.util.Ping;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Dreya extends JavaPlugin {
@@ -13,6 +14,8 @@ public class Dreya extends JavaPlugin {
         instance = this;
         dataManager = new DataManager();
 
+        registerCommands();
+        new Ping(this);
     }
 
     private void registerCommands() {

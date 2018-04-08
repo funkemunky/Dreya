@@ -17,7 +17,20 @@ public class PlayerData {
     private int GroundSpoofVL;
     private boolean ShouldSetBack = false;
     private int setBackTicks = 0;
-
+    private long LastVelMS = 0;
+    private boolean DidTakeVelocity = false;
+    private long lastDelayedPacket;
+    private long lastReceivedKeepAlive;
+    private int lastReceivedKeepAliveID;
+    private long lastSentKeepAlive;
+    private long lastPlayerPacket;
+    private long LastTypeBPingSpoof;
+    private int PingSpoof_VL2 = 0;
+    private long LastTypeBPingSpoof2;
+    private boolean DidSetPingspoof2 = false;
+    private int LastPingBeforKick_Pingspoof = 0;
+    private boolean didGetKicked_Pingspoof = false;
+    private int SlowPingSpoof_Count = 0;
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -132,5 +145,127 @@ public class PlayerData {
 
     public void setSetBackTicks(int setBackTicks) {
         this.setBackTicks = setBackTicks;
+    }
+
+    public long getLastVelMS() {
+        return LastVelMS;
+    }
+
+    public void setLastVelMS(long lastVelMS) {
+        LastVelMS = lastVelMS;
+    }
+
+    public boolean isDidTakeVelocity() {
+        return DidTakeVelocity;
+    }
+
+    public void setDidTakeVelocity(boolean didTakeVelocity) {
+        DidTakeVelocity = didTakeVelocity;
+    }
+
+    public long getLastDelayedPacket() {
+        return this.lastDelayedPacket;
+    }
+
+    public long getLastDelayedPacketDiff() {
+        return System.currentTimeMillis() - this.getLastDelayedPacket();
+    }
+
+    public void setLastDelayedPacket(long l) {
+        this.lastDelayedPacket = l;
+    }
+
+    public long getLastReceivedKeepAlive() {
+        return this.lastReceivedKeepAlive;
+    }
+
+    public void setLastReceivedKeepAliveID(int n) {
+        this.lastReceivedKeepAliveID = n;
+    }
+
+
+    public long getLastSentKeepAlive() {
+        return this.lastSentKeepAlive;
+    }
+
+    public long getLastPlayerPacketDiff() {
+        return System.currentTimeMillis() - this.getLastPlayerPacket();
+    }
+
+    public long getLastPlayerPacket() {
+        return this.lastPlayerPacket;
+    }
+    public void setLastPlayerPacket(long l) {
+        this.lastPlayerPacket = l;
+    }
+
+    public void setLastReceivedKeepAlive(long l) {
+        this.lastReceivedKeepAlive = l;
+    }
+    public long getLastTypeBPingSpoof() {
+        return LastTypeBPingSpoof;
+    }
+
+    public void setLastTypeBPingSpoof(long lastTypeBPingSpoof) {
+        LastTypeBPingSpoof = lastTypeBPingSpoof;
+    }
+
+    public int getPingSpoof_VL2() {
+        return PingSpoof_VL2;
+    }
+
+    public long getLastTypeBPingSpoof2() {
+        return LastTypeBPingSpoof2;
+    }
+
+    public void setPingSpoof_VL2(int pingSpoof_VL2) {
+        PingSpoof_VL2 = pingSpoof_VL2;
+    }
+    public boolean isDidSetPingspoof2() {
+        return DidSetPingspoof2;
+    }
+
+    public void setDidSetPingspoof2(boolean didSetPingspoof2) {
+        DidSetPingspoof2 = didSetPingspoof2;
+    }
+
+    public int getLastReceivedKeepAliveID() {
+        return lastReceivedKeepAliveID;
+    }
+
+    public void setLastSentKeepAlive(long lastSentKeepAlive) {
+        this.lastSentKeepAlive = lastSentKeepAlive;
+    }
+
+    public void setLastTypeBPingSpoof2(long lastTypeBPingSpoof2) {
+        LastTypeBPingSpoof2 = lastTypeBPingSpoof2;
+    }
+
+    public int getLastPingBeforKick_Pingspoof() {
+        return LastPingBeforKick_Pingspoof;
+    }
+
+    public void setLastPingBeforKick_Pingspoof(int lastPingBeforKick_Pingspoof) {
+        LastPingBeforKick_Pingspoof = lastPingBeforKick_Pingspoof;
+    }
+
+    public boolean isDidGetKicked_Pingspoof() {
+        return didGetKicked_Pingspoof;
+    }
+
+    public void setDidGetKicked_Pingspoof(boolean didGetKicked_Pingspoof) {
+        this.didGetKicked_Pingspoof = didGetKicked_Pingspoof;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public int getSlowPingSpoof_Count() {
+        return SlowPingSpoof_Count;
+    }
+
+    public void setSlowPingSpoof_Count(int slowPingSpoof_Count) {
+        SlowPingSpoof_Count = slowPingSpoof_Count;
     }
 }

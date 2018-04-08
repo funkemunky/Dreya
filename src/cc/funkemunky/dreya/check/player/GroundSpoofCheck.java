@@ -6,6 +6,7 @@ import cc.funkemunky.dreya.check.CheckType;
 import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.util.PlayerUtils;
 import cc.funkemunky.dreya.util.TimerUtils;
+import cc.funkemunky.dreya.util.VelocityUtils;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -42,7 +43,7 @@ public class GroundSpoofCheck extends Check {
                  data.setGroundSpoofVL(0);
                  return;
              }
-             if (e.getTo().getY() > e.getFrom().getY() || PlayerUtils.isOnGround3(p)) {
+             if (e.getTo().getY() > e.getFrom().getY() || PlayerUtils.isOnGround3(p) || VelocityUtils.didTakeVelocity(p)) {
                  data.setGroundSpoofVL(0);
                  return;
              }

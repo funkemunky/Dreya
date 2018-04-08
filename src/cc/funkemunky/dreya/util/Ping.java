@@ -40,7 +40,7 @@ public class Ping {
 		return field.get(instance);
 	}
 
-	public int getPing(Player who) {
+	public static int getPing(Player who) {
 		try {
 			String bukkitversion = Bukkit.getServer().getClass().getPackage().getName().substring(23);
 			Class<?> craftPlayer = Class.forName("org.bukkit.craftbukkit." + bukkitversion + ".entity.CraftPlayer");

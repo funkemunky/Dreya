@@ -10,10 +10,17 @@ public class PlayerData {
     private double fallDistance = 0D;
     private int aboveBlockTicks = 0;
     private int waterTicks = 0;
+<<<<<<< HEAD
     private long LastBlockPlacedTicks = 0;
     private boolean LastBlockPlaced_GroundSpoof = false;
+=======
+    private int airTicks = 0;
+    private int groundTicks = 0;
+
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
     /** Violation fields **/
     private int criticalsVerbose = 0;
+    private int flyHoverVerbose = 0;
 
 
     public PlayerData(Player player) {
@@ -64,6 +71,7 @@ public class PlayerData {
         this.criticalsVerbose = criticalsVerbose;
     }
 
+<<<<<<< HEAD
     public long getLastBlockPlacedTicks() {
         return LastBlockPlacedTicks;
     }
@@ -78,5 +86,29 @@ public class PlayerData {
 
     public void setLastBlockPlaced_GroundSpoof(boolean lastBlockPlaced_GroundSpoof) {
         LastBlockPlaced_GroundSpoof = lastBlockPlaced_GroundSpoof;
+=======
+    public int getAirTicks() {
+        return airTicks;
+    }
+
+    public void setAirTicks(int airTicks) {
+        this.airTicks = airTicks;
+    }
+
+    public int getGroundTicks() {
+        return groundTicks;
+    }
+
+    public void setGroundTicks(int groundTicks) {
+        this.groundTicks = groundTicks;
+    }
+
+    public int getFlyHoverVerbose() {
+        return flyHoverVerbose;
+    }
+
+    public void setFlyHoverVerbose(int flyHoverVerbose) {
+        this.flyHoverVerbose = flyHoverVerbose;
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
     }
 }

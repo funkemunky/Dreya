@@ -19,11 +19,20 @@ public class UtilityMoveEvent implements Listener {
 
         double distance = MathUtils.getVerticalDistance(e.getFrom(), e.getTo());
 
-        if(!PlayerUtils.isOnGround(player)
+        boolean onGround = PlayerUtils.isOnGround(player);
+        if(!onGround
                 && e.getFrom().getY() > e.getTo().getY()) {
             data.setFallDistance(data.getFallDistance() + distance);
         } else {
             data.setFallDistance(0);
+        }
+
+        if(onGround) {
+            data.setGroundTicks(data.getGroundTicks() + 1);
+            data.setAirTicks(0);
+        } else {
+            data.setAirTicks(data.getAirTicks() + 1);
+            data.setGroundTicks(0);
         }
 
         if(PlayerUtils.isOnGround(player.getLocation().add(0, 2, 0))) {

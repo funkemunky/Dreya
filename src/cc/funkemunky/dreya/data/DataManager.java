@@ -30,7 +30,10 @@ public class DataManager {
         addCheck(new Line_Of_Sight_Check());
         addCheck(new Fly());
         addCheck(new Criticals());
+<<<<<<< HEAD
         addCheck(new GroundSpoofCheck());
+=======
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
     }
 
     public void removeCheck(Check check) {

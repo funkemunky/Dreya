@@ -6,7 +6,24 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="9c54f93f-df84-46da-bd8b-95b1617aa7c4" name="Default" comment="" />
+=======
+    <list default="true" id="a6dda040-43fd-4ca5-98be-7689cd09c7bf" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Dreya_jar/Dreya.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/check/movement/Example.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/check/movement/Fly.class" afterPath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/check/movement/Fly.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/data/DataManager.class" afterPath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/data/DataManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/data/PlayerData.class" afterPath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/data/PlayerData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/events/UtilityMoveEvent.class" afterPath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/events/UtilityMoveEvent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Dreya_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Dreya_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityMoveEvent.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityMoveEvent.java" />
+    </list>
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,16 +34,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="GroundSpoofCheck.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/player/GroundSpoofCheck.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="62">
               <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+=======
+      <file leaf-file-name="Fly.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="64" column="28" lean-forward="false" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Dreya.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/Dreya.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -49,10 +75,19 @@
                 <element signature="e#2999#3000#0" expanded="true" />
                 <element signature="e#3028#3029#0" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="Check.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/Check.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="30" column="91" lean-forward="true" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
+              <folding />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="UtilityJoinQuitEvent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityJoinQuitEvent.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,6 +96,25 @@
               <folding>
                 <element signature="e#602#603#0" expanded="true" />
                 <element signature="e#686#687#0" expanded="true" />
+=======
+      <file leaf-file-name="UtilityMoveEvent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityMoveEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="26" column="27" lean-forward="true" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
               </folding>
             </state>
           </provider>
@@ -69,6 +123,7 @@
       <file leaf-file-name="PlayerData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="700">
               <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
               <folding>
@@ -90,6 +145,22 @@
                 <element signature="e#1678#1679#0" expanded="true" />
                 <element signature="e#1732#1733#0" expanded="true" />
                 <element signature="e#1782#1783#0" expanded="true" />
+=======
+            <state relative-caret-position="622">
+              <caret line="84" column="37" lean-forward="false" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
+              <folding>
+                <element signature="e#1494#1495#0" expanded="true" />
+                <element signature="e#1525#1526#0" expanded="true" />
+                <element signature="e#1570#1571#0" expanded="true" />
+                <element signature="e#1610#1611#0" expanded="true" />
+                <element signature="e#1645#1646#0" expanded="true" />
+                <element signature="e#1679#1680#0" expanded="true" />
+                <element signature="e#1730#1731#0" expanded="true" />
+                <element signature="e#1776#1777#0" expanded="true" />
+                <element signature="e#1853#1854#0" expanded="true" />
+                <element signature="e#1912#1913#0" expanded="true" />
+                <element signature="e#1966#1967#0" expanded="true" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
               </folding>
             </state>
           </provider>
@@ -97,17 +168,8 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>addC</find>
-    </findStrings>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -117,6 +179,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Example.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/util/LineOfSight_Utils/WrappedMaterial.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java" />
@@ -137,6 +200,15 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
+=======
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityMoveEvent.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java" />
+      </list>
+    </option>
+  </component>
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -152,6 +224,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="AndroidView" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -162,6 +238,15 @@
             <path>
               <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
               <item name="Dreya" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
+            </path>
+            <path>
+              <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dreya" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -176,6 +261,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dreya" type="462c0819:PsiDirectoryNode" />
               <item name="check" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dreya" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dreya" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="check" type="462c0819:PsiDirectoryNode" />
+              <item name="combat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dreya" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dreya" type="462c0819:PsiDirectoryNode" />
+              <item name="check" type="462c0819:PsiDirectoryNode" />
+              <item name="movement" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
@@ -184,6 +288,7 @@
               <item name="dreya" type="462c0819:PsiDirectoryNode" />
               <item name="check" type="462c0819:PsiDirectoryNode" />
               <item name="player" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
             </path>
             <path>
               <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
@@ -192,6 +297,8 @@
               <item name="dreya" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+=======
             <path>
               <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
               <item name="Dreya" type="462c0819:PsiDirectoryNode" />
@@ -199,27 +306,36 @@
               <item name="dreya" type="462c0819:PsiDirectoryNode" />
               <item name="events" type="462c0819:PsiDirectoryNode" />
             </path>
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
+=======
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="K:/root/Minecraft-Servers/Dreya_TestServer/plugins" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15820312" />
+    <property name="project.structure.proportion" value="0.15625" />
     <property name="project.structure.side.proportion" value="0.2037037" />
   </component>
+<<<<<<< HEAD
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Rhys Jones\Documents\GitHub\Dreya\src\cc\funkemunky\dreya\util" />
     </key>
   </component>
+=======
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -265,7 +381,7 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -294,7 +410,7 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
@@ -323,43 +439,54 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9c54f93f-df84-46da-bd8b-95b1617aa7c4" name="Default" comment="" />
-      <created>1523156623570</created>
+      <changelist id="a6dda040-43fd-4ca5-98be-7689cd09c7bf" name="Default" comment="" />
+      <created>1523160202739</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1523156623570</updated>
+      <updated>1523160202739</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+=======
+    <frame x="0" y="23" width="1680" height="951" extended-state="6" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05090138" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -371,6 +498,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/util/LineOfSight_Utils/BlockPathFinder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -400,11 +528,31 @@
         <state relative-caret-position="221">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="84" column="37" lean-forward="false" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
+          <folding>
+            <element signature="e#1494#1495#0" expanded="true" />
+            <element signature="e#1525#1526#0" expanded="true" />
+            <element signature="e#1570#1571#0" expanded="true" />
+            <element signature="e#1610#1611#0" expanded="true" />
+            <element signature="e#1645#1646#0" expanded="true" />
+            <element signature="e#1679#1680#0" expanded="true" />
+            <element signature="e#1730#1731#0" expanded="true" />
+            <element signature="e#1776#1777#0" expanded="true" />
+            <element signature="e#1853#1854#0" expanded="true" />
+            <element signature="e#1912#1913#0" expanded="true" />
+            <element signature="e#1966#1967#0" expanded="true" />
+          </folding>
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="442">
           <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
           <folding />
@@ -415,10 +563,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -457,10 +610,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/Check.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" column="91" lean-forward="true" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/player/Line_Of_Sight_Check.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
@@ -477,10 +637,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityMoveEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
@@ -537,15 +704,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="64" column="28" lean-forward="false" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/player/GroundSpoofCheck.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="62">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="26" column="27" lean-forward="true" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
         </state>
       </provider>
     </entry>
@@ -620,7 +803,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.2037037" />
               </list>
             </option>
           </splitter-proportions>

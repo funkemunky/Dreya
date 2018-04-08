@@ -90,9 +90,9 @@ public class PacketCore {
                 PlayerData data = Dreya.getInstance().getDataManager().getData(player);
 
                 if(data != null) {
-                    data.setLastPacket(System.currentTimeMillis());
                     data.setLastKillauraPitch(packetEvent.getPacket().getFloat().read(1));
                     data.setLastKillauraYaw(packetEvent.getPacket().getFloat().read(0));
+                    data.setLastPacket(System.currentTimeMillis());
                 }
             }
         });

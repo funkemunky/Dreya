@@ -7,16 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beed7837-c721-4579-bf4f-9c4309f73244" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Dreya_jar/Dreya.jar" afterPath="$PROJECT_DIR$/out/artifacts/Dreya_jar/Dreya.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/check/movement/Gravity.class" afterPath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/check/movement/Gravity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/data/DataManager.class" afterPath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/data/DataManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/data/PlayerData.class" afterPath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/data/PlayerData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/util/Config.class" afterPath="$PROJECT_DIR$/out/production/Dreya/cc/funkemunky/dreya/util/Config.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/config.yml" afterPath="$PROJECT_DIR$/resources/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/Check.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/Check.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Speed.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Speed.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/util/Config.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/util/Config.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/PacketCore/PacketCore.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/PacketCore/PacketCore.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/combat/KillAura.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/combat/KillAura.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,26 +20,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VelocityUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/util/VelocityUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gravity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Gravity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ImpossibleMovements.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/ImpossibleMovements.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,9 +35,13 @@
       <file leaf-file-name="PlayerData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6045">
-              <caret line="404" column="0" lean-forward="false" selection-start-line="404" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="594">
+              <caret line="110" column="43" lean-forward="false" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
+              <folding>
+                <element signature="e#3201#3202#0" expanded="true" />
+                <element signature="e#3269#3270#0" expanded="true" />
+                <element signature="e#3329#3330#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,11 +78,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/util/Config.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="7" column="108" lean-forward="false" selection-start-line="7" selection-start-column="108" selection-end-line="7" selection-end-column="108" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KillAura.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/combat/KillAura.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="48" column="41" lean-forward="false" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Reach.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/combat/Reach.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PacketCore.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/PacketCore/PacketCore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="618">
+              <caret line="91" column="16" lean-forward="false" selection-start-line="91" selection-start-column="16" selection-end-line="91" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -147,8 +155,17 @@
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/Check.java" />
         <option value="$PROJECT_DIR$/resources/config.yml" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/util/Config.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/PacketCore/PacketCore.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/combat/KillAura.java" />
       </list>
     </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="23" />
+    <option name="width" value="1936" />
+    <option name="height" value="942" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -213,7 +230,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dreya" type="462c0819:PsiDirectoryNode" />
               <item name="check" type="462c0819:PsiDirectoryNode" />
-              <item name="movement" type="462c0819:PsiDirectoryNode" />
+              <item name="combat" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
@@ -229,6 +246,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dreya" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dreya" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dreya" type="462c0819:PsiDirectoryNode" />
+              <item name="PacketCore" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
@@ -352,7 +376,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="23" width="1936" height="948" extended-state="0" />
+    <frame x="-8" y="23" width="1936" height="942" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -421,7 +445,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3345">
           <caret line="388" column="0" lean-forward="false" selection-start-line="388" selection-start-column="0" selection-end-line="388" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3201#3202#0" expanded="true" />
+            <element signature="e#3269#3270#0" expanded="true" />
+            <element signature="e#3329#3330#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -519,22 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/combat/KillAura.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/combat/Reach.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityJoinQuitEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -554,14 +566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/PacketCore/PacketCore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,14 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6045">
-          <caret line="404" column="0" lean-forward="false" selection-start-line="404" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -788,6 +784,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="7" column="108" lean-forward="false" selection-start-line="7" selection-start-column="108" selection-end-line="7" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/PacketCore/PacketCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="91" column="16" lean-forward="false" selection-start-line="91" selection-start-column="16" selection-end-line="91" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="110" column="43" lean-forward="false" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
+          <folding>
+            <element signature="e#3201#3202#0" expanded="true" />
+            <element signature="e#3269#3270#0" expanded="true" />
+            <element signature="e#3329#3330#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/combat/Reach.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/combat/KillAura.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="48" column="41" lean-forward="false" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
           <folding />
         </state>
       </provider>

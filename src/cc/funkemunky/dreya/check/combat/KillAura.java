@@ -39,12 +39,17 @@ public class KillAura extends Check {
             verboseA = 0;
         }
 
-        if ((Math.abs(data.getLastKillauraPitch() - e.getPlayer().getEyeLocation().getPitch()) > 1 || angleDistance((float) data.getLastKillauraYaw(), player.getEyeLocation().getYaw()) > 1
+        if ((Math.abs(data.getLastKillauraPitch() - e.getPlayer().getEyeLocation().getPitch()) > 1
+                || angleDistance((float) data.getLastKillauraYaw(), player.getEyeLocation().getYaw()) > 1
                 || Double.compare(player.getEyeLocation().getYaw(), data.getLastKillauraYaw()) != 0)
                 && !MathUtils.elapsed(data.getLastPacket(), 100L)) {
-            if(++verboseA > 9) {
-                flag(player, "Type: A");
+
+            if(angleDistance((float) data.getLastKillauraYaw(), player.getEyeLocation().getYaw()) != data.getLastKillauraYawDif()) {
+                if(++verboseA > 9) {
+                    flag(player, "Type: A");
+                }
             }
+            data.setLastKillauraYawDif(angleDistance((float) data.getLastKillauraYaw(), player.getEyeLocation().getYaw()));
         } else {
             verboseA = 0;
         }

@@ -33,28 +33,17 @@ public class PlayerData {
     private long GoingUp_MS;
     private double GoingUp_Blocks;
     private double LastY_Gravity;
-<<<<<<< HEAD
     private int Gravity_VL;
     private int AntiCactus_VL;
-=======
->>>>>>> 44c84dc60cfb5b53d130a9c44b2b4c1b949d7106
     private double lastVelocityFlyY = 0;
     private double lastKillauraPitch = 0;
     private double lastKillauraYaw = 0;
     private long lastPacket = 0;
     private long lastAimTime = System.currentTimeMillis();
-<<<<<<< HEAD
-=======
-
->>>>>>> 44c84dc60cfb5b53d130a9c44b2b4c1b949d7106
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
     private int flyVelocityVerbose = 0;
-<<<<<<< HEAD
-=======
-    private int Gravity_VL = 0;
->>>>>>> 44c84dc60cfb5b53d130a9c44b2b4c1b949d7106
     private int GroundSpoofVL = 0;
     private int PingSpoof_VL2 = 0;
     private int SlowPingSpoof_Count = 0;
@@ -397,7 +386,6 @@ public class PlayerData {
     public void setGravity_VL(int gravity_VL) {
         Gravity_VL = gravity_VL;
     }
-<<<<<<< HEAD
 
     public int getAntiCactus_VL() {
         return AntiCactus_VL;
@@ -406,6 +394,4 @@ public class PlayerData {
     public void setAntiCactus_VL(int antiCactus_VL) {
         AntiCactus_VL = antiCactus_VL;
     }
-=======
->>>>>>> 44c84dc60cfb5b53d130a9c44b2b4c1b949d7106
 }

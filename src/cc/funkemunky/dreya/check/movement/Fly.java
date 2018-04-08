@@ -143,8 +143,4 @@ public class Fly extends Check {
     private static void setBackPlayer(Player p) {
         SetBackSystem.setBack(p);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 44c84dc60cfb5b53d130a9c44b2b4c1b949d7106

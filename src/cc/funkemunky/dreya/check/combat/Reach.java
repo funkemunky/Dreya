@@ -32,6 +32,9 @@ public class Reach extends Check {
         maxReach+= Math.abs(player.getVelocity().length() + entity.getVelocity().length()) * 0.4;
         maxReach+= yawDifference * 0.01;
 
+        if(maxReach < 4.2) maxReach = 4.2;
+        
+
         if(distance > maxReach) {
             flag(player, MathUtils.trim(3, distance) + " > " + MathUtils.trim(3, maxReach));
         }

@@ -29,6 +29,10 @@ public class Gravity extends Check {
             if (e.getTo().getY() < e.getFrom().getY()) {
                 return;
             }
+            if (NEW_Velocity_Utils.didTakeVel(p)) {
+                data.setGravity_VL(0);
+                return;
+            }
             if (BlockUtils.isHalfBlock(p.getLocation().add(0, -1.50, 0).getBlock()) || BlockUtils.isNearHalfBlock(p) || BlockUtils.isStair(p.getLocation().add(0,1.50,0).getBlock())
                     || BlockUtils.isStair(p.getLocation().add(0,1,0).getBlock())
                     || BlockUtils.isStair(p.getLocation().add(0,2,0).getBlock()) || BlockUtils.isNearStiar(p) || NEW_Velocity_Utils.didTakeVel(p)) {

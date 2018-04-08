@@ -38,9 +38,11 @@ public class NEW_Velocity_Utils implements Listener {
         Player p = e.getPlayer();
         PlayerData data = Dreya.getInstance().getDataManager().getData(p);
         if (data != null) {
-            if (!data.isLastVelUpdateBoolean()) {
-                data.setLastVelUpdateBoolean(true);
-                data.setLastVelUpdate(TimerUtils.nowlong());
+            if (p.getNoDamageTicks() > 0 == false) {
+                if (!data.isLastVelUpdateBoolean()) {
+                    data.setLastVelUpdateBoolean(true);
+                    data.setLastVelUpdate(TimerUtils.nowlong());
+                }
             }
         }
     }

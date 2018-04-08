@@ -47,6 +47,8 @@ public class PlayerData {
     private long isNearIceTicks = 0;
     private long LastVelUpdate = 0;
     private boolean LastVelUpdateBoolean = false;
+    private double lastKillauraYawDif = 0;
+
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -105,6 +107,14 @@ public class PlayerData {
 
     public void setCriticalsVerbose(int criticalsVerbose) {
         this.criticalsVerbose = criticalsVerbose;
+    }
+
+    public double getLastKillauraYawDif() {
+        return lastKillauraYawDif;
+    }
+
+    public void setLastKillauraYawDif(double lastKillauraYawDif) {
+        this.lastKillauraYawDif = lastKillauraYawDif;
     }
 
     public double getLastKillauraPitch() {

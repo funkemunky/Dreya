@@ -7,6 +7,7 @@ import cc.funkemunky.dreya.check.CheckType;
 import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.events.PluginEvents.PacketAttackEvent;
 import cc.funkemunky.dreya.util.MathUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -48,6 +49,7 @@ public class KillAura extends Check {
                 if(++verboseA > 9) {
                     flag(player, "Type: A");
                 }
+                Bukkit.broadcastMessage("Verbose: " + verboseA);
             }
             data.setLastKillauraYawDif(angleDistance((float) data.getLastKillauraYaw(), player.getEyeLocation().getYaw()));
         } else {

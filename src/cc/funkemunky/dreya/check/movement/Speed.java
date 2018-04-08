@@ -67,7 +67,11 @@ public class Speed extends Check {
                 data.setSpeedVerbose(data.getSpeedVerbose()+1);
            } else if (data.getSpeedVerbose() >= 6 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p)) {
                flag(p,"Type: A - Player Moved Too Fast.");
+<<<<<<< HEAD
                setBack(p);
+=======
+               SetBackSystem.setBack(p);
+>>>>>>> fabac226bd28682374e186182a07062460516d70
            }
         }
 
@@ -78,8 +82,12 @@ public class Speed extends Check {
                 || (YSpeed > 0.2457D && YSpeed < 0.24582D) || (YSpeed > 0.329 && YSpeed < 0.33) || YSpeed == 0.4200000000000017)
                 && !p.getLocation().clone().subtract(0.0D, 0.1, 0.0D).getBlock().getType().equals(Material.SNOW)) {
             flag(p,"Type: B - Player Moved Too Fast.");
+<<<<<<< HEAD
             setBack(p);
 
+=======
+            SetBackSystem.setBack(p);
+>>>>>>> fabac226bd28682374e186182a07062460516d70
         }
             //Type C
             Location l = p.getLocation();
@@ -117,6 +125,7 @@ public class Speed extends Check {
                     && above.getBlock().getType() == Material.AIR && above3.getBlock().getType() == Material.AIR
                     && blockLoc.getBlock().getType() != Material.AIR && !NEW_Velocity_Utils.didTakeVel(p) && !BlockUtils.isNearStiar(p)) {
                 if (!NEW_Velocity_Utils.didTakeVel(p)) {
+<<<<<<< HEAD
                     if (data.getSpeed2Verbose() >= 3) {
                         flag(p, "Type: C [1] - Player Moved Too Fast.");
                         setBack(p);
@@ -125,6 +134,10 @@ public class Speed extends Check {
                     }
                 } else {
                     data.setSpeed2Verbose(0);
+=======
+                    flag(p, "Type: C [1] - Player Moved Too Fast.");
+                    SetBackSystem.setBack(p);
+>>>>>>> fabac226bd28682374e186182a07062460516d70
                 }
             }
 
@@ -135,7 +148,11 @@ public class Speed extends Check {
                     && loc2.getBlock().getType() != Material.TRAP_DOOR && above.getBlock().getType() == Material.AIR
                     && above3.getBlock().getType() == Material.AIR) {
                 flag(p,"Type: C [2] - Player Moved Too Fast.");
+<<<<<<< HEAD
                 setBack(p);
+=======
+                SetBackSystem.setBack(p);
+>>>>>>> fabac226bd28682374e186182a07062460516d70
             }
 
             //3
@@ -144,7 +161,11 @@ public class Speed extends Check {
                     && loc2.getBlock().getType() != Material.TRAP_DOOR && above.getBlock().getType() == Material.AIR
                     && above3.getBlock().getType() == Material.AIR) {
                 flag(p,"Type: C [3] - Player Moved Too Fast.");
+<<<<<<< HEAD
                 setBack(p);
+=======
+                SetBackSystem.setBack(p);
+>>>>>>> fabac226bd28682374e186182a07062460516d70
             }
     }
     public boolean isAir(final Player player) {

@@ -7,6 +7,7 @@ import cc.funkemunky.dreya.check.combat.Reach;
 import cc.funkemunky.dreya.check.movement.Fly;
 import cc.funkemunky.dreya.check.movement.Gravity;
 import cc.funkemunky.dreya.check.movement.ImpossibleMovements;
+import cc.funkemunky.dreya.check.movement.Speed;
 import cc.funkemunky.dreya.check.player.GroundSpoofCheck;
 import cc.funkemunky.dreya.check.player.ImpossiblePitch;
 import cc.funkemunky.dreya.check.player.LineOfSight;
@@ -24,7 +25,6 @@ public class DataManager {
         checks = new ArrayList<>();
         violations = new WeakHashMap<>();
         players = new ArrayList<>();
-
         addChecks();
     }
 
@@ -39,6 +39,7 @@ public class DataManager {
         addCheck(new ImpossibleMovements());
         addCheck(new KillAura());
         addCheck(new KillAura());
+        addCheck(new Speed());
     }
 
     public void removeCheck(Check check) {

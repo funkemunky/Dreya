@@ -1,8 +1,5 @@
 package cc.funkemunky.dreya.util;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -10,6 +7,9 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 import org.bukkit.material.Door;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BlockUtils {
 	
@@ -305,4 +305,23 @@ public class BlockUtils {
         }
         return blocks;
     }
+    public static boolean isNearIce(Player p) {
+    	boolean out = false;
+		for (Block b : getNearbyBlocks(p.getLocation(), 1)) {
+			if (isIce(b)) {
+				out = true;
+			}
+		}
+    	return out;
+	}
+	public static boolean isNearStiar(Player p) {
+		boolean out = false;
+		for (Block b : getNearbyBlocks(p.getLocation(), 1)) {
+			if (isStair(b)) {
+				out = true;
+			}
+		}
+		return out;
+	}
+
 }

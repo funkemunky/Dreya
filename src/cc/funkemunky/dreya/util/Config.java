@@ -10,7 +10,8 @@ public class Config {
     public Config() {
         Dreya.getInstance().saveDefaultConfig();
 
-        init();
+        //Broken idk why
+      //  init();
     }
 
     private void init() {

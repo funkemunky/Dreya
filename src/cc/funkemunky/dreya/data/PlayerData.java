@@ -58,6 +58,7 @@ public class PlayerData {
     private int SlowPingSpoof_Count = 0;
     private int killauraAVerbose = 0;
     private int SpeedVerbose = 0;
+    private int Speed2Verbose = 0;
 
 
     public PlayerData(Player player) {
@@ -475,5 +476,13 @@ public class PlayerData {
 
     public void setLastVelUpdateBoolean(boolean lastVelUpdateBoolean) {
         LastVelUpdateBoolean = lastVelUpdateBoolean;
+    }
+
+    public int getSpeed2Verbose() {
+        return Speed2Verbose;
+    }
+
+    public void setSpeed2Verbose(int speed2Verbose) {
+        Speed2Verbose = speed2Verbose;
     }
 }

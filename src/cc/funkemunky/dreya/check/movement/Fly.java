@@ -97,6 +97,6 @@ public class Fly extends Check {
         return distance;
     }
     private static void setBackPlayer(Player p) {
-        SetBackSystem.SetBack(p);
+        SetBackSystem.setBack(p);
     }
 }

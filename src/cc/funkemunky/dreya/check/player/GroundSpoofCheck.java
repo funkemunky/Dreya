@@ -5,6 +5,7 @@ import cc.funkemunky.dreya.check.Check;
 import cc.funkemunky.dreya.check.CheckType;
 import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.util.PlayerUtils;
+import cc.funkemunky.dreya.util.SetBackSystem;
 import cc.funkemunky.dreya.util.TimerUtils;
 import cc.funkemunky.dreya.util.VelocityUtils;
 import org.bukkit.Location;
@@ -50,6 +51,7 @@ public class GroundSpoofCheck extends Check {
              if (p.isOnGround() && diff > 0.0 && !PlayerUtils.isOnGround(p) && dist >= 2 && e.getTo().getY() < e.getFrom().getY()) {
                  if (data.getGroundSpoofVL() >= 4) {
                      flag(p, "Spoofed On-Ground Packet.");
+                     SetBackSystem.setBack(p);
                  } else {
                      data.setGroundSpoofVL(data.getGroundSpoofVL()+1);
                  }

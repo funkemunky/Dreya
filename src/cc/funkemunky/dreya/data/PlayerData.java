@@ -1,5 +1,6 @@
 package cc.funkemunky.dreya.data;
 
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 public class PlayerData {
@@ -31,6 +32,8 @@ public class PlayerData {
     private int LastPingBeforKick_Pingspoof = 0;
     private boolean didGetKicked_Pingspoof = false;
     private int SlowPingSpoof_Count = 0;
+    private Location setbackLocation;
+
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -267,5 +270,13 @@ public class PlayerData {
 
     public void setSlowPingSpoof_Count(int slowPingSpoof_Count) {
         SlowPingSpoof_Count = slowPingSpoof_Count;
+    }
+
+    public Location getSetbackLocation() {
+        return setbackLocation;
+    }
+
+    public void setSetbackLocation(Location setbackLocation) {
+        this.setbackLocation = setbackLocation;
     }
 }

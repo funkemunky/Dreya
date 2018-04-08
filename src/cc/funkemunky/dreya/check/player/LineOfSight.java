@@ -15,8 +15,8 @@ import org.bukkit.event.player.PlayerMoveEvent;
 /**
  * Created by Mr_JaVa_ on 2018-04-08 Package cc.funkemunky.dreya.check.player
  */
-public class Line_Of_Sight_Check extends Check {
-      public Line_Of_Sight_Check() {
+public class LineOfSight extends Check {
+      public LineOfSight() {
         super("Line Of Sight", CheckType.WORLD, true);
     }
 

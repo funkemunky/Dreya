@@ -29,7 +29,7 @@ public class Dreya extends JavaPlugin {
         for (Player p : Bukkit.getOnlinePlayers()) {
             getInstance().getDataManager().addPlayerData(p);
         }
-        PacketCore.Init();
+        PacketCore.init();
         MS_PluginLoad = TimerUtils.nowlong();
         coreVersion = Bukkit.getServer().getClass().getPackage().getName().substring(23);
     }

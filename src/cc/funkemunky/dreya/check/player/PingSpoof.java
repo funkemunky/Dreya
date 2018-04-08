@@ -24,7 +24,9 @@ public class PingSpoof extends Check {
     public PingSpoof() {
         super("Ping Spoof", CheckType.MISC, true);
     }
+
     ArrayList<Player> ShouldKick = new ArrayList<>();
+
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPacketPlayer(PacketPlayerEvent e) {
         Player p = e.getPlayer();

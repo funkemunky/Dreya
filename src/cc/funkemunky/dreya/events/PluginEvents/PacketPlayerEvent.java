@@ -1,6 +1,7 @@
 package cc.funkemunky.dreya.events.PluginEvents;
 
 
+import cc.funkemunky.dreya.PacketCore.PacketTypes;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
@@ -13,15 +14,16 @@ extends Event {
     private double z;
     private float pitch;
     private float yaw;
+    private PacketTypes type;
     private static final HandlerList handlers = new HandlerList();
 
-    public PacketPlayerEvent(Player player, double d, double d2, double d3, float f, float f2) {
+    public PacketPlayerEvent(Player player, double x, double y, double z, float yaw, float pitch, PacketTypes type) {
         this.Player = player;
-        this.x = d;
-        this.y = d2;
-        this.z = d3;
-        this.pitch = f2;
-        this.yaw = f;
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.pitch = pitch;
+        this.yaw = yaw;
     }
 
     public Player getPlayer() {
@@ -46,6 +48,14 @@ extends Event {
 
     public float getPitch() {
         return this.pitch;
+    }
+
+    public PacketTypes getType() {
+        return type;
+    }
+
+    public void setType(PacketTypes type) {
+        this.type = type;
     }
 
     public HandlerList getHandlers() {

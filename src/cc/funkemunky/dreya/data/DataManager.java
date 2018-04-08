@@ -1,10 +1,11 @@
 package cc.funkemunky.dreya.data;
 
 import cc.funkemunky.dreya.check.Check;
+import cc.funkemunky.dreya.check.combat.Reach;
 import cc.funkemunky.dreya.check.movement.Fly;
 import cc.funkemunky.dreya.check.player.GroundSpoofCheck;
-import cc.funkemunky.dreya.check.player.Impossible_pitch;
-import cc.funkemunky.dreya.check.player.Line_Of_Sight_Check;
+import cc.funkemunky.dreya.check.player.ImpossiblePitch;
+import cc.funkemunky.dreya.check.player.LineOfSight;
 import cc.funkemunky.dreya.check.combat.Criticals;
 import cc.funkemunky.dreya.check.player.PingSpoof;
 import org.bukkit.entity.Player;
@@ -26,12 +27,13 @@ public class DataManager {
     }
 
     private void addChecks() {
-        addCheck(new Impossible_pitch());
-        addCheck(new Line_Of_Sight_Check());
+        addCheck(new ImpossiblePitch());
+        addCheck(new LineOfSight());
         addCheck(new Fly());
         addCheck(new Criticals());
         addCheck(new GroundSpoofCheck());
         addCheck(new PingSpoof());
+        addCheck(new Reach());
     }
 
     public void removeCheck(Check check) {

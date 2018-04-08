@@ -5,6 +5,7 @@ import cc.funkemunky.dreya.check.combat.Reach;
 import cc.funkemunky.dreya.check.movement.Fly;
 import cc.funkemunky.dreya.check.movement.Gravity;
 import cc.funkemunky.dreya.check.player.GroundSpoofCheck;
+import cc.funkemunky.dreya.check.player.ImpossibleMovements;
 import cc.funkemunky.dreya.check.player.ImpossiblePitch;
 import cc.funkemunky.dreya.check.player.LineOfSight;
 import cc.funkemunky.dreya.check.combat.Criticals;
@@ -34,6 +35,7 @@ public class DataManager {
         addCheck(new GroundSpoofCheck());
         addCheck(new Reach());
         addCheck(new Gravity());
+        addCheck(new ImpossibleMovements());
     }
 
     public void removeCheck(Check check) {

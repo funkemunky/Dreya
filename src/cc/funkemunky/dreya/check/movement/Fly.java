@@ -7,6 +7,7 @@ import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.util.MathUtils;
 import cc.funkemunky.dreya.util.PlayerUtils;
 import cc.funkemunky.dreya.util.SetBackSystem;
+import cc.funkemunky.dreya.util.VelocityUtils;
 import org.bukkit.*;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
@@ -100,6 +101,15 @@ public class Fly extends Check {
                 verbose = 0;
             }
             data.setFlyHoverVerbose(verbose);
+        }
+
+        //Too Fast Check
+        if (VelocityUtils.didTakeVelocity(p)) {
+            return;
+        }
+    //    p.sendMessage(""+p.getFlySpeed());
+        if (e.getTo() != e.getFrom()) {
+
         }
     }
     @EventHandler

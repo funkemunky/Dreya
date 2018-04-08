@@ -37,6 +37,7 @@ public class PlayerData {
     private double GoingUp_Blocks;
     private double LastY_Gravity;
     private int Gravity_VL;
+    private int AntiCactus_VL;
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -321,5 +322,13 @@ public class PlayerData {
 
     public void setGravity_VL(int gravity_VL) {
         Gravity_VL = gravity_VL;
+    }
+
+    public int getAntiCactus_VL() {
+        return AntiCactus_VL;
+    }
+
+    public void setAntiCactus_VL(int antiCactus_VL) {
+        AntiCactus_VL = antiCactus_VL;
     }
 }

@@ -34,7 +34,7 @@ public class KillAura extends Check {
         int verboseA = data.getKillauraAVerbose();
         long time = data.getLastAimTime();
 
-        if(MathUtils.elapsed(time, 800L)) {
+        if(MathUtils.elapsed(time, 1000L)) {
             time = System.currentTimeMillis();
             verboseA = 0;
         }

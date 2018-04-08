@@ -1,0 +1,12 @@
+name: Dreya
+main: cc.funkemunky.dreya.Dreya
+author: [funkemunky, ItzJava]
+version: 1.0~ALPHA
+commands:
+  dreya:
+    description: Main Dreya command.
+
+permissions:
+  dreya.admin:
+    default: op
+    description: Dreya cmd node.

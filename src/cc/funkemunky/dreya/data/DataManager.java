@@ -1,6 +1,7 @@
 package cc.funkemunky.dreya.data;
 
 import cc.funkemunky.dreya.check.Check;
+import cc.funkemunky.dreya.check.movement.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +18,7 @@ public class DataManager {
     }
 
     private void addChecks() {
-        //TODO Add checks.
+        addCheck(new Test());
     }
 
     public void removeCheck(Check check) {

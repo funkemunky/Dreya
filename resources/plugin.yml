@@ -4,8 +4,6 @@ author: [funkemunky, Mr_JaVa_]
 version: 1.0~ALPHA
 commands:
   dreya:
-    description: Main Dreya command.
-
 permissions:
   dreya.admin:
     default: op

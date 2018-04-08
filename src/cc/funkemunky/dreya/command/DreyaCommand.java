@@ -17,7 +17,9 @@ public class DreyaCommand implements CommandExecutor {
             return true;
         }
 
-        if(args[0].equalsIgnoreCase("toggle")) {
+        if(args.length == 0) {
+            sender.sendMessage(ChatColor.RED + "Invalid arguments.");
+        } else if(args[0].equalsIgnoreCase("toggle")) {
             if(args.length == 2) {
                 Check checkName = Dreya.getInstance().getDataManager().getCheckByName(args[1]);
 
@@ -33,8 +35,6 @@ public class DreyaCommand implements CommandExecutor {
             sender.sendMessage(ChatColor.RED + "Invalid arguments.");
             return true;
         }
-
-        sender.sendMessage(ChatColor.RED + "Invalid arguments.");
 
         return true;
     }

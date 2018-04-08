@@ -6,7 +6,6 @@ import cc.funkemunky.dreya.data.DataManager;
 import cc.funkemunky.dreya.events.UtilityJoinQuitEvent;
 import cc.funkemunky.dreya.events.UtilityMoveEvent;
 import cc.funkemunky.dreya.util.*;
-import io.netty.util.Timer;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -39,6 +38,7 @@ public class Dreya extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new UtilityJoinQuitEvent(), this);
         getServer().getPluginManager().registerEvents(new SetBackSystem(), this);
         getServer().getPluginManager().registerEvents(new VelocityUtils(), this);
+        getServer().getPluginManager().registerEvents(new NEW_Velocity_Utils(), this);
     }
 
     public static Dreya getInstance() {

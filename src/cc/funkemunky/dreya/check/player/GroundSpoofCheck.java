@@ -50,7 +50,11 @@ public class GroundSpoofCheck extends Check {
              }
              if (p.isOnGround() && diff > 0.0 && !PlayerUtils.isOnGround(p) && dist >= 2 && e.getTo().getY() < e.getFrom().getY()) {
                  if (data.getGroundSpoofVL() >= 4) {
-                     flag(p, "Spoofed On-Ground Packet.");
+                     if (data.getAirTicks() >= 10) {
+                         flag(p, "Spoofed On-Ground Packet. [NoFall]");
+                     } else {
+                         flag(p, "Spoofed On-Ground Packet.");
+                     }
                      SetBackSystem.setBack(p);
                  } else {
                      data.setGroundSpoofVL(data.getGroundSpoofVL()+1);

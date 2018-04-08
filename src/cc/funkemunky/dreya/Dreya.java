@@ -5,10 +5,7 @@ import cc.funkemunky.dreya.command.DreyaCommand;
 import cc.funkemunky.dreya.data.DataManager;
 import cc.funkemunky.dreya.events.UtilityJoinQuitEvent;
 import cc.funkemunky.dreya.events.UtilityMoveEvent;
-import cc.funkemunky.dreya.util.Ping;
-import cc.funkemunky.dreya.util.SetBackSystem;
-import cc.funkemunky.dreya.util.TimerUtils;
-import cc.funkemunky.dreya.util.VelocityUtils;
+import cc.funkemunky.dreya.util.*;
 import io.netty.util.Timer;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -23,6 +20,7 @@ public class Dreya extends JavaPlugin {
     public void onEnable() {
         instance = this;
         dataManager = new DataManager();
+        new Config();
         registerCommands();
         registerListeners();
         new Ping(this);

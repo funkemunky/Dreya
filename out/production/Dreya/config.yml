@@ -1,0 +1,4 @@
+# The Dreya Anticheat Config.
+Messages:
+  ALERTS_MESSAGE: "%prefix%&bplayer.getName() &7failed &b%player% &8%data% &cx%vl%"
+  PREFIX: "&8[&c&lDreya&8] "

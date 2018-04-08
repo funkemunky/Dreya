@@ -32,7 +32,9 @@ public class Fly extends Check {
         if (p.getGameMode().equals(GameMode.CREATIVE)
                 || p.getAllowFlight()
                 || e.getPlayer().getVehicle() != null
-                || p.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.SPONGE) {
+                || p.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.SPONGE
+                || PlayerUtils.isOnClimbable(p, 0)
+                || PlayerUtils.isOnClimbable(p, 1)) {
             return;
         }
 
@@ -65,6 +67,7 @@ public class Fly extends Check {
                 if (PlayerUtils.getDistanceToGround(p) > 2) {
                     if (data.getGoingUp_Blocks() >= 3) {
                         flag(p,"Type: A [5]");
+                        setBackPlayer(p);
                     } else {
                         data.setGoingUp_Blocks(data.getGoingUp_Blocks() + 1);
                     }
@@ -101,14 +104,29 @@ public class Fly extends Check {
             }
             data.setFlyHoverVerbose(verbose);
         }
-    }
-    @EventHandler
-    public void onKickEvent(PlayerKickEvent e) {
-        if (e.getReason().equalsIgnoreCase("Flying is not enabled on this server")) {
-            e.setCancelled(true);
-            flag(e.getPlayer(),"Type: C");
-            setBackPlayer(e.getPlayer());
+
+        //Velocity Diff check
+        double diffY = Math.abs(from.getY() - to.getY());
+        double lastDiffY = data.getLastVelocityFlyY();
+        int verboseC = data.getFlyVelocityVerbose();
+
+        double finalDifference = Math.abs(diffY - lastDiffY);
+
+        //Bukkit.broadcastMessage(Math.abs(diffY - lastDiffY) + ", " + PlayerUtils.isOnGround(p));
+
+        if(finalDifference < 0.08
+                && e.getFrom().getY() < e.getTo().getY()
+                && !PlayerUtils.isOnGround(p)) {
+            if(++verboseC > 2) {
+                flag(p, "Type: C");
+                SetBackSystem.setBack(p);
+                verboseC = 0;
+            }
+        } else {
+            verboseC = verboseC > 0 ? verboseC - 1 : 0;
         }
+        data.setLastVelocityFlyY(diffY);
+        data.setFlyVelocityVerbose(verboseC);
     }
 
     private int getDistanceToGround(Player p){

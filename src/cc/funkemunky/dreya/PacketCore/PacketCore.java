@@ -56,6 +56,12 @@ public class PacketCore {
                     return;
                 }
                 Bukkit.getServer().getPluginManager().callEvent(new PacketPlayerEvent(player, player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ(), packetEvent.getPacket().getFloat().read(0), packetEvent.getPacket().getFloat().read(1), PacketTypes.LOOK));
+
+                PlayerData data = Dreya.getInstance().getDataManager().getData(player);
+
+                if(data != null) {
+                    data.setLastPacket(System.currentTimeMillis());
+                }
             }
         });
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(), PacketType.Play.Client.POSITION) {
@@ -66,6 +72,12 @@ public class PacketCore {
                     return;
                 }
                 Bukkit.getServer().getPluginManager().callEvent(new PacketPlayerEvent(player, packetEvent.getPacket().getDoubles().read(0), packetEvent.getPacket().getDoubles().read(1), packetEvent.getPacket().getDoubles().read(2), player.getLocation().getYaw(), player.getLocation().getPitch(), PacketTypes.POSITION));
+
+                PlayerData data = Dreya.getInstance().getDataManager().getData(player);
+
+                if(data != null) {
+                    data.setLastPacket(System.currentTimeMillis());
+                }
             }
         });
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(), PacketType.Play.Client.POSITION_LOOK) {
@@ -77,6 +89,14 @@ public class PacketCore {
                 }
 
                 Bukkit.getServer().getPluginManager().callEvent(new PacketPlayerEvent(player, packetEvent.getPacket().getDoubles().read(0), packetEvent.getPacket().getDoubles().read(1), packetEvent.getPacket().getDoubles().read(2), packetEvent.getPacket().getFloat().read(0), packetEvent.getPacket().getFloat().read(1), PacketTypes.POSLOOK));
+
+                PlayerData data = Dreya.getInstance().getDataManager().getData(player);
+
+                if(data != null) {
+                    data.setLastPacket(System.currentTimeMillis());
+                    data.setLastKillauraPitch(packetEvent.getPacket().getFloat().read(1));
+                    data.setLastKillauraYaw(packetEvent.getPacket().getFloat().read(0));
+                }
             }
         });
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(), PacketType.Play.Client.FLYING) {
@@ -87,6 +107,12 @@ public class PacketCore {
                     return;
                 }
                 Bukkit.getServer().getPluginManager().callEvent(new PacketPlayerEvent(player, player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ(), player.getLocation().getYaw(), player.getLocation().getPitch(), PacketTypes.FLYING));
+
+                PlayerData data = Dreya.getInstance().getDataManager().getData(player);
+
+                if(data != null) {
+                    data.setLastPacket(System.currentTimeMillis());
+                }
             }
         });
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(), PacketType.Play.Client.KEEP_ALIVE) {

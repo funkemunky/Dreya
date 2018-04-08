@@ -1,6 +1,7 @@
 package cc.funkemunky.dreya.data;
 
 import cc.funkemunky.dreya.check.Check;
+import cc.funkemunky.dreya.check.combat.KillAura;
 import cc.funkemunky.dreya.check.combat.Reach;
 import cc.funkemunky.dreya.check.movement.Fly;
 import cc.funkemunky.dreya.check.movement.Gravity;
@@ -34,6 +35,7 @@ public class DataManager {
         addCheck(new GroundSpoofCheck());
         addCheck(new Reach());
         addCheck(new Gravity());
+        addCheck(new KillAura());
     }
 
     public void removeCheck(Check check) {

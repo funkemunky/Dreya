@@ -15,7 +15,6 @@ public class PlayerData {
     private boolean LastBlockPlaced_GroundSpoof = false;
     private int airTicks = 0;
     private int groundTicks = 0;
-    private int GroundSpoofVL;
     private boolean ShouldSetBack = false;
     private int setBackTicks = 0;
     private long LastVelMS = 0;
@@ -26,20 +25,29 @@ public class PlayerData {
     private long lastSentKeepAlive;
     private long lastPlayerPacket;
     private long LastTypeBPingSpoof;
-    private int PingSpoof_VL2 = 0;
     private long LastTypeBPingSpoof2;
     private boolean DidSetPingspoof2 = false;
     private int LastPingBeforKick_Pingspoof = 0;
     private boolean didGetKicked_Pingspoof = false;
-    private int SlowPingSpoof_Count = 0;
     private Location setbackLocation;
     private long GoingUp_MS;
     private double GoingUp_Blocks;
     private double LastY_Gravity;
-    private int Gravity_VL;
+    private double lastVelocityFlyY = 0;
+    private double lastKillauraPitch = 0;
+    private double lastKillauraYaw = 0;
+    private long lastPacket = 0;
+    private long lastAimTime = System.currentTimeMillis();
+
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
+    private int flyVelocityVerbose = 0;
+    private int Gravity_VL = 0;
+    private int GroundSpoofVL = 0;
+    private int PingSpoof_VL2 = 0;
+    private int SlowPingSpoof_Count = 0;
+    private int killauraAVerbose = 0;
 
 
     public PlayerData(Player player) {
@@ -88,6 +96,46 @@ public class PlayerData {
 
     public void setCriticalsVerbose(int criticalsVerbose) {
         this.criticalsVerbose = criticalsVerbose;
+    }
+
+    public double getLastKillauraPitch() {
+        return lastKillauraPitch;
+    }
+
+    public void setLastKillauraPitch(double lastKillauraPitch) {
+        this.lastKillauraPitch = lastKillauraPitch;
+    }
+
+    public double getLastKillauraYaw() {
+        return lastKillauraYaw;
+    }
+
+    public void setLastKillauraYaw(double lastKillauraYaw) {
+        this.lastKillauraYaw = lastKillauraYaw;
+    }
+
+    public int getKillauraAVerbose() {
+        return killauraAVerbose;
+    }
+
+    public void setKillauraAVerbose(int killauraAVerbose) {
+        this.killauraAVerbose = killauraAVerbose;
+    }
+
+    public long getLastPacket() {
+        return lastPacket;
+    }
+
+    public void setLastPacket(long lastPacket) {
+        this.lastPacket = lastPacket;
+    }
+
+    public long getLastAimTime() {
+        return lastAimTime;
+    }
+
+    public void setLastAimTime(long lastAimTime) {
+        this.lastAimTime = lastAimTime;
     }
 
     public long getLastBlockPlacedTicks() {
@@ -145,6 +193,14 @@ public class PlayerData {
         ShouldSetBack = shouldSetBack;
     }
 
+    public double getLastVelocityFlyY() {
+        return lastVelocityFlyY;
+    }
+
+    public void setLastVelocityFlyY(double lastVelocityFlyY) {
+        this.lastVelocityFlyY = lastVelocityFlyY;
+    }
+
     public int getSetBackTicks() {
         return setBackTicks;
     }
@@ -167,6 +223,14 @@ public class PlayerData {
 
     public void setDidTakeVelocity(boolean didTakeVelocity) {
         DidTakeVelocity = didTakeVelocity;
+    }
+
+    public int getFlyVelocityVerbose() {
+        return flyVelocityVerbose;
+    }
+
+    public void setFlyVelocityVerbose(int flyVelocityVerbose) {
+        this.flyVelocityVerbose = flyVelocityVerbose;
     }
 
     public long getLastDelayedPacket() {

@@ -26,9 +26,7 @@ public class Dreya extends JavaPlugin {
         registerCommands();
         registerListeners();
         new Ping(this);
-        for (Player p : Bukkit.getOnlinePlayers()) {
-            getInstance().getDataManager().addPlayerData(p);
-        }
+        addDataPlayers();
         PacketCore.init();
         MS_PluginLoad = TimerUtils.nowlong();
         coreVersion = Bukkit.getServer().getClass().getPackage().getName().substring(23);
@@ -51,5 +49,11 @@ public class Dreya extends JavaPlugin {
 
     public DataManager getDataManager() {
         return dataManager;
+    }
+
+    private void addDataPlayers() {
+        for (Player playerLoop : Bukkit.getOnlinePlayers()) {
+            getInstance().getDataManager().addPlayerData(playerLoop);
+        }
     }
 }

@@ -10,9 +10,12 @@ public class PlayerData {
     private double fallDistance = 0D;
     private int aboveBlockTicks = 0;
     private int waterTicks = 0;
+    private int airTicks = 0;
+    private int groundTicks = 0;
 
     /** Violation fields **/
     private int criticalsVerbose = 0;
+    private int flyHoverVerbose = 0;
 
 
     public PlayerData(Player player) {
@@ -61,5 +64,29 @@ public class PlayerData {
 
     public void setCriticalsVerbose(int criticalsVerbose) {
         this.criticalsVerbose = criticalsVerbose;
+    }
+
+    public int getAirTicks() {
+        return airTicks;
+    }
+
+    public void setAirTicks(int airTicks) {
+        this.airTicks = airTicks;
+    }
+
+    public int getGroundTicks() {
+        return groundTicks;
+    }
+
+    public void setGroundTicks(int groundTicks) {
+        this.groundTicks = groundTicks;
+    }
+
+    public int getFlyHoverVerbose() {
+        return flyHoverVerbose;
+    }
+
+    public void setFlyHoverVerbose(int flyHoverVerbose) {
+        this.flyHoverVerbose = flyHoverVerbose;
     }
 }

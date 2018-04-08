@@ -1,7 +1,9 @@
 package cc.funkemunky.dreya.data;
 
 import cc.funkemunky.dreya.check.Check;
-import cc.funkemunky.dreya.check.movement.Example;
+import cc.funkemunky.dreya.check.movement.Fly;
+import cc.funkemunky.dreya.check.player.Impossible_pitch;
+import cc.funkemunky.dreya.check.player.Line_Of_Sight_Check;
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -20,7 +22,10 @@ public class DataManager {
     }
 
     private void addChecks() {
-        addCheck(new Example());
+      //  addCheck(new Example());
+        addCheck(new Impossible_pitch());
+        addCheck(new Line_Of_Sight_Check());
+        addCheck(new Fly());
     }
 
     public void removeCheck(Check check) {

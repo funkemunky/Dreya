@@ -1,7 +1,0 @@
-<application>
-  <component name="CodeInsightSettings">
-    <option name="SMART_BACKSPACE" value="2" />
-    <option name="SMART_END_ACTION" value="false" />
-    <option name="REFORMAT_ON_PASTE" value="1" />
-  </component>
-</application>

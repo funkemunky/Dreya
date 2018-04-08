@@ -5,17 +5,17 @@ import org.bukkit.ChatColor;
 
 public class Config {
 
-    public static String ALERTS_MESSAGE = translate("%prefix%&b%player% &7failed &b%check% &8%data% &cx%vl%");
+    public static String ALERTS_MESSAGE = translate("%prefix%&e%player% &7failed &e%check% &8%data% &cx%vl%");
 
     public Config() {
         Dreya.getInstance().saveDefaultConfig();
 
         //Broken idk why
-      //  init();
+        init();
     }
 
     private void init() {
-        ALERTS_MESSAGE = translate(Dreya.getInstance().getConfig().getString("ALERTS_MESSAGE"));
+        ALERTS_MESSAGE = translate(Dreya.getInstance().getConfig().getString("Messages.ALERTS_MESSAGE"));
     }
 
     private static String translate(String string) {

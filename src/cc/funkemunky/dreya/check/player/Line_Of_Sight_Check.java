@@ -3,8 +3,10 @@ package cc.funkemunky.dreya.check.player;
 import cc.funkemunky.dreya.check.Check;
 import cc.funkemunky.dreya.check.CheckType;
 import cc.funkemunky.dreya.util.LineOfSight_Utils.BlockPathFinder;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -38,11 +40,13 @@ public class Line_Of_Sight_Check extends Check {
     }
     @EventHandler
     public void onInteract(PlayerInteractEvent e) {
-          Player p = e.getPlayer();
-             if ((e.getClickedBlock().getLocation().distance(p.getPlayer().getEyeLocation()) > 2)
-             && !BlockPathFinder.line(p.getPlayer().getEyeLocation(), e.getClickedBlock().getLocation()).contains(e.getClickedBlock()) && !e.isCancelled()) {
-              flag(p,"Interacted without a line of sight too it.");
-              e.setCancelled(true);
-          }
+        if (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.LEFT_CLICK_BLOCK) {
+            Player p = e.getPlayer();
+            if ((e.getClickedBlock().getLocation().distance(p.getPlayer().getEyeLocation()) > 2)
+                    && !BlockPathFinder.line(p.getPlayer().getEyeLocation(), e.getClickedBlock().getLocation()).contains(e.getClickedBlock()) && !e.isCancelled()) {
+                flag(p, "Interacted without a line of sight too it.");
+                e.setCancelled(true);
+            }
+        }
     }
 }

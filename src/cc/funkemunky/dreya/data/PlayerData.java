@@ -10,14 +10,14 @@ public class PlayerData {
     private double fallDistance = 0D;
     private int aboveBlockTicks = 0;
     private int waterTicks = 0;
-<<<<<<< HEAD
     private long LastBlockPlacedTicks = 0;
     private boolean LastBlockPlaced_GroundSpoof = false;
-=======
     private int airTicks = 0;
     private int groundTicks = 0;
+    private int GroundSpoofVL;
+    private boolean ShouldSetBack = false;
+    private int setBackTicks = 0;
 
->>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -71,7 +71,6 @@ public class PlayerData {
         this.criticalsVerbose = criticalsVerbose;
     }
 
-<<<<<<< HEAD
     public long getLastBlockPlacedTicks() {
         return LastBlockPlacedTicks;
     }
@@ -86,7 +85,7 @@ public class PlayerData {
 
     public void setLastBlockPlaced_GroundSpoof(boolean lastBlockPlaced_GroundSpoof) {
         LastBlockPlaced_GroundSpoof = lastBlockPlaced_GroundSpoof;
-=======
+    }
     public int getAirTicks() {
         return airTicks;
     }
@@ -109,6 +108,29 @@ public class PlayerData {
 
     public void setFlyHoverVerbose(int flyHoverVerbose) {
         this.flyHoverVerbose = flyHoverVerbose;
->>>>>>> 597246ca2a81eb1976b1a506b1cb7d266a71f2f5
+    }
+
+    public int getGroundSpoofVL() {
+        return GroundSpoofVL;
+    }
+
+    public void setGroundSpoofVL(int groundSpoofVL) {
+        GroundSpoofVL = groundSpoofVL;
+    }
+
+    public boolean isShouldSetBack() {
+        return ShouldSetBack;
+    }
+
+    public void setShouldSetBack(boolean shouldSetBack) {
+        ShouldSetBack = shouldSetBack;
+    }
+
+    public int getSetBackTicks() {
+        return setBackTicks;
+    }
+
+    public void setSetBackTicks(int setBackTicks) {
+        this.setBackTicks = setBackTicks;
     }
 }

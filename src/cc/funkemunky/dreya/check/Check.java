@@ -26,7 +26,7 @@ public class Check implements Listener {
         for(Player playerLoop : Bukkit.getOnlinePlayers()) {
             if(playerLoop.hasPermission("dreya.alerts")) {
                 playerLoop.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.RED + "!" + ChatColor.DARK_GRAY + "] "
-                        + ChatColor.GOLD + player.getName() + ChatColor.GRAY + " set off " + ChatColor.GOLD + getName()
+                        + ChatColor.AQUA + player.getName() + ChatColor.GRAY + " failed " + ChatColor.AQUA + getName()
                         + (data != null ? ChatColor.DARK_GRAY + " (" + ChatColor.RED + data + ChatColor.DARK_GRAY + ") " : " ")
                         + ChatColor.RED + "x" + Dreya.getInstance().getDataManager().getViolatonsPlayer(player, this));
             }

@@ -6,6 +6,7 @@ import cc.funkemunky.dreya.check.CheckType;
 import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.util.MathUtils;
 import cc.funkemunky.dreya.util.PlayerUtils;
+import cc.funkemunky.dreya.util.SetBackSystem;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -13,6 +14,7 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
@@ -45,8 +47,9 @@ public class Fly extends Check {
         Vector vec = new Vector(to.getX(), to.getY(), to.getZ());
         double Distance = vec.distance(new Vector(from.getX(),from.getY(),from.getZ()));
         if (p.getFallDistance() == 0.0f && p.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.AIR && p.getLocation().getBlock().getRelative(BlockFace.UP).getType() == Material.AIR) {
-            if (Distance > 0.50 && !PlayerUtils.isOnGround(p)) {
+            if (Distance > 0.50 && !PlayerUtils.isOnGround(p) && e.getTo().getY() > e.getFrom().getY() && e.getTo().getX() == e.getFrom().getX() && e.getTo().getZ() == e.getFrom().getZ()) {
                 flag(p,"Type: A");
+                setBackPlayer(p);
             }
         }
 
@@ -67,9 +70,18 @@ public class Fly extends Check {
 
             if(verbose > 17) {
                 flag(p, "Type: B");
+                setBackPlayer(p);
                 verbose = 0;
             }
             data.setFlyHoverVerbose(verbose);
+        }
+    }
+    @EventHandler
+    public void onKickEvent(PlayerKickEvent e) {
+        if (e.getReason().equalsIgnoreCase("Flying is not enabled on this server")) {
+            e.setCancelled(true);
+            flag(e.getPlayer(),"Type: C");
+            setBackPlayer(e.getPlayer());
         }
     }
 
@@ -83,5 +95,8 @@ public class Fly extends Check {
             distance++;
         }
         return distance;
+    }
+    private static void setBackPlayer(Player p) {
+        SetBackSystem.SetBack(p);
     }
 }

@@ -54,6 +54,19 @@ public class PlayerUtils {
 		}
 	}
 
+	    public static int getDistanceToGround(Player p){
+        Location loc = p.getLocation().clone();
+        double y = loc.getBlockY();
+        int distance = 0;
+        for (double i = y; i >= 0; i--){
+            loc.setY(i);
+           if(loc.getBlock().getType().isSolid())break;
+            distance++;
+        }
+        return distance;
+    }
+
+
 	private static boolean isGround(Material material) {
 		return ground.contains(material);
 	}

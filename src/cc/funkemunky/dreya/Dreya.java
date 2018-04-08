@@ -5,6 +5,8 @@ import cc.funkemunky.dreya.data.DataManager;
 import cc.funkemunky.dreya.events.UtilityJoinQuitEvent;
 import cc.funkemunky.dreya.events.UtilityMoveEvent;
 import cc.funkemunky.dreya.util.Ping;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Dreya extends JavaPlugin {
@@ -15,10 +17,12 @@ public class Dreya extends JavaPlugin {
     public void onEnable() {
         instance = this;
         dataManager = new DataManager();
-
         registerCommands();
         registerListeners();
         new Ping(this);
+        for (Player p : Bukkit.getOnlinePlayers()) {
+            getInstance().getDataManager().addPlayerData(p);
+        }
     }
 
     private void registerCommands() {

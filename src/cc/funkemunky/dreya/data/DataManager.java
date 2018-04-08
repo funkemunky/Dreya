@@ -1,14 +1,11 @@
 package cc.funkemunky.dreya.data;
 
 import cc.funkemunky.dreya.check.Check;
-<<<<<<< HEAD
 import cc.funkemunky.dreya.check.movement.Fly;
+import cc.funkemunky.dreya.check.player.GroundSpoofCheck;
 import cc.funkemunky.dreya.check.player.Impossible_pitch;
 import cc.funkemunky.dreya.check.player.Line_Of_Sight_Check;
-=======
 import cc.funkemunky.dreya.check.combat.Criticals;
-import cc.funkemunky.dreya.check.movement.Example;
->>>>>>> c17e3257430142fecee1424d5857b45884fd5d66
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -28,14 +25,12 @@ public class DataManager {
     }
 
     private void addChecks() {
-<<<<<<< HEAD
       //  addCheck(new Example());
         addCheck(new Impossible_pitch());
         addCheck(new Line_Of_Sight_Check());
         addCheck(new Fly());
-=======
         addCheck(new Criticals());
->>>>>>> c17e3257430142fecee1424d5857b45884fd5d66
+        addCheck(new GroundSpoofCheck());
     }
 
     public void removeCheck(Check check) {

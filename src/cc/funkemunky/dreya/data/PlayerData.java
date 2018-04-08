@@ -10,7 +10,8 @@ public class PlayerData {
     private double fallDistance = 0D;
     private int aboveBlockTicks = 0;
     private int waterTicks = 0;
-
+    private long LastBlockPlacedTicks = 0;
+    private boolean LastBlockPlaced_GroundSpoof = false;
     /** Violation fields **/
     private int criticalsVerbose = 0;
 
@@ -61,5 +62,21 @@ public class PlayerData {
 
     public void setCriticalsVerbose(int criticalsVerbose) {
         this.criticalsVerbose = criticalsVerbose;
+    }
+
+    public long getLastBlockPlacedTicks() {
+        return LastBlockPlacedTicks;
+    }
+
+    public void setLastBlockPlacedTicks(long lastBlockPlacedTicks) {
+        LastBlockPlacedTicks = lastBlockPlacedTicks;
+    }
+
+    public boolean isLastBlockPlaced_GroundSpoof() {
+        return LastBlockPlaced_GroundSpoof;
+    }
+
+    public void setLastBlockPlaced_GroundSpoof(boolean lastBlockPlaced_GroundSpoof) {
+        LastBlockPlaced_GroundSpoof = lastBlockPlaced_GroundSpoof;
     }
 }

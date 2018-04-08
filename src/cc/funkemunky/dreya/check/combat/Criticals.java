@@ -42,7 +42,7 @@ public class Criticals extends Check {
         int verbose = data.getCriticalsVerbose();
 
         if(player.getFallDistance() > 0 && data.getFallDistance() == 0) {
-            if(verbose++ > 2) {
+            if(++verbose > 2) {
                 flag(player, "Illegitimate critical packet");
                 verbose = 0;
             }

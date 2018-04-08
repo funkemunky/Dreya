@@ -1,12 +1,14 @@
 package cc.funkemunky.dreya.util;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
+import org.bukkit.entity.Player;
 import org.bukkit.material.Door;
 
 public class BlockUtils {
@@ -267,4 +269,40 @@ public class BlockUtils {
 
 		return blocks;
 	}
+	    /**
+     * Thanks too KekzCrafter your the best (im too lazy to write all this)
+     */
+    static String[] HalfBlocksArray = { "pot", "flower", "step", "slab", "snow", "detector", "daylight",
+            "comparator", "repeater", "diode", "water", "lava", "ladder", "vine", "carpet", "sign", "pressure", "plate",
+            "button", "mushroom", "torch", "frame", "armor", "banner", "lever", "hook", "redstone", "rail", "brewing",
+            "rose", "skull", "enchantment", "cake","bed" };
+    public static boolean isHalfBlock(Block block) {
+        Material type = block.getType();
+        for (String types : HalfBlocksArray) {
+            if (type.toString().toLowerCase().contains(types)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public static boolean isNearHalfBlock(Player p) {
+        boolean out = false;
+         for (Block b : getNearbyBlocks(p.getLocation(), 1)) {
+             if (isHalfBlock(b)) {
+                 out = true;
+             }
+         }
+        return out;
+    }
+        public static List<Block> getNearbyBlocks(Location location, int radius) {
+        List<Block> blocks = new ArrayList<Block>();
+        for(int x = location.getBlockX() - radius; x <= location.getBlockX() + radius; x++) {
+            for(int y = location.getBlockY() - radius; y <= location.getBlockY() + radius; y++) {
+                for(int z = location.getBlockZ() - radius; z <= location.getBlockZ() + radius; z++) {
+                    blocks.add(location.getWorld().getBlockAt(x, y, z));
+                }
+            }
+        }
+        return blocks;
+    }
 }

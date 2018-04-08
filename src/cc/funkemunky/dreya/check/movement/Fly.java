@@ -7,15 +7,14 @@ import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.util.MathUtils;
 import cc.funkemunky.dreya.util.PlayerUtils;
 import cc.funkemunky.dreya.util.SetBackSystem;
-import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
-import org.bukkit.Location;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
 /**
@@ -48,11 +47,38 @@ public class Fly extends Check {
         double Distance = vec.distance(new Vector(from.getX(),from.getY(),from.getZ()));
         if (p.getFallDistance() == 0.0f && p.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.AIR && p.getLocation().getBlock().getRelative(BlockFace.UP).getType() == Material.AIR) {
             if (Distance > 0.50 && !PlayerUtils.isOnGround(p) && e.getTo().getY() > e.getFrom().getY() && e.getTo().getX() == e.getFrom().getX() && e.getTo().getZ() == e.getFrom().getZ()) {
-                flag(p,"Type: A");
+                flag(p,"Type: A [1]");
+                setBackPlayer(p);
+            } else if (Distance > 0.90 && !PlayerUtils.isOnGround(p) && e.getTo().getY() > e.getFrom().getY() && e.getTo().getX() == e.getFrom().getX() && e.getTo().getZ() == e.getFrom().getZ()) {
+                flag(p,"Type: A [2]");
+                setBackPlayer(p);
+            } else if (Distance > 1.0 && !PlayerUtils.isOnGround(p) && e.getTo().getY() > e.getFrom().getY() && e.getTo().getX() == e.getFrom().getX() && e.getTo().getZ() == e.getFrom().getZ()) {
+                flag(p,"Type: A [3]");
+                setBackPlayer(p);
+            } else if (Distance > 3.24 && !PlayerUtils.isOnGround(p) && e.getTo().getY() > e.getFrom().getY() && e.getTo().getX() == e.getFrom().getX() && e.getTo().getZ() == e.getFrom().getZ()) {
+                flag(p,"Type: A [4]");
                 setBackPlayer(p);
             }
         }
-
+        if (e.getTo().getY() > e.getFrom().getY() && data.getAirTicks() > 2) {
+            if (!PlayerUtils.isOnGround3(p) && !PlayerUtils.onGround2(p) && !PlayerUtils.isOnGround(p)) {
+                if (PlayerUtils.getDistanceToGround(p) > 2) {
+                    if (data.getGoingUp_Blocks() >= 3) {
+                        flag(p,"Type: A [5]");
+                    } else {
+                        data.setGoingUp_Blocks(data.getGoingUp_Blocks() + 1);
+                    }
+                } else {
+                    data.setGoingUp_Blocks(0);
+                }
+            } else {
+                data.setGoingUp_Blocks(0);
+            }
+        } else if (e.getTo().getY() < e.getFrom().getY()) {
+            data.setGoingUp_Blocks(0);
+        } else {
+            data.setGoingUp_Blocks(0);
+        }
         //Hover check
         if(!PlayerUtils.isOnGround(p)) {
             double distanceToGround = getDistanceToGround(p);

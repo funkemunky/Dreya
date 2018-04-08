@@ -33,7 +33,10 @@ public class PlayerData {
     private boolean didGetKicked_Pingspoof = false;
     private int SlowPingSpoof_Count = 0;
     private Location setbackLocation;
-
+    private long GoingUp_MS;
+    private double GoingUp_Blocks;
+    private double LastY_Gravity;
+    private int Gravity_VL;
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -278,5 +281,45 @@ public class PlayerData {
 
     public void setSetbackLocation(Location setbackLocation) {
         this.setbackLocation = setbackLocation;
+    }
+
+    public long getGoinUp_MS() {
+        return GoingUp_MS;
+    }
+
+    public void setGoinUp_MS(long goinUp_MS) {
+        GoingUp_MS = goinUp_MS;
+    }
+
+    public long getGoingUp_MS() {
+        return GoingUp_MS;
+    }
+
+    public void setGoingUp_MS(long goingUp_MS) {
+        GoingUp_MS = goingUp_MS;
+    }
+
+    public double getGoingUp_Blocks() {
+        return GoingUp_Blocks;
+    }
+
+    public void setGoingUp_Blocks(double goingUp_Blocks) {
+        GoingUp_Blocks = goingUp_Blocks;
+    }
+
+    public double getLastY_Gravity() {
+        return LastY_Gravity;
+    }
+
+    public void setLastY_Gravity(double lastY_Gravity) {
+        LastY_Gravity = lastY_Gravity;
+    }
+
+    public int getGravity_VL() {
+        return Gravity_VL;
+    }
+
+    public void setGravity_VL(int gravity_VL) {
+        Gravity_VL = gravity_VL;
     }
 }

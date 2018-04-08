@@ -5,6 +5,7 @@ import cc.funkemunky.dreya.check.Check;
 import cc.funkemunky.dreya.check.CheckType;
 import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.util.*;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -32,7 +33,8 @@ public class Gravity extends Check {
                 data.setGravity_VL(0);
                 return;
             }
-            if (!PlayerUtils.onGround2(p) || !PlayerUtils.isOnGround3(p) || !PlayerUtils.isOnGround(p)) {
+            if (!PlayerUtils.onGround2(p) || !PlayerUtils.isOnGround3(p) || !PlayerUtils.isOnGround(p) || p.getLocation().getBlock().getType() != Material.CHEST ||
+                    p.getLocation().getBlock().getType() != Material.TRAPPED_CHEST || p.getLocation().getBlock().getType() != Material.ENDER_CHEST || p.getLocation().add(0,1,0).getBlock().getType() == Material.AIR) {
                 if ((((ServerUtils.isBukkitVerison("1_7") || ServerUtils.isBukkitVerison("1_8")) && Math.abs(p.getVelocity().getY() - LastY) > 0.000001)
                         || (!ServerUtils.isBukkitVerison("1_7") && !ServerUtils.isBukkitVerison("1_8") && Math.abs(p.getVelocity().getY() - diff) > 0.000001))
                         && !PlayerUtils.onGround2(p)

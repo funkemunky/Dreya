@@ -36,11 +36,8 @@ public class DataManager {
         addCheck(new GroundSpoofCheck());
         addCheck(new Reach());
         addCheck(new Gravity());
-<<<<<<< HEAD
         addCheck(new ImpossibleMovements());
-=======
         addCheck(new KillAura());
->>>>>>> 00ad5272dd8f08fd07f0d1f6a2ec91326a2de6a6
     }
 
     public void removeCheck(Check check) {

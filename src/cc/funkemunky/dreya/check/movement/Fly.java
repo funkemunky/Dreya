@@ -7,7 +7,6 @@ import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.util.MathUtils;
 import cc.funkemunky.dreya.util.PlayerUtils;
 import cc.funkemunky.dreya.util.SetBackSystem;
-import cc.funkemunky.dreya.util.VelocityUtils;
 import org.bukkit.*;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
@@ -106,23 +105,6 @@ public class Fly extends Check {
             data.setFlyHoverVerbose(verbose);
         }
 
-<<<<<<< HEAD
-        //Too Fast Check
-        if (VelocityUtils.didTakeVelocity(p)) {
-            return;
-        }
-    //    p.sendMessage(""+p.getFlySpeed());
-        if (e.getTo() != e.getFrom()) {
-
-        }
-    }
-    @EventHandler
-    public void onKickEvent(PlayerKickEvent e) {
-        if (e.getReason().equalsIgnoreCase("Flying is not enabled on this server")) {
-            e.setCancelled(true);
-            flag(e.getPlayer(),"Type: C");
-            setBackPlayer(e.getPlayer());
-=======
         //Velocity Diff check
         double diffY = Math.abs(from.getY() - to.getY());
         double lastDiffY = data.getLastVelocityFlyY();
@@ -142,7 +124,6 @@ public class Fly extends Check {
             }
         } else {
             verboseC = verboseC > 0 ? verboseC - 1 : 0;
->>>>>>> 00ad5272dd8f08fd07f0d1f6a2ec91326a2de6a6
         }
         data.setLastVelocityFlyY(diffY);
         data.setFlyVelocityVerbose(verboseC);

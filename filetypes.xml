@@ -1,12 +1,7 @@
 <application>
   <component name="FileTypeManager" version="17">
     <extensionMap>
-      <mapping pattern="._painting" type="PLAIN_TEXT" />
-      <mapping pattern="._.DS_Store" type="PLAIN_TEXT" />
-      <mapping pattern="._FIRM" type="PLAIN_TEXT" />
-      <mapping pattern="._creeper" type="PLAIN_TEXT" />
-      <mapping pattern="._particle" type="PLAIN_TEXT" />
-      <mapping pattern="._font" type="PLAIN_TEXT" />
+      <mapping pattern=".checker.ini" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
 </application>

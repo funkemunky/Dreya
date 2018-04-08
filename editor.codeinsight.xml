@@ -1,7 +1,5 @@
 <application>
   <component name="CodeInsightSettings">
-    <option name="SMART_BACKSPACE" value="2" />
-    <option name="SMART_END_ACTION" value="false" />
-    <option name="REFORMAT_ON_PASTE" value="1" />
+    <option name="ADD_UNAMBIGIOUS_IMPORTS_ON_THE_FLY" value="true" />
   </component>
 </application>

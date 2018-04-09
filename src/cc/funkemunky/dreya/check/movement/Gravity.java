@@ -61,4 +61,9 @@ public class Gravity extends Check {
             }
         }
     }
+    private boolean isOnSlime(Player p) {
+        boolean out = false;
+
+        return out;
+    }
 }

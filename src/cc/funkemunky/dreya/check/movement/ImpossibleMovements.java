@@ -22,7 +22,7 @@ public class ImpossibleMovements extends Check {
         Player p = e.getPlayer();
         PlayerData data = Dreya.getInstance().getDataManager().getData(p);
         if (data != null) {
-            if (p.getLocation().add(0,-1.30,0).getBlock().getType() == Material.CACTUS && p.getLocation().getBlock().getType() == Material.AIR) {
+            if (p.getLocation().add(0,-0.30,0).getBlock().getType() == Material.CACTUS && p.getLocation().getBlock().getType() == Material.AIR) {
                 if (data.getAntiCactus_VL() >= 3) {
                     flag(p,"Anti Cactus");
                 } else {

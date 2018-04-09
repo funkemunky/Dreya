@@ -350,5 +350,14 @@ public class BlockUtils {
         }
         return out;
     }
+    public static boolean isNearSnow(Player p) {
+        boolean out = false;
+        for (Block b : getNearbyBlocks(p.getLocation(), 1)) {
+            if (b.getType() == Material.SNOW || b.getType() == Material.SNOW_BLOCK) {
+                out = true;
+            }
+        }
+        return out;
+    }
 
 }

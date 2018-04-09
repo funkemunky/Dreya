@@ -60,9 +60,14 @@ public class PlayerData {
     private int iceTicks = 0;
     private long Speed_YPort2_MS = 0;
     private boolean Speed_YPort2_Set = false;
+<<<<<<< HEAD
     private long speedGroundReset = 0;
     private int slimeTicks = 0;
 
+=======
+    private long Speed_MS_Yport = 0;
+    private boolean Speed_MS_Set = false;
+>>>>>>> d9f32ae668eb38aa050dccf0ea4d684e8fbb9452
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -78,8 +83,20 @@ public class PlayerData {
     private int Speed_YPORT_Verbose = 0;
     private int Speed_YPort2_Verbose = 0;
     private int NEWSpeed_Verbose = 0;
+<<<<<<< HEAD
     private int speedAVerbose = 0;
+=======
+    private int Speed_C3_Verbose = 0;
 
+>>>>>>> d9f32ae668eb38aa050dccf0ea4d684e8fbb9452
+
+    public int getSpeed_C3_Verbose() {
+        return Speed_C3_Verbose;
+    }
+
+    public void setSpeed_C3_Verbose(int speed_C3_Verbose) {
+        Speed_C3_Verbose = speed_C3_Verbose;
+    }
 
     public int getNEWSpeed_Verbose() {
         return NEWSpeed_Verbose;

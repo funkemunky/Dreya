@@ -93,7 +93,16 @@ public class PlayerData {
     private int Speed_YPort2_Verbose = 0;
     private int NEWSpeed_Verbose = 0;
     private int Speed_C3_Verbose = 0;
+    private int Jesus_Verbose = 0;
 
+
+    public int getJesus_Verbose() {
+        return Jesus_Verbose;
+    }
+
+    public void setJesus_Verbose(int jesus_Verbose) {
+        Jesus_Verbose = jesus_Verbose;
+    }
 
     public int getSpeed_C3_Verbose() {
         return Speed_C3_Verbose;

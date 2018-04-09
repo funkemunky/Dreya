@@ -94,7 +94,7 @@ public class Fly extends Check {
             if(distanceToGround > 2) {
                 verbose = yDiff == 0 ? verbose + 6 : yDiff < 0.06 ? verbose + 4 : 0;
             } else if(data.getAirTicks() > 7
-                    && yDiff == 0) {
+                    && yDiff < 0.001) {
                 verbose+= 2;
             } else {
                 verbose = 0;

@@ -67,13 +67,13 @@ public class PlayerData {
     private boolean Speed_PistonExpand_Set = false;
     private long BlockAbove = 0;
     private boolean BlockAbove_Set = false;
-<<<<<<< HEAD
     private long Speed_YPORT_MS = 0;
     private boolean Speed_YPORT_Set = false;
-=======
     private int iceTicks = 0;
-
->>>>>>> a8a6fece0ee6e83831c18d98935a0c436b2943da
+    private long Speed_YPort2_MS = 0;
+    private boolean Speed_YPort2_Set = false;
+    private long Speed_MS_Yport = 0;
+    private boolean Speed_MS_Set = false;
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -90,7 +90,33 @@ public class PlayerData {
     private int SpeedC_Verbose = 0;
     private int Speed_C_3_Verbose = 0;
     private int Speed_YPORT_Verbose = 0;
+    private int Speed_YPort2_Verbose = 0;
+    private int NEWSpeed_Verbose = 0;
 
+
+    public long getSpeed_MS_Yport() {
+        return Speed_MS_Yport;
+    }
+
+    public void setSpeed_MS_Yport(long speed_MS_Yport) {
+        Speed_MS_Yport = speed_MS_Yport;
+    }
+
+    public boolean isSpeed_MS_Set() {
+        return Speed_MS_Set;
+    }
+
+    public void setSpeed_MS_Set(boolean speed_MS_Set) {
+        Speed_MS_Set = speed_MS_Set;
+    }
+
+    public int getNEWSpeed_Verbose() {
+        return NEWSpeed_Verbose;
+    }
+
+    public void setNEWSpeed_Verbose(int NEWSpeed_Verbose) {
+        this.NEWSpeed_Verbose = NEWSpeed_Verbose;
+    }
 
     public PlayerData(Player player) {
         this.player = player;
@@ -735,5 +761,29 @@ public class PlayerData {
 
     public void setSpeed_YPORT_Set(boolean speed_YPORT_Set) {
         Speed_YPORT_Set = speed_YPORT_Set;
+    }
+
+    public long getSpeed_YPort2_MS() {
+        return Speed_YPort2_MS;
+    }
+
+    public void setSpeed_YPort2_MS(long speed_YPort2_MS) {
+        Speed_YPort2_MS = speed_YPort2_MS;
+    }
+
+    public boolean isSpeed_YPort2_Set() {
+        return Speed_YPort2_Set;
+    }
+
+    public void setSpeed_YPort2_Set(boolean speed_YPort2_Set) {
+        Speed_YPort2_Set = speed_YPort2_Set;
+    }
+
+    public int getSpeed_YPort2_Verbose() {
+        return Speed_YPort2_Verbose;
+    }
+
+    public void setSpeed_YPort2_Verbose(int speed_YPort2_Verbose) {
+        Speed_YPort2_Verbose = speed_YPort2_Verbose;
     }
 }

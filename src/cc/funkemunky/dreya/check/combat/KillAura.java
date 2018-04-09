@@ -25,7 +25,6 @@ public class KillAura extends Check {
         }
 
         Player player = e.getPlayer();
-        Entity entity = e.getEntity();
         PlayerData data = Dreya.getInstance().getDataManager().getData(player);
 
         if(data == null) {
@@ -35,7 +34,7 @@ public class KillAura extends Check {
         int verboseA = data.getKillauraAVerbose();
         long time = data.getLastAimTime();
 
-        if(MathUtils.elapsed(time, 1000L)) {
+        if(MathUtils.elapsed(time, 1100L)) {
             time = System.currentTimeMillis();
             verboseA = 0;
         }
@@ -49,7 +48,7 @@ public class KillAura extends Check {
                 if(++verboseA > 9) {
                     flag(player, "Type: A");
                 }
-                Bukkit.broadcastMessage("Verbose: " + verboseA);
+                //Bukkit.broadcastMessage("Verbose: " + verboseA);
             }
             data.setLastKillauraYawDif(angleDistance((float) data.getLastKillauraYaw(), player.getEyeLocation().getYaw()));
         } else {

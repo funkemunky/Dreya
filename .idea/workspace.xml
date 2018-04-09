@@ -358,17 +358,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Jesus.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Jesus.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Jesus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+            <state relative-caret-position="544">
+              <caret line="38" column="55" lean-forward="true" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#556#557#0" expanded="true" />
                 <element signature="e#612#613#0" expanded="true" />
-                <element signature="e#1780#1781#0" expanded="true" />
-                <element signature="e#1824#1825#0" expanded="true" />
+                <element signature="e#1999#2000#0" expanded="true" />
+                <element signature="e#2043#2044#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -408,6 +408,9 @@
         </entry>
       </file>
 <<<<<<< HEAD
+      <file leaf-file-name="PlayerData.java" pinned="false" current-in-tab="true">
+=======
+<<<<<<< HEAD
       <file leaf-file-name="PacketCore.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/PacketCore/PacketCore.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -429,16 +432,29 @@
                 <marker date="1523304407000" expanded="false" signature="7142:7148" ph=" }" />
 =======
       <file leaf-file-name="PlayerData.java" pinned="false" current-in-tab="false">
+>>>>>>> 99f12512bc62ff53c2380ddfce980089c654063f
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+            <state relative-caret-position="606">
+              <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+              <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding>
+<<<<<<< HEAD
+                <element signature="e#3599#3600#0" expanded="true" />
+                <element signature="e#3635#3636#0" expanded="true" />
+                <element signature="e#3690#3691#0" expanded="true" />
+                <element signature="e#3735#3736#0" expanded="true" />
+                <element signature="e#7286#7287#0" expanded="true" />
+                <element signature="e#7317#7318#0" expanded="true" />
+                <element signature="e#7704#7705#0" expanded="true" />
+                <element signature="e#7758#7759#0" expanded="true" />
+=======
                 <element signature="e#7078#7079#0" expanded="true" />
                 <element signature="e#7109#7110#0" expanded="true" />
                 <element signature="e#7496#7497#0" expanded="true" />
                 <element signature="e#7550#7551#0" expanded="true" />
 >>>>>>> d9f32ae668eb38aa050dccf0ea4d684e8fbb9452
+>>>>>>> 99f12512bc62ff53c2380ddfce980089c654063f
               </folding>
             </state>
           </provider>
@@ -531,12 +547,13 @@
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Speed.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Jesus.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="639" />
-    <option name="y" value="195" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -756,8 +773,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+=======
     <frame x="639" y="195" width="1936" height="1056" extended-state="0" />
 >>>>>>> d9f32ae668eb38aa050dccf0ea4d684e8fbb9452
+>>>>>>> 99f12512bc62ff53c2380ddfce980089c654063f
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1510,6 +1531,8 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/player/LineOfSight.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1528,6 +1551,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> 99f12512bc62ff53c2380ddfce980089c654063f
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/util/PlayerUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
@@ -1642,11 +1666,28 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Jesus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="38" column="55" lean-forward="true" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#556#557#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+            <element signature="e#1999#2000#0" expanded="true" />
+            <element signature="e#2043#2044#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+=======
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/PacketCore/PacketCore.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="128" column="11" lean-forward="false" selection-start-line="128" selection-start-column="11" selection-end-line="128" selection-end-column="11" />
 =======
+>>>>>>> 99f12512bc62ff53c2380ddfce980089c654063f
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1656,6 +1697,9 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java">
+=======
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1672,15 +1716,20 @@
           <folding />
 =======
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Jesus.java">
+>>>>>>> 99f12512bc62ff53c2380ddfce980089c654063f
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        <state relative-caret-position="606">
+          <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+          <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#556#557#0" expanded="true" />
-            <element signature="e#612#613#0" expanded="true" />
-            <element signature="e#1780#1781#0" expanded="true" />
-            <element signature="e#1824#1825#0" expanded="true" />
+            <element signature="e#3599#3600#0" expanded="true" />
+            <element signature="e#3635#3636#0" expanded="true" />
+            <element signature="e#3690#3691#0" expanded="true" />
+            <element signature="e#3735#3736#0" expanded="true" />
+            <element signature="e#7286#7287#0" expanded="true" />
+            <element signature="e#7317#7318#0" expanded="true" />
+            <element signature="e#7704#7705#0" expanded="true" />
+            <element signature="e#7758#7759#0" expanded="true" />
           </folding>
 >>>>>>> d9f32ae668eb38aa050dccf0ea4d684e8fbb9452
         </state>

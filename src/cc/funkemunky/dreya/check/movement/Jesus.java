@@ -24,13 +24,19 @@ public class Jesus extends Check {
         Player p = e.getPlayer();
         PlayerData data = Dreya.getInstance().getDataManager().getData(p);
         if (data != null) {
-            if (p.getLocation().add(0,-0.50,0).getBlock().isLiquid()) {
+            if (p.getLocation().add(0,-0.3,0).getBlock().isLiquid()) {
                 boolean onWater = isHoveringOverWater(p.getLocation());
                 Location to = e.getTo();
                 Location from = e.getFrom();
                 double motion = (to.getY() - from.getY());
+                boolean goingUp;
+                if (e.getTo().getY() > e.getTo().getY()) {
+                    goingUp = true;
+                } else {
+                    goingUp = false;
+                }
                 if (onWater) {
-                    if (motion > 0.10000) {
+                    if (motion > 0.10000 && !goingUp) {
                         p.sendMessage("1");
                     }
                 }

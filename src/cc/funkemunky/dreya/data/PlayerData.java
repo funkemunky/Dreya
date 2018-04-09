@@ -48,7 +48,11 @@ public class PlayerData {
     private long LastVelUpdate = 0;
     private boolean LastVelUpdateBoolean = false;
     private double lastKillauraYawDif = 0;
-
+    private long Speed_OnGround_Reset = 0;
+    private long lastPacketTimer = 0;
+    private long LastTimeTimer = 0;
+    private int LastPacketTimer = 0;
+    private int LastPACKETSTimer = 0;
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -59,6 +63,8 @@ public class PlayerData {
     private int killauraAVerbose = 0;
     private int SpeedVerbose = 0;
     private int Speed2Verbose = 0;
+    private int Speed_OnGround_Verbose = 0;
+    private int TimerVerbose = 0;
 
 
     public PlayerData(Player player) {
@@ -484,5 +490,57 @@ public class PlayerData {
 
     public void setSpeed2Verbose(int speed2Verbose) {
         Speed2Verbose = speed2Verbose;
+    }
+
+    public long getSpeed_OnGround_Reset() {
+        return Speed_OnGround_Reset;
+    }
+
+    public void setSpeed_OnGround_Reset(long speed_OnGround_Reset) {
+        Speed_OnGround_Reset = speed_OnGround_Reset;
+    }
+
+    public int getSpeed_OnGround_Verbose() {
+        return Speed_OnGround_Verbose;
+    }
+
+    public void setSpeed_OnGround_Verbose(int speed_OnGround_Verbose) {
+        Speed_OnGround_Verbose = speed_OnGround_Verbose;
+    }
+
+    public long getLastPacketTimer() {
+        return lastPacketTimer;
+    }
+
+    public void setLastPacketTimer(long lastPacketTimer) {
+        this.lastPacketTimer = lastPacketTimer;
+    }
+
+    public long getLastTimeTimer() {
+        return LastTimeTimer;
+    }
+
+    public void setLastTimeTimer(long lastTimeTimer) {
+        LastTimeTimer = lastTimeTimer;
+    }
+
+    public void setLastPacketTimer(int lastPacketTimer) {
+        LastPacketTimer = lastPacketTimer;
+    }
+
+    public int getTimerVerbose() {
+        return TimerVerbose;
+    }
+
+    public void setTimerVerbose(int timerVerbose) {
+        TimerVerbose = timerVerbose;
+    }
+
+    public int getLastPACKETSTimer() {
+        return LastPACKETSTimer;
+    }
+
+    public void setLastPACKETSTimer(int lastPACKETSTimer) {
+        LastPACKETSTimer = lastPACKETSTimer;
     }
 }

@@ -42,7 +42,7 @@ public class Fly extends Check {
             return;
         }
         //Ascension Check
-        if (!NEW_Velocity_Utils.didTakeVel(p)) {
+        if (!NEW_Velocity_Utils.didTakeVel(p) && !PlayerUtils.wasOnSlime(p)) {
             Vector vec = new Vector(to.getX(), to.getY(), to.getZ());
             double Distance = vec.distance(new Vector(from.getX(), from.getY(), from.getZ()));
             if (p.getFallDistance() == 0.0f && p.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.AIR && p.getLocation().getBlock().getRelative(BlockFace.UP).getType() == Material.AIR) {
@@ -61,7 +61,7 @@ public class Fly extends Check {
                 }
             }
         }
-        if (!NEW_Velocity_Utils.didTakeVel(p)) {
+        if (!NEW_Velocity_Utils.didTakeVel(p) && !PlayerUtils.wasOnSlime(p)) {
             if (e.getTo().getY() > e.getFrom().getY() && data.getAirTicks() > 2 && !VelocityUtils.didTakeVelocity(p)) {
                 if (!PlayerUtils.isOnGround3(p) && !PlayerUtils.onGround2(p) && !PlayerUtils.isOnGround(p)) {
                     if (PlayerUtils.getDistanceToGround(p) > 2) {
@@ -119,7 +119,7 @@ public class Fly extends Check {
 
         if(finalDifference < 0.08
                 && e.getFrom().getY() < e.getTo().getY()
-                && !PlayerUtils.isOnGround(p)) {
+                && !PlayerUtils.isOnGround(p) && !p.getLocation().getBlock().isLiquid() && !BlockUtils.isNearLiquid(p)) {
             if(++verboseC > 2) {
                 flag(p, "Type: C");
                 SetBackSystem.setBack(p);

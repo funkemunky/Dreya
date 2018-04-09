@@ -26,10 +26,14 @@ public class Gravity extends Check {
             double diff = MathUtils.getVerticalDistance(e.getFrom(), e.getTo());
             double LastY = data.getLastY_Gravity();
             double MaxG = 5;
+            if (PlayerUtils.wasOnSlime(p)) {
+                data.setGravity_VL(0);
+                return;
+            }
             if (e.getTo().getY() < e.getFrom().getY()) {
                 return;
             }
-            if (NEW_Velocity_Utils.didTakeVel(p)) {
+            if (NEW_Velocity_Utils.didTakeVel(p) || p.getLocation().getBlock().isLiquid() || !BlockUtils.isNearLiquid(p)) {
                 data.setGravity_VL(0);
                 return;
             }

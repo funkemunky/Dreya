@@ -41,11 +41,13 @@ public class LineOfSight extends Check {
     @EventHandler
     public void onInteract(PlayerInteractEvent e) {
         if (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.LEFT_CLICK_BLOCK) {
-            Player p = e.getPlayer();
-            if ((e.getClickedBlock().getLocation().distance(p.getPlayer().getEyeLocation()) > 2)
-                    && !BlockPathFinder.line(p.getPlayer().getEyeLocation(), e.getClickedBlock().getLocation()).contains(e.getClickedBlock()) && !e.isCancelled()) {
-                flag(p, "Interacted without a line of sight too it.");
-                e.setCancelled(true);
+            if (e.getClickedBlock().getType() == Material.CHEST || e.getClickedBlock().getType() == Material.TRAPPED_CHEST || e.getClickedBlock().getType() == Material.ENDER_CHEST) {
+                Player p = e.getPlayer();
+                if ((e.getClickedBlock().getLocation().distance(p.getPlayer().getEyeLocation()) > 2)
+                        && !BlockPathFinder.line(p.getPlayer().getEyeLocation(), e.getClickedBlock().getLocation()).contains(e.getClickedBlock()) && !e.isCancelled()) {
+                    flag(p, "Interacted without a line of sight too it.");
+                    e.setCancelled(true);
+                }
             }
         }
     }

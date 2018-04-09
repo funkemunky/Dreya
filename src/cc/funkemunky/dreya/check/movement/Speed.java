@@ -66,7 +66,7 @@ public class Speed extends Check {
                         data.setSpeed_Ticks(TimerUtils.nowlong());
                     }
                     data.setSpeedVerbose(data.getSpeedVerbose() + 1);
-                } else if (data.getSpeedVerbose() >= 6 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p)) {
+                } else if (data.getSpeedVerbose() >= 6 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && p.getLocation().add(0,1.94,0).getBlock().getType() != Material.AIR) {
                     flag(p, "Type: A - Player Moved Too Fast.");
                     setBack(p);
                     SetBackSystem.setBack(p);
@@ -80,7 +80,9 @@ public class Speed extends Check {
         if (((YSpeed == 0.25D || (YSpeed >= 0.58D && YSpeed < 0.581D))
                 || (YSpeed > 0.2457D && YSpeed < 0.24582D) || (YSpeed > 0.329 && YSpeed < 0.33) || YSpeed == 0.4200000000000017)
                 && !p.getLocation().clone().subtract(0.0D, 0.1, 0.0D).getBlock().getType().equals(Material.SNOW)) {
-            if (p.getNoDamageTicks() == 0) {
+            if (p.getNoDamageTicks() == 0 && !PlayerUtils.wasOnSlime(p) && !BlockUtils.isClimbableBlock(p.getLocation().add(0,0.30,0).getBlock())
+                    && ! BlockUtils.isClimbableBlock(p.getLocation().add(0,0.90,0).getBlock()) && !BlockUtils.isClimbableBlock(p.getLocation().add(0,1.10,0).getBlock()) &&
+                    !p.getLocation().getBlock().isLiquid() && !BlockUtils.isNearLiquid(p)) {
                 flag(p, "Type: B - Player Moved Too Fast.");
                 setBack(p);
                 SetBackSystem.setBack(p);
@@ -121,8 +123,9 @@ public class Speed extends Check {
                     && !loc.getBlock().isLiquid() && blockLoc.getBlock().getType() != Material.PACKED_ICE
                     && above.getBlock().getType() == Material.AIR && above3.getBlock().getType() == Material.AIR
                     && blockLoc.getBlock().getType() != Material.AIR && !NEW_Velocity_Utils.didTakeVel(p) && !BlockUtils.isNearStiar(p)) {
-                if (!NEW_Velocity_Utils.didTakeVel(p)) {
-                    if (data.getSpeed2Verbose() >= 3 || p.getNoDamageTicks() == 0 == false) {
+                if (!NEW_Velocity_Utils.didTakeVel(p) && PlayerUtils.getDistanceToGround(p) > 4 == false) {
+                    if (data.getSpeed2Verbose() >= 8 || p.getNoDamageTicks() == 0 == false && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p)
+                            && p.getLocation().add(0,1.94,0).getBlock().getType() != Material.AIR) {
                         flag(p, "Type: C [1] - Player Moved Too Fast.");
                         setBack(p);
                     } else {
@@ -130,8 +133,6 @@ public class Speed extends Check {
                     }
                 } else {
                     data.setSpeed2Verbose(0);
-                    flag(p, "Type: C [1] - Player Moved Too Fast.");
-                    SetBackSystem.setBack(p);
                 }
             }
 
@@ -155,6 +156,19 @@ public class Speed extends Check {
                 setBack(p);
                 SetBackSystem.setBack(p);
             }
+        //Type D
+        double Differ = MathUtils.offset(getHorizontalVector(e.getTo().toVector()),getHorizontalVector(from.toVector()));
+        if (Differ > 0.29 && PlayerUtils.isOnGround(p) && !data.isNearIce() && !BlockUtils.isNearStiar(p) && !NEW_Velocity_Utils.didTakeVel(p)) {
+            if (data.getSpeed_OnGround_Verbose() >= 5) {
+                flag(p,"Type: D");
+                setBack(p);
+            } else {
+                data.setSpeed_OnGround_Verbose(data.getSpeed_OnGround_Verbose()+1);
+            }
+            data.setSpeed_OnGround_Reset(TimerUtils.nowlong());
+        } else {
+            data.setSpeed_OnGround_Verbose(0);
+        }
     }
     public boolean isAir(final Player player) {
         final Block b = player.getLocation().getBlock().getRelative(BlockFace.DOWN);

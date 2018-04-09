@@ -323,5 +323,14 @@ public class BlockUtils {
 		}
 		return out;
 	}
+	public static boolean isNearLiquid(Player p) {
+		boolean out = false;
+		for (Block b : getNearbyBlocks(p.getLocation(), 1)) {
+			if (isLiquid(b)) {
+				out = true;
+			}
+		}
+		return out;
+	}
 
 }

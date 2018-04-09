@@ -112,7 +112,7 @@ public class UtilityMoveEvent implements Listener {
         }
 
         if(PlayerUtils.isOnGround(player.getLocation().add(0, 2, 0))) {
-            data.setAboveBlockTicks(data.getAboveBlockTicks() + 1);
+            data.setAboveBlockTicks(data.getAboveBlockTicks() + 2);
         } else if(data.getAboveBlockTicks() > 0) {
             data.setAboveBlockTicks(data.getAboveBlockTicks() - 1);
         }

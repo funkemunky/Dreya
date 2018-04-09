@@ -88,7 +88,8 @@ public class Speed extends Check {
                 int z = l.getBlockZ();
                 Location loc1 = new Location(p.getWorld(), x, y + 1, z);
                 if (loc1.getBlock().getType()  == Material.AIR) {
-                    if (OXZ > 1 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && p.getLocation().add(0, 1.94, 0).getBlock().getType() == Material.AIR && !data.isAboveSpeedSet()) {
+                    if (OXZ > 1 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && p.getLocation().add(0, 1.94, 0).getBlock().getType() == Material.AIR
+                            && !data.isAboveSpeedSet() && !PlayerUtils.hasPistonNear(p)) {
                         flag(p, "Type: A [C2] - Player Moved Too Fast.");
                         setBack(p);
                         SetBackSystem.setBack(p);
@@ -202,7 +203,7 @@ public class Speed extends Check {
             if (speed > Max && !isAir(p) && onGroundDiff <= -0.4 && p.getFallDistance() <= 0.4  && blockLoc.getBlock().getType() != Material.ICE
                     && e.getTo().getY() != e.getFrom().getY() && blockLoc.getBlock().getType() != Material.PACKED_ICE
                     && loc2.getBlock().getType() != Material.TRAP_DOOR && above.getBlock().getType() == Material.AIR
-                    && above3.getBlock().getType() == Material.AIR) {
+                    && above3.getBlock().getType() == Material.AIR && data.getAboveBlockTicks() != 0) {
                 flag(p,"Type: C [2] - Player Moved Too Fast.");
                 setBack(p);
                 SetBackSystem.setBack(p);

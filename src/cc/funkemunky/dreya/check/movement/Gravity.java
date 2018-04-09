@@ -36,8 +36,8 @@ public class Gravity extends Check {
                     if (!data.isHalfBlocks_MS_Set() && PlayerUtils.getDistanceToGround(p) < 3 && p.getNoDamageTicks() == 0 && !PlayerUtils.wasOnSlime(p)
                             && p.getLocation().add(0,-0.50,0).getBlock().getType() != Material.SLIME_BLOCK && !NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p)
                     && TimerUtils.elapsed(data.getLastVelUpdate(),1500L)) {
-                        flag(p, "Player's motion was changed to an unexpected value. [C2]");
-                        SetBackSystem.setBack(p);
+                     //   flag(p, "Player's motion was changed to an unexpected value. [C2]");
+                       // SetBackSystem.setBack(p);
                     }
                 }
             }

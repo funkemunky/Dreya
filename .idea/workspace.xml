@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11a5c6a0-a295-4b04-adac-4c56ecc19373" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Speed.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Speed.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Dreya_jar/Dreya.jar" afterPath="$PROJECT_DIR$/out/artifacts/Dreya_jar/Dreya.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/funkemunky/dreya/util/VelocityUtils.java" afterPath="$PROJECT_DIR$/src/cc/funkemunky/dreya/util/VelocityUtils.java" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VelocityUtils.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="VelocityUtils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/util/VelocityUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+            <state relative-caret-position="222">
+              <caret line="27" column="51" lean-forward="true" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -383,7 +383,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Speed.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Speed.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Speed.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
@@ -453,8 +453,8 @@
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityMoveEvent.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java" />
-        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/util/VelocityUtils.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Speed.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/util/VelocityUtils.java" />
       </list>
     </option>
   </component>
@@ -2584,14 +2584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/util/VelocityUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Speed.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -2601,6 +2593,14 @@
             <element signature="e#668#669#0" expanded="true" />
             <element signature="e#724#725#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/util/VelocityUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="27" column="51" lean-forward="true" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -29,10 +29,8 @@ public class VelocityUtils implements Listener {
         Player p = e.getPlayer();
          PlayerData data = Dreya.getInstance().getDataManager().getData(p);
         if (data != null) {
-            if (!data.isDidTakeVelocity() && p.getNoDamageTicks() > 0) {
-                data.setDidTakeVelocity(true);
-                data.setLastVelMS(TimerUtils.nowlong());
-            }
+            data.setDidTakeVelocity(true);
+            data.setLastVelMS(TimerUtils.nowlong());
         }
     }
     public static boolean didTakeVelocity(Player p) {

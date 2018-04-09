@@ -5,11 +5,6 @@ import cc.funkemunky.dreya.check.Check;
 import cc.funkemunky.dreya.check.CheckType;
 import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.util.*;
-<<<<<<< HEAD
-import org.bukkit.Bukkit;
-=======
-import org.apache.commons.lang3.builder.Diff;
->>>>>>> d9f32ae668eb38aa050dccf0ea4d684e8fbb9452
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -21,11 +16,12 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
+import java.util.ArrayList;
+
 /**
  * Created by Mr_JaVa_ on 2018-04-08 Package cc.funkemunky.dreya.check.movement
  */
 public class Speed extends Check {
-<<<<<<< HEAD
 
     List<String> debugList;
     public Speed() {
@@ -87,12 +83,10 @@ public class Speed extends Check {
      * }
      */
 
-=======
     public Speed() {
         super("Speed", CheckType.MOVEMENT, true);
     }
 
->>>>>>> d9f32ae668eb38aa050dccf0ea4d684e8fbb9452
     @EventHandler
     public void onMove(PlayerMoveEvent e) {
         Player p = e.getPlayer();
@@ -108,7 +102,6 @@ public class Speed extends Check {
         }
 
         if (data != null) {
-<<<<<<< HEAD
 
             if (data.isSpeed_PistonExpand_Set()) {
                 if (TimerUtils.elapsed(data.getSpeed_PistonExpand_MS(), 9900L)) {

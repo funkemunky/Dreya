@@ -4,19 +4,15 @@ import cc.funkemunky.dreya.Dreya;
 import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.events.PluginEvents.PacketAttackEvent;
 import cc.funkemunky.dreya.events.PluginEvents.PacketPlayerEvent;
-import cc.funkemunky.dreya.events.PluginEvents.PacketPlayerEvent2;
-import cc.funkemunky.dreya.events.PluginEvents.PacketPlayerType;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.events.PacketEvent;
-import com.comphenix.protocol.events.PacketListener;
 import com.comphenix.protocol.wrappers.EnumWrappers;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,18 +24,16 @@ import java.util.UUID;
 public class PacketCore {
     public static Map<UUID, Integer> movePackets;
     public static void init() {
-        movePackets = new HashMap<UUID, Integer>();
-        ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(),
-                new PacketType[] { PacketType.Play.Server.POSITION}) {
+        movePackets = new HashMap<>();
+
+        ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(), PacketType.Play.Server.POSITION) {
             public void onPacketSending(final PacketEvent event) {
                 Player player = event.getPlayer();
                 if (player == null) {
                     return;
                 }
 
-                int i = movePackets.getOrDefault(player.getUniqueId(), 0);
-                i++;
-                movePackets.put(player.getUniqueId(), i);
+                movePackets.put(player.getUniqueId(), movePackets.getOrDefault(player.getUniqueId(), 0) + 1);
             }
         });
         ProtocolLibrary.getProtocolManager().addPacketListener(
@@ -70,48 +64,6 @@ public class PacketCore {
                         }
                     }
                 });
-        ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(),
-                PacketType.Play.Client.POSITION) {
-            public void onPacketReceiving(final PacketEvent event) {
-                Player player = event.getPlayer();
-                if (player == null) {
-                    return;
-                }
-                Bukkit.getServer().getPluginManager().callEvent(
-                        new PacketPlayerEvent2(player, event.getPacket().getDoubles().read(0),
-                                event.getPacket().getDoubles().read(1),
-                                event.getPacket().getDoubles().read(2), player.getLocation().getYaw(),
-                                player.getLocation().getPitch(), PacketPlayerType.POSITION));
-            }
-        });
-        ProtocolLibrary.getProtocolManager().addPacketListener(
-                new PacketAdapter(Dreya.getInstance(), PacketType.Play.Client.FLYING) {
-                    public void onPacketReceiving(final PacketEvent event) {
-                        final Player player = event.getPlayer();
-                        if (player == null) {
-                            return;
-                        }
-                        Bukkit.getServer().getPluginManager()
-                                .callEvent(new PacketPlayerEvent2(player, player.getLocation().getX(),
-                                        player.getLocation().getY(), player.getLocation().getZ(),
-                                        player.getLocation().getYaw(), player.getLocation().getPitch(),
-                                        PacketPlayerType.FLYING));
-                    }
-                });
-        ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(),
-                PacketType.Play.Client.POSITION) {
-            public void onPacketReceiving(final PacketEvent event) {
-                Player player = event.getPlayer();
-                if (player == null) {
-                    return;
-                }
-                Bukkit.getServer().getPluginManager().callEvent(
-                        new PacketPlayerEvent2(player, event.getPacket().getDoubles().read(0),
-                                event.getPacket().getDoubles().read(1),
-                                event.getPacket().getDoubles().read(2), player.getLocation().getYaw(),
-                                player.getLocation().getPitch(), PacketPlayerType.POSITION));
-            }
-        });
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(), PacketType.Play.Client.LOOK) {
             public void onPacketReceiving(PacketEvent packetEvent) {
                 Player player = packetEvent.getPlayer();
@@ -158,20 +110,6 @@ public class PacketCore {
                     data.setLastKillauraYaw(packetEvent.getPacket().getFloat().read(0));
                     data.setLastPacket(System.currentTimeMillis());
                 }
-            }
-        });
-        ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(),
-                PacketType.Play.Client.POSITION_LOOK) {
-            public void onPacketReceiving(final PacketEvent event) {
-                Player player = event.getPlayer();
-                if (player == null) {
-                    return;
-                }
-                Bukkit.getServer().getPluginManager().callEvent(new PacketPlayerEvent2(player,
-                        event.getPacket().getDoubles().read(0),
-                        event.getPacket().getDoubles().read(1),
-                        event.getPacket().getDoubles().read(2), event.getPacket().getFloat().read(0),
-                        event.getPacket().getFloat().read(1), PacketPlayerType.POSLOOK));
             }
         });
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(), PacketType.Play.Client.FLYING) {

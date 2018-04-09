@@ -9,7 +9,7 @@ import cc.funkemunky.dreya.check.movement.Gravity;
 import cc.funkemunky.dreya.check.movement.ImpossibleMovements;
 import cc.funkemunky.dreya.check.movement.Speed;
 import cc.funkemunky.dreya.check.player.*;
-import cc.funkemunky.dreya.check.player.Timer;
+import cc.funkemunky.dreya.check.player.MorePackets;
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -39,8 +39,7 @@ public class DataManager {
         addCheck(new KillAura());
         addCheck(new KillAura());
         addCheck(new Speed());
-        addCheck(new Timer());
-        addCheck(new TimerB());
+        addCheck(new MorePackets());
     }
 
     public void removeCheck(Check check) {

@@ -67,6 +67,8 @@ public class PlayerData {
     private boolean Speed_PistonExpand_Set = false;
     private long BlockAbove = 0;
     private boolean BlockAbove_Set = false;
+    private int iceTicks = 0;
+
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -106,6 +108,14 @@ public class PlayerData {
 
     public void setFallDistance(double fallDistance) {
         this.fallDistance = fallDistance;
+    }
+
+    public int getIceTicks() {
+        return iceTicks;
+    }
+
+    public void setIceTicks(int iceTicks) {
+        this.iceTicks = iceTicks;
     }
 
     public int getAboveBlockTicks() {

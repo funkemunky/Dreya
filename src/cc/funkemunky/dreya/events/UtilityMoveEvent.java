@@ -62,6 +62,12 @@ public class UtilityMoveEvent implements Listener {
             }
         }
 
+        if (PlayerUtils.hasIceNear(player)) {
+            if(data.getIceTicks() < 60) data.setIceTicks(data.getIceTicks() + 1);
+        } else if(data.getIceTicks() > 0) {
+            data.setIceTicks(data.getIceTicks() - 1);
+        }
+
         if (BlockUtils.isHalfBlock(player.getLocation().add(0,-0.50,0).getBlock()) || BlockUtils.isNearHalfBlock(player)) {
             if (!data.isHalfBlocks_MS_Set()) {
                 data.setHalfBlocks_MS_Set(true);

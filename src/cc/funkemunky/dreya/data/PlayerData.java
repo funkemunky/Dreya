@@ -20,17 +20,8 @@ public class PlayerData {
     private long LastVelMS = 0;
     private boolean DidTakeVelocity = false;
     private long lastDelayedPacket;
-    private long lastReceivedKeepAlive;
-    private int lastReceivedKeepAliveID;
-    private long lastSentKeepAlive;
     private long lastPlayerPacket;
-    private long LastTypeBPingSpoof;
-    private long LastTypeBPingSpoof2;
-    private boolean DidSetPingspoof2 = false;
-    private int LastPingBeforKick_Pingspoof = 0;
-    private boolean didGetKicked_Pingspoof = false;
     private Location setbackLocation;
-    private long GoingUp_MS;
     private double GoingUp_Blocks;
     private double LastY_Gravity;
     private int Gravity_VL;
@@ -40,7 +31,6 @@ public class PlayerData {
     private double lastKillauraYaw = 0;
     private long lastPacket = 0;
     private long lastAimTime = System.currentTimeMillis();
-    private double NoFall_Falling_Ticks = 0;
     private long Speed_Ticks = 0;
     private boolean Speed_TicksSet = false;
     private boolean isNearIce = false;
@@ -48,10 +38,8 @@ public class PlayerData {
     private long LastVelUpdate = 0;
     private boolean LastVelUpdateBoolean = false;
     private double lastKillauraYawDif = 0;
-    private long Speed_OnGround_Reset = 0;
     private long lastPacketTimer = 0;
     private long LastTimeTimer = 0;
-    private int LastPacketTimer = 0;
     private int LastPACKETSTimer = 0;
     private long WebFloatMS = 0;
     private boolean WebFloatMS_Set = false;
@@ -72,17 +60,20 @@ public class PlayerData {
     private int iceTicks = 0;
     private long Speed_YPort2_MS = 0;
     private boolean Speed_YPort2_Set = false;
+<<<<<<< HEAD
+    private long speedGroundReset = 0;
+    private int slimeTicks = 0;
+
+=======
     private long Speed_MS_Yport = 0;
     private boolean Speed_MS_Set = false;
+>>>>>>> d9f32ae668eb38aa050dccf0ea4d684e8fbb9452
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
     private int flyVelocityVerbose = 0;
     private int GroundSpoofVL = 0;
-    private int PingSpoof_VL2 = 0;
-    private int SlowPingSpoof_Count = 0;
     private int killauraAVerbose = 0;
-    private int SpeedVerbose = 0;
     private int Speed2Verbose = 0;
     private int Speed_OnGround_Verbose = 0;
     private int TimerVerbose = 0;
@@ -92,9 +83,13 @@ public class PlayerData {
     private int Speed_YPORT_Verbose = 0;
     private int Speed_YPort2_Verbose = 0;
     private int NEWSpeed_Verbose = 0;
+<<<<<<< HEAD
+    private int speedAVerbose = 0;
+=======
     private int Speed_C3_Verbose = 0;
     private int Jesus_Verbose = 0;
 
+>>>>>>> d9f32ae668eb38aa050dccf0ea4d684e8fbb9452
 
     public int getJesus_Verbose() {
         return Jesus_Verbose;
@@ -110,22 +105,6 @@ public class PlayerData {
 
     public void setSpeed_C3_Verbose(int speed_C3_Verbose) {
         Speed_C3_Verbose = speed_C3_Verbose;
-    }
-
-    public long getSpeed_MS_Yport() {
-        return Speed_MS_Yport;
-    }
-
-    public void setSpeed_MS_Yport(long speed_MS_Yport) {
-        Speed_MS_Yport = speed_MS_Yport;
-    }
-
-    public boolean isSpeed_MS_Set() {
-        return Speed_MS_Set;
-    }
-
-    public void setSpeed_MS_Set(boolean speed_MS_Set) {
-        Speed_MS_Set = speed_MS_Set;
     }
 
     public int getNEWSpeed_Verbose() {
@@ -182,6 +161,30 @@ public class PlayerData {
 
     public void setWaterTicks(int waterTicks) {
         this.waterTicks = waterTicks;
+    }
+
+    public int getSpeedAVerbose() {
+        return speedAVerbose;
+    }
+
+    public void setSpeedAVerbose(int speedAVerbose) {
+        this.speedAVerbose = speedAVerbose;
+    }
+
+    public int getSlimeTicks() {
+        return slimeTicks;
+    }
+
+    public void setSlimeTicks(int slimeTicks) {
+        this.slimeTicks = slimeTicks;
+    }
+
+    public long getSpeedGroundReset() {
+        return speedGroundReset;
+    }
+
+    public void setSpeedGroundReset(long speedGroundReset) {
+        this.speedGroundReset = speedGroundReset;
     }
 
     public int getCriticalsVerbose() {
@@ -339,26 +342,10 @@ public class PlayerData {
         return this.lastDelayedPacket;
     }
 
-    public long getLastDelayedPacketDiff() {
-        return System.currentTimeMillis() - this.getLastDelayedPacket();
-    }
-
     public void setLastDelayedPacket(long l) {
         this.lastDelayedPacket = l;
     }
 
-    public long getLastReceivedKeepAlive() {
-        return this.lastReceivedKeepAlive;
-    }
-
-    public void setLastReceivedKeepAliveID(int n) {
-        this.lastReceivedKeepAliveID = n;
-    }
-
-
-    public long getLastSentKeepAlive() {
-        return this.lastSentKeepAlive;
-    }
 
     public long getLastPlayerPacketDiff() {
         return System.currentTimeMillis() - this.getLastPlayerPacket();
@@ -371,74 +358,8 @@ public class PlayerData {
         this.lastPlayerPacket = l;
     }
 
-    public void setLastReceivedKeepAlive(long l) {
-        this.lastReceivedKeepAlive = l;
-    }
-    public long getLastTypeBPingSpoof() {
-        return LastTypeBPingSpoof;
-    }
-
-    public void setLastTypeBPingSpoof(long lastTypeBPingSpoof) {
-        LastTypeBPingSpoof = lastTypeBPingSpoof;
-    }
-
-    public int getPingSpoof_VL2() {
-        return PingSpoof_VL2;
-    }
-
-    public long getLastTypeBPingSpoof2() {
-        return LastTypeBPingSpoof2;
-    }
-
-    public void setPingSpoof_VL2(int pingSpoof_VL2) {
-        PingSpoof_VL2 = pingSpoof_VL2;
-    }
-    public boolean isDidSetPingspoof2() {
-        return DidSetPingspoof2;
-    }
-
-    public void setDidSetPingspoof2(boolean didSetPingspoof2) {
-        DidSetPingspoof2 = didSetPingspoof2;
-    }
-
-    public int getLastReceivedKeepAliveID() {
-        return lastReceivedKeepAliveID;
-    }
-
-    public void setLastSentKeepAlive(long lastSentKeepAlive) {
-        this.lastSentKeepAlive = lastSentKeepAlive;
-    }
-
-    public void setLastTypeBPingSpoof2(long lastTypeBPingSpoof2) {
-        LastTypeBPingSpoof2 = lastTypeBPingSpoof2;
-    }
-
-    public int getLastPingBeforKick_Pingspoof() {
-        return LastPingBeforKick_Pingspoof;
-    }
-
-    public void setLastPingBeforKick_Pingspoof(int lastPingBeforKick_Pingspoof) {
-        LastPingBeforKick_Pingspoof = lastPingBeforKick_Pingspoof;
-    }
-
-    public boolean isDidGetKicked_Pingspoof() {
-        return didGetKicked_Pingspoof;
-    }
-
-    public void setDidGetKicked_Pingspoof(boolean didGetKicked_Pingspoof) {
-        this.didGetKicked_Pingspoof = didGetKicked_Pingspoof;
-    }
-
     public void setPlayer(Player player) {
         this.player = player;
-    }
-
-    public int getSlowPingSpoof_Count() {
-        return SlowPingSpoof_Count;
-    }
-
-    public void setSlowPingSpoof_Count(int slowPingSpoof_Count) {
-        SlowPingSpoof_Count = slowPingSpoof_Count;
     }
 
     public Location getSetbackLocation() {
@@ -447,30 +368,6 @@ public class PlayerData {
 
     public void setSetbackLocation(Location setbackLocation) {
         this.setbackLocation = setbackLocation;
-    }
-
-    public long getGoinUp_MS() {
-        return GoingUp_MS;
-    }
-
-    public void setGoinUp_MS(long goinUp_MS) {
-        GoingUp_MS = goinUp_MS;
-    }
-
-    public long getGoingUp_MS() {
-        return GoingUp_MS;
-    }
-
-    public double getNoFall_Falling_Ticks() {
-        return NoFall_Falling_Ticks;
-    }
-
-    public void setNoFall_Falling_Ticks(double noFall_Falling_Ticks) {
-        NoFall_Falling_Ticks = noFall_Falling_Ticks;
-    }
-
-    public void setGoingUp_MS(long goingUp_MS) {
-        GoingUp_MS = goingUp_MS;
     }
 
     public double getGoingUp_Blocks() {
@@ -507,18 +404,6 @@ public class PlayerData {
 
     public long getSpeed_Ticks() {
         return Speed_Ticks;
-    }
-
-    public void setSpeed_Ticks(long speed_Ticks) {
-        Speed_Ticks = speed_Ticks;
-    }
-
-    public int getSpeedVerbose() {
-        return SpeedVerbose;
-    }
-
-    public void setSpeedVerbose(int speedVerbose) {
-        SpeedVerbose = speedVerbose;
     }
 
     public boolean isSpeed_TicksSet() {
@@ -569,13 +454,6 @@ public class PlayerData {
         Speed2Verbose = speed2Verbose;
     }
 
-    public long getSpeed_OnGround_Reset() {
-        return Speed_OnGround_Reset;
-    }
-
-    public void setSpeed_OnGround_Reset(long speed_OnGround_Reset) {
-        Speed_OnGround_Reset = speed_OnGround_Reset;
-    }
 
     public int getSpeed_OnGround_Verbose() {
         return Speed_OnGround_Verbose;
@@ -599,10 +477,6 @@ public class PlayerData {
 
     public void setLastTimeTimer(long lastTimeTimer) {
         LastTimeTimer = lastTimeTimer;
-    }
-
-    public void setLastPacketTimer(int lastPacketTimer) {
-        LastPacketTimer = lastPacketTimer;
     }
 
     public int getTimerVerbose() {

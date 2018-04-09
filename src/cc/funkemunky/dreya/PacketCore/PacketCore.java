@@ -127,19 +127,6 @@ public class PacketCore {
                 }
             }
         });
-        ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(), PacketType.Play.Client.KEEP_ALIVE) {
-            public void onPacketReceiving(PacketEvent packetEvent) {
-                Player player = packetEvent.getPlayer();
-                if (player == null) {
-                    return;
-                }
-                PlayerData data = Dreya.getInstance().getDataManager().getData(player);
-                if (data != null) {
-                    data.setLastReceivedKeepAlive(System.currentTimeMillis());
-                    data.setLastReceivedKeepAliveID(packetEvent.getPacket().getIntegers().read(0));
-                }
-            }
-        });
     }
 }
 

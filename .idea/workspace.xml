@@ -17,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Fly.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Fly.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="111" column="156" lean-forward="true" selection-start-line="111" selection-start-column="156" selection-end-line="111" selection-end-column="156" />
+            <state relative-caret-position="51">
+              <caret line="110" column="21" lean-forward="true" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="21" />
               <folding>
                 <element signature="e#7234#7235#0" expanded="true" />
                 <element signature="e#7274#7275#0" expanded="true" />
@@ -30,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gravity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Gravity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Gravity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="35" column="122" lean-forward="true" selection-start-line="35" selection-start-column="122" selection-end-line="35" selection-end-column="122" />
+            <state relative-caret-position="306">
+              <caret line="34" column="119" lean-forward="true" selection-start-line="34" selection-start-column="119" selection-end-line="34" selection-end-column="119" />
               <folding />
             </state>
           </provider>
@@ -88,13 +88,13 @@
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityMoveEvent.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Speed.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" />
-        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Gravity.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Gravity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -289,7 +289,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -814,22 +814,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Gravity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="35" column="122" lean-forward="true" selection-start-line="35" selection-start-column="122" selection-end-line="35" selection-end-column="122" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="111" column="156" lean-forward="true" selection-start-line="111" selection-start-column="156" selection-end-line="111" selection-end-column="156" />
+        <state relative-caret-position="51">
+          <caret line="110" column="21" lean-forward="true" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="21" />
           <folding>
             <element signature="e#7234#7235#0" expanded="true" />
             <element signature="e#7274#7275#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Gravity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="34" column="119" lean-forward="true" selection-start-line="34" selection-start-column="119" selection-end-line="34" selection-end-column="119" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -109,7 +109,7 @@ public class Fly extends Check {
         }
 
         //Glide check
-        if (PlayerUtils.getDistanceToGround(p) >= 3) {
+        if (PlayerUtils.getDistanceToGround(p) >  3) {
             double OffSet = e.getFrom().getY() - e.getTo().getY();
             long Time = System.currentTimeMillis();
             if (OffSet <= 0.0 || OffSet > 0.16) {
@@ -120,7 +120,7 @@ public class Fly extends Check {
                 Time = data.getGlideTicks();
             }
             long Millis = System.currentTimeMillis() - Time;
-            if (Millis > 100L) {
+            if (Millis > 200L) {
                 flag(p,"Flight(Type: D)");
                 setBackPlayer(p);
                 data.setGlideTicks(0);
@@ -141,7 +141,8 @@ public class Fly extends Check {
 
         if(finalDifference < 0.08
                 && e.getFrom().getY() < e.getTo().getY()
-                && !PlayerUtils.isOnGround(p) && !p.getLocation().getBlock().isLiquid() && !BlockUtils.isNearLiquid(p)) {
+                && !PlayerUtils.isOnGround(p) && !p.getLocation().getBlock().isLiquid() && !BlockUtils.isNearLiquid(p)
+                && !NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p)) {
             if(++verboseC > 2) {
                 flag(p, "Type: C");
                 SetBackSystem.setBack(p);

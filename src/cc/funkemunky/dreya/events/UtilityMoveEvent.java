@@ -38,7 +38,7 @@ public class UtilityMoveEvent implements Listener {
 
         double distance = MathUtils.getVerticalDistance(e.getFrom(), e.getTo());
 
-        boolean onGround = PlayerUtils.isOnGround(player);
+        boolean onGround = PlayerUtils.isOnGround4(player);
         if(!onGround
                 && e.getFrom().getY() > e.getTo().getY()) {
             data.setFallDistance(data.getFallDistance() + distance);

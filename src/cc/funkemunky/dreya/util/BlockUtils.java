@@ -332,5 +332,14 @@ public class BlockUtils {
 		}
 		return out;
 	}
+    public static boolean isNearLadder(Player p) {
+        boolean out = false;
+        for (Block b : getNearbyBlocks(p.getLocation(), 1)) {
+            if (b.getType() == Material.LADDER) {
+                out = true;
+            }
+        }
+        return out;
+    }
 
 }

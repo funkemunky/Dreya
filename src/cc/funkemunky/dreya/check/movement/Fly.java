@@ -63,7 +63,7 @@ public class Fly extends Check {
         }
         if (!NEW_Velocity_Utils.didTakeVel(p) && !PlayerUtils.wasOnSlime(p)) {
             if (e.getTo().getY() > e.getFrom().getY() && data.getAirTicks() > 2 && !VelocityUtils.didTakeVelocity(p)) {
-                if (!PlayerUtils.isOnGround3(p) && !PlayerUtils.onGround2(p) && !PlayerUtils.isOnGround(p)) {
+                if (!PlayerUtils.isOnGround4(p) && !PlayerUtils.onGround2(p) && !PlayerUtils.isOnGround(p)) {
                     if (PlayerUtils.getDistanceToGround(p) > 2) {
                         if (data.getGoingUp_Blocks() >= 3 && data.getAirTicks() >= 10) {
                             flag(p, "Type: A [5]");

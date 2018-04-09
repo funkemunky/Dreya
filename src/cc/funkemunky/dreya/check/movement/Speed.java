@@ -59,6 +59,7 @@ public class Speed extends Check {
             } else if (BlockUtils.isNearStiar(p)) {
                 LXZ += 0.5D;
             }
+       //     p.sendMessage(""+OXZ + " " + LXZ);
             if (p.getNoDamageTicks() == 0) {
                 if (OXZ > LXZ && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p)) {
                     if (!data.isSpeed_TicksSet()) {
@@ -82,7 +83,7 @@ public class Speed extends Check {
                 && !p.getLocation().clone().subtract(0.0D, 0.1, 0.0D).getBlock().getType().equals(Material.SNOW)) {
             if (p.getNoDamageTicks() == 0 && !PlayerUtils.wasOnSlime(p) && !BlockUtils.isClimbableBlock(p.getLocation().add(0,0.30,0).getBlock())
                     && ! BlockUtils.isClimbableBlock(p.getLocation().add(0,0.90,0).getBlock()) && !BlockUtils.isClimbableBlock(p.getLocation().add(0,1.10,0).getBlock()) &&
-                    !p.getLocation().getBlock().isLiquid() && !BlockUtils.isNearLiquid(p)) {
+                    !p.getLocation().getBlock().isLiquid() && !BlockUtils.isNearLiquid(p) && !BlockUtils.isNearLadder(p)) {
                 flag(p, "Type: B - Player Moved Too Fast.");
                 setBack(p);
                 SetBackSystem.setBack(p);
@@ -118,7 +119,7 @@ public class Speed extends Check {
             MaxAirSpeed += p.getWalkSpeed() > 0.2 ? p.getWalkSpeed() * 0.8 : 0;
             maxSpeed += p.getWalkSpeed() > 0.2 ? p.getWalkSpeed() * 0.8 : 0;
             //1
-            if (!PlayerUtils.isOnGround3(p) && speed >= MaxAirSpeed && !data.isNearIce()
+            if (!PlayerUtils.isOnGround4(p) && speed >= MaxAirSpeed && !data.isNearIce()
                     && blockLoc.getBlock().getType() != Material.ICE && !blockLoc.getBlock().isLiquid()
                     && !loc.getBlock().isLiquid() && blockLoc.getBlock().getType() != Material.PACKED_ICE
                     && above.getBlock().getType() == Material.AIR && above3.getBlock().getType() == Material.AIR

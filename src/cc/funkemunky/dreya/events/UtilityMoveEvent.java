@@ -68,6 +68,14 @@ public class UtilityMoveEvent implements Listener {
             data.setIceTicks(data.getIceTicks() - 1);
         }
 
+        if(PlayerUtils.wasOnSlime(player)) {
+            if(data.getSlimeTicks() < 50) {
+                data.setSlimeTicks(data.getSlimeTicks() + 1);
+            } else if(data.getSlimeTicks() > 0) {
+                data.setSlimeTicks(data.getSlimeTicks() - 1);
+            }
+        }
+
         if (BlockUtils.isHalfBlock(player.getLocation().add(0,-0.50,0).getBlock()) || BlockUtils.isNearHalfBlock(player)) {
             if (!data.isHalfBlocks_MS_Set()) {
                 data.setHalfBlocks_MS_Set(true);

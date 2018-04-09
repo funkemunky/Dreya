@@ -5,11 +5,7 @@ import cc.funkemunky.dreya.check.Check;
 import cc.funkemunky.dreya.check.CheckType;
 import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.util.*;
-<<<<<<< HEAD
-=======
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
->>>>>>> 005fc0b970ec03caefe1df88131c18a5bd91d056
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -29,63 +25,65 @@ import java.util.List;
  */
 public class Speed extends Check {
 
-    private List<String> debugList;
+    List<String> debugList;
     public Speed() {
         super("Speed", CheckType.MOVEMENT, true);
+
         debugList = new ArrayList<>();
     }
 
 
-    /**@EventHandler
-    public void test(PlayerMoveEvent e) {
-        Player p = e.getPlayer();
-        PlayerData data = Dreya.getInstance().getDataManager().getData(p);
-        if (data != null) {
-            double OXZ = MathUtils.offset(getHorizontalVector(e.getFrom().toVector()), getHorizontalVector(e.getTo().toVector()));
-            double LXZ;
-            if (p.getVehicle() == null) {
-                LXZ = 0.42D;
-            } else {
-                LXZ = 2D;
-            }
-            if (data.isSpeed_TicksSet()) {
-                if (TimerUtils.elapsed(data.getSpeed_Ticks(), 500l)) {
-                    data.setSpeed_TicksSet(false);
-                    data.setNEWSpeed_Verbose(0);
-                    data.setSpeedVerbose(0);
-                }
-            }
-            for (PotionEffect effect : p.getActivePotionEffects()) {
-                if (effect.getType().equals(PotionEffectType.SPEED)) {
-                    LXZ += 0.3D;
-                }
-            }
-            if (BlockUtils.isIce(p.getLocation().add(0, 1.50, 0).getBlock())) {
-                LXZ += 0.5D;
-            } else if (BlockUtils.isNearIce(p)) {
-                LXZ += 0.5D;
-            } else if (data.isNearIce()) {
-                LXZ += 0.5D;
-            } else if (BlockUtils.isNearStiar(p)) {
-                LXZ += 0.5D;
-            }
-            if (OXZ > LXZ && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p)) {
-                if (!data.isSpeed_TicksSet()) {
-                    data.setSpeed_TicksSet(true);
-                    data.setSpeed_Ticks(TimerUtils.nowlong());
-                }
-                data.setSpeedVerbose(data.getSpeedVerbose() + 1);
-            } else if (data.getSpeedVerbose() > 0 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && p.getLocation().add(0, 1.94, 0).getBlock().getType() != Material.AIR) {
-              if (!data.isSpeed_MS_Set()) {
-                  data.setSpeed_MS_Set(true);
-                  data.setSpeed_MS_Yport(TimerUtils.nowlong());
-              }
-                flag(p, "Type: A [C1] - Player Moved Too Fast.");
-                setBack(p);
-                SetBackSystem.setBack(p);
-            }
-        }
-    }*/
+    /**
+     * @EventHandler public void test(PlayerMoveEvent e) {
+     * Player p = e.getPlayer();
+     * PlayerData data = Dreya.getInstance().getDataManager().getData(p);
+     * if (data != null) {
+     * double OXZ = MathUtils.offset(getHorizontalVector(e.getFrom().toVector()), getHorizontalVector(e.getTo().toVector()));
+     * double LXZ;
+     * if (p.getVehicle() == null) {
+     * LXZ = 0.42D;
+     * } else {
+     * LXZ = 2D;
+     * }
+     * if (data.isSpeed_TicksSet()) {
+     * if (TimerUtils.elapsed(data.getSpeed_Ticks(), 500l)) {
+     * data.setSpeed_TicksSet(false);
+     * data.setNEWSpeed_Verbose(0);
+     * data.setSpeedVerbose(0);
+     * }
+     * }
+     * for (PotionEffect effect : p.getActivePotionEffects()) {
+     * if (effect.getType().equals(PotionEffectType.SPEED)) {
+     * LXZ += 0.3D;
+     * }
+     * }
+     * if (BlockUtils.isIce(p.getLocation().add(0, 1.50, 0).getBlock())) {
+     * LXZ += 0.5D;
+     * } else if (BlockUtils.isNearIce(p)) {
+     * LXZ += 0.5D;
+     * } else if (data.isNearIce()) {
+     * LXZ += 0.5D;
+     * } else if (BlockUtils.isNearStiar(p)) {
+     * LXZ += 0.5D;
+     * }
+     * if (OXZ > LXZ && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p)) {
+     * if (!data.isSpeed_TicksSet()) {
+     * data.setSpeed_TicksSet(true);
+     * data.setSpeed_Ticks(TimerUtils.nowlong());
+     * }
+     * data.setSpeedVerbose(data.getSpeedVerbose() + 1);
+     * } else if (data.getSpeedVerbose() > 0 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && p.getLocation().add(0, 1.94, 0).getBlock().getType() != Material.AIR) {
+     * if (!data.isSpeed_MS_Set()) {
+     * data.setSpeed_MS_Set(true);
+     * data.setSpeed_MS_Yport(TimerUtils.nowlong());
+     * }
+     * flag(p, "Type: A [C1] - Player Moved Too Fast.");
+     * setBack(p);
+     * SetBackSystem.setBack(p);
+     * }
+     * }
+     * }
+     */
 
     @EventHandler
     public void onMove(PlayerMoveEvent e) {
@@ -93,6 +91,14 @@ public class Speed extends Check {
         PlayerData data = Dreya.getInstance().getDataManager().getData(p);
         Location to = e.getTo();
         Location from = e.getFrom();
+
+        if((to.getX() == from.getX()
+                && to.getY() == from.getY()
+                && to.getZ() == from.getZ())
+                || p.getAllowFlight()) {
+            return;
+        }
+
         if (data != null) {
 
             if (data.isSpeed_PistonExpand_Set()) {
@@ -100,155 +106,44 @@ public class Speed extends Check {
                     data.setSpeed_PistonExpand_Set(false);
                 }
             }
-
             //Type A
-<<<<<<< HEAD
+
+            int verbose = data.getSpeedAVerbose();
             double speed = MathUtils.offset(getHorizontalVector(to.toVector()), getHorizontalVector(from.toVector()));
-=======
-            double OXZ = MathUtils.offset(getHorizontalVector(e.getFrom().toVector()), getHorizontalVector(e.getTo().toVector()));
-            double LXZ;
-            if (p.getVehicle() == null) {
-                LXZ = 0.42D;
+            double speedEffect = PlayerUtils.getPotionEffectLevel(p, PotionEffectType.SPEED);
+            double speedAThreshold = (data.getAirTicks() > 0 ? data.getAirTicks() >= 6
+                    ? data.getAirTicks() == 13 ? 0.466 : 0.35 : (0.3447344481 * Math.pow(986938064, data.getAirTicks()))
+                    : data.getGroundTicks() > 5 ? 0.348 : data.getGroundTicks() == 3 ? 0.62 : 0.4)
+                    + (data.getAirTicks() > 0 ? (-0.001 * data.getAirTicks() + 0.014) : (0.018 - (data.getGroundTicks() >= 6 ? 0 : data.getGroundTicks() * 0.001)) * speedEffect);
+
+            speedAThreshold = data.getAboveBlockTicks() > 0 ? speedAThreshold + 0.25 : speedAThreshold;
+            speedAThreshold = data.getIceTicks() > 0 ? speedAThreshold + 0.1 : speedAThreshold;
+            speedAThreshold = data.getSlimeTicks() > 0 ? speedAThreshold + 0.08 : speedAThreshold;
+
+            if(speed > speedAThreshold) {
+                verbose+= 8;
+                //Bukkit.broadcastMessage("Verbose: " + verbose + ", " + speed + ", " + speedAThreshold + ", " + data.getGroundTicks() + ", " + data.getAirTicks());
             } else {
-                LXZ = 2D;
-            }
-            if (data.isSpeed_TicksSet()) {
-                if (TimerUtils.elapsed(data.getSpeed_Ticks(), 900L)) {
-                    data.setSpeed_TicksSet(false);
-                    data.setNEWSpeed_Verbose(0);
-                }
-            }
-            for (PotionEffect effect : p.getActivePotionEffects()) {
-                if (effect.getType().equals(PotionEffectType.SPEED)) {
-                    LXZ += 0.3D;
-                }
-            }
-            if (BlockUtils.isIce(p.getLocation().add(0, 1.50, 0).getBlock())) {
-                LXZ += 0.5D;
-            } else if (BlockUtils.isNearIce(p)) {
-                LXZ += 0.5D;
-            } else if (data.isNearIce()) {
-                LXZ += 0.5D;
-            } else if (BlockUtils.isNearStiar(p)) {
-                LXZ += 0.5D;
+                verbose = verbose > 0 ? verbose - 1 : 0;
             }
 
-
-                Location l = p.getLocation();
-                int x = l.getBlockX();
-                int y = l.getBlockY();
-                int z = l.getBlockZ();
-                Location loc1 = new Location(p.getWorld(), x, y + 1, z);
-                if (loc1.getBlock().getType()  == Material.AIR) {
-                    if (OXZ > 1 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && p.getLocation().add(0, 1.94, 0).getBlock().getType() == Material.AIR
-                            && !data.isAboveSpeedSet() && !PlayerUtils.hasPistonNear(p)) {
-                        flag(p, "Type: A [C2] - Player Moved Too Fast.");
-                        setBack(p);
-                        SetBackSystem.setBack(p);
-                    }
-
-                    if (OXZ > 0.380 && !NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p) && PlayerUtils.getDistanceToGround(p) <= 3) {
-                        if (!data.isSpeed_YPORT_Set()) {
-                            data.setSpeed_YPORT_Set(true);
-                            data.setSpeed_YPORT_MS(TimerUtils.nowlong());
-                        } else {
-                            if (TimerUtils.elapsed(data.getSpeed_YPORT_MS(), 1200L)) {
-                                data.setSpeed_YPORT_Verbose(0);
-                                data.setSpeed_YPORT_Set(false);
-                            }
-                        }
-                        if (data.getSpeed_YPORT_Verbose() >= 3 && data.getAboveBlockTicks() == 0) {
-                            if (TimerUtils.elapsed(data.getLastVelUpdate(), 1000L)) {
-                                flag(p, "Type: A [C4] - Player Moved Too Fast.");
-                                SetBackSystem.setBack(p);
-                            }
-                            data.setSpeed_YPORT_Verbose(data.getSpeed_YPORT_Verbose() + 1);
-                        } else {
-                            data.setSpeed_YPORT_Verbose(0);
-                        }
-                    } else {
-                        if (data.isSpeed_YPORT_Set()) {
-                            if (TimerUtils.elapsed(data.getSpeed_YPORT_MS(), 500L)) {
-                                data.setSpeed_YPORT_Verbose(0);
-                                data.setSpeed_YPORT_Set(false);
-                            }
-                        }
-                    }
->>>>>>> 005fc0b970ec03caefe1df88131c18a5bd91d056
-
-            if(debugList.size() >= 100) {
-                TxtFile file = new TxtFile(Dreya.getInstance(), "debug", p.getName() + "_debug_speed");
-
-<<<<<<< HEAD
-                for(String stringLoop : debugList) {
-                    file.addLine(stringLoop);
-                }
-                file.write();
-                debugList.clear();
+            if(verbose > 50) {
+                flag(p, "Type: A");
+                verbose = 0;
             }
-=======
-                    if (p.getLocation().add(0, 0.50, 0).getBlock().getType() != Material.AIR) {
-                        if (!data.isAboveSpeedSet()) {
-                            data.setAboveSpeedSet(true);
-                            data.setAboveSpeedTicks(TimerUtils.nowlong());
-                        } else {
-                            if (TimerUtils.elapsed(data.getAboveSpeedTicks(), 1000L)) {
-                                if (p.getLocation().add(0, 0.50, 0).getBlock().getType() == Material.AIR) {
-                                    data.setAboveSpeedSet(false);
-                                } else {
-                                    data.setAboveSpeedSet(true);
-                                    data.setAboveSpeedTicks(TimerUtils.nowlong());
-                                }
-                            }
-                        }
-                    }
-                    if (data.isAboveSpeedSet()) {
-                        if (TimerUtils.elapsed(data.getAboveSpeedTicks(), 1000L)) {
-                            data.setAboveSpeedSet(false);
-                        }
-                    }
-                    if (data.isAboveSpeedSet()) {
-                        return;
-                    } else {
-                        if (OXZ > 0.635 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && !BlockUtils.isNearPistion(p)) {
-                            if (TimerUtils.elapsed(data.getLastVelUpdate(), 50L) && PlayerUtils.getDistanceToGround(p) <= 3
-                                    && p.getLocation().add(0, 0.50, 0).getBlock().getType() == Material.AIR && !data.isBlockAbove_Set() && data.getAboveBlockTicks() == 0 && data.getIceTicks() == 0) {
-                                flag(p, "Type: A [C3] - Player Moved Too Fast.");
-                                setBack(p);
-                                SetBackSystem.setBack(p);
-                            }
-                        } else {
-                            data.setSpeedAC2_Verbose(0);
-                        }
-                    }
-                }
-        }
->>>>>>> 005fc0b970ec03caefe1df88131c18a5bd91d056
 
-            debugList.add(data.getAirTicks() + ", " + speed);
+            data.setSpeedAVerbose(verbose);
 
-            //Type B
-            double YSpeed = MathUtils.offset(getVerticalVector(e.getFrom().toVector()),
-                    getVerticalVector(e.getTo().toVector()));
-            if (((YSpeed == 0.25D || (YSpeed >= 0.58D && YSpeed < 0.581D))
-                    || (YSpeed > 0.2457D && YSpeed < 0.24582D) || (YSpeed > 0.329 && YSpeed < 0.33) || YSpeed == 0.4200000000000017)
-                    && !p.getLocation().clone().subtract(0.0D, 0.1, 0.0D).getBlock().getType().equals(Material.SNOW)) {
-                if (p.getNoDamageTicks() == 0 && !PlayerUtils.wasOnSlime(p) && !BlockUtils.isClimbableBlock(p.getLocation().add(0, 0.30, 0).getBlock())
-                        && !BlockUtils.isClimbableBlock(p.getLocation().add(0, 0.90, 0).getBlock()) && !BlockUtils.isClimbableBlock(p.getLocation().add(0, 1.10, 0).getBlock()) &&
-                        !p.getLocation().getBlock().isLiquid() && !BlockUtils.isNearLiquid(p) && !BlockUtils.isNearLadder(p)) {
-                    flag(p, "Type: B - Player Moved Too Fast.");
-                    setBack(p);
-                    SetBackSystem.setBack(p);
-                }
-            }
             //Type C
             Location l = p.getLocation();
             int x = l.getBlockX();
             int y = l.getBlockY();
             int z = l.getBlockZ();
-
+            Location blockLoc = new Location(p.getWorld(), x, y - 1, z);
             Location loc = new Location(p.getWorld(), x, y, z);
-
+            Location loc2 = new Location(p.getWorld(), x, y + 1, z);
+            Location above = new Location(p.getWorld(), x, y + 2, z);
+            Location above3 = new Location(p.getWorld(), x - 1, y + 2, z - 1);
             double MaxAirSpeed = 0.4;
             double maxSpeed = 0.42;
             double MaxSpeedNEW = 0.75;
@@ -256,7 +151,6 @@ public class Speed extends Check {
                 MaxSpeedNEW = 1.0;
             }
             double Max = 0.28;
-
             if (p.hasPotionEffect(PotionEffectType.SPEED)) {
                 int level = getPotionEffectLevel(p, PotionEffectType.SPEED);
                 if (level > 0) {
@@ -270,10 +164,10 @@ public class Speed extends Check {
             maxSpeed += p.getWalkSpeed() > 0.2 ? p.getWalkSpeed() * 0.8 : 0;
             //1
             if (!PlayerUtils.isOnGround4(p) && speed >= MaxAirSpeed && !data.isNearIce()
-                    && data.getAboveBlockTicks() == 0
-                    && data.getWaterTicks() == 0
-                    && data.getIceTicks() == 0
-                    && !NEW_Velocity_Utils.didTakeVel(p) && !BlockUtils.isNearStiar(p)) {
+                    && blockLoc.getBlock().getType() != Material.ICE && !blockLoc.getBlock().isLiquid()
+                    && !loc.getBlock().isLiquid() && blockLoc.getBlock().getType() != Material.PACKED_ICE
+                    && above.getBlock().getType() == Material.AIR && above3.getBlock().getType() == Material.AIR
+                    && blockLoc.getBlock().getType() != Material.AIR && !NEW_Velocity_Utils.didTakeVel(p) && !BlockUtils.isNearStiar(p)) {
                 if (!NEW_Velocity_Utils.didTakeVel(p) && PlayerUtils.getDistanceToGround(p) > 4 == false) {
                     if (data.getSpeed2Verbose() >= 8 || p.getNoDamageTicks() == 0 == false && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p)
                             && p.getLocation().add(0, 1.94, 0).getBlock().getType() != Material.AIR) {
@@ -289,17 +183,22 @@ public class Speed extends Check {
 
             //2
             double onGroundDiff = (to.getY() - from.getY());
-            if (speed > Max && !isAir(p) && onGroundDiff <= -0.4 && p.getFallDistance() <= 0.4 && data.getIceTicks() == 0
-                    && e.getTo().getY() != e.getFrom().getY() && data.getAboveBlockTicks() == 0) {
+            if (speed > Max && !isAir(p) && onGroundDiff <= -0.4 && p.getFallDistance() <= 0.4 && blockLoc.getBlock().getType() != Material.ICE
+                    && e.getTo().getY() != e.getFrom().getY() && blockLoc.getBlock().getType() != Material.PACKED_ICE
+                    && loc2.getBlock().getType() != Material.TRAP_DOOR && above.getBlock().getType() == Material.AIR
+                    && above3.getBlock().getType() == Material.AIR && data.getAboveBlockTicks() != 0) {
                 flag(p, "Type: C [2] - Player Moved Too Fast.");
                 setBack(p);
                 SetBackSystem.setBack(p);
             }
 
             //3
-            if (speed > Max && !isAir(p) && onGroundDiff <= -0.4 && p.getFallDistance() <= 0.4
-                    && e.getTo().getY() != e.getFrom().getY() && data.getIceTicks() == 0
-                    && data.getAboveBlockTicks() == 0 && !NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p) && !PlayerUtils.hasPistonNear(p)) {
+            if (speed > Max && !isAir(p) && onGroundDiff <= -0.4 && p.getFallDistance() <= 0.4 && blockLoc.getBlock().getType() != Material.ICE
+                    && e.getTo().getY() != e.getFrom().getY() && blockLoc.getBlock().getType() != Material.PACKED_ICE
+                    && loc2.getBlock().getType() != Material.TRAP_DOOR && above.getBlock().getType() == Material.AIR
+                    && above3.getBlock().getType() == Material.AIR && !NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p) && !PlayerUtils.hasPistonNear(p) &&
+                    p.getLocation().getBlock().getType() != Material.PISTON_MOVING_PIECE && p.getLocation().getBlock().getType() != Material.PISTON_BASE
+                    && p.getLocation().getBlock().getType() != Material.PISTON_STICKY_BASE && !BlockUtils.isNearPistion(p) && !data.isSpeed_PistonExpand_Set()) {
                 if (!data.isSpeed_PistonExpand_Set()) {
                     if (data.getSpeed_C_3_Verbose() > 1) {
                         flag(p, "Type: C [3] - Player Moved Too Fast.");
@@ -347,61 +246,53 @@ public class Speed extends Check {
                     }
                 }
             }
-<<<<<<< HEAD
             //Type D
-            if (speed > 0.29 && PlayerUtils.isOnGround(p) && !data.isNearIce() && !BlockUtils.isNearStiar(p) && !NEW_Velocity_Utils.didTakeVel(p)) {
+            boolean speedPot = false;
+            for (PotionEffect effect : p.getActivePotionEffects()) {
+                if (effect.getType().equals(PotionEffectType.SPEED)) {
+                    speedPot = true;
+                }
+            }
+            double Differ = MathUtils.offset(getHorizontalVector(e.getTo().toVector()), getHorizontalVector(from.toVector()));
+            if (Differ > 0.29 && PlayerUtils.isOnGround(p) && !data.isNearIce() && !BlockUtils.isNearStiar(p) && !NEW_Velocity_Utils.didTakeVel(p) && !speedPot) {
                 if (data.getSpeed_OnGround_Verbose() >= 5) {
                     flag(p, "Type: D");
-                    setBack(p);
+                    //setBack(p);
                 } else {
                     data.setSpeed_OnGround_Verbose(data.getSpeed_OnGround_Verbose() + 1);
                 }
-                data.setSpeed_OnGround_Reset(TimerUtils.nowlong());
-=======
-        //Type D
-        boolean speedPot = false;
-        for (PotionEffect effect : p.getActivePotionEffects()) {
-            if (effect.getType().equals(PotionEffectType.SPEED)) {
-                speedPot = true;
-            }
-        }
-        double Differ = MathUtils.offset(getHorizontalVector(e.getTo().toVector()),getHorizontalVector(from.toVector()));
-        if (Differ > 0.29 && PlayerUtils.isOnGround(p) && !data.isNearIce() && !BlockUtils.isNearStiar(p) && !NEW_Velocity_Utils.didTakeVel(p) && !speedPot) {
-            if (data.getSpeed_OnGround_Verbose() >= 5) {
-                flag(p,"Type: D");
-                setBack(p);
->>>>>>> 005fc0b970ec03caefe1df88131c18a5bd91d056
+                data.setSpeedGroundReset(TimerUtils.nowlong());
             } else {
                 data.setSpeed_OnGround_Verbose(0);
             }
-        }
-        //Type E
-        if (Differ > 0.38424 && p.getNoDamageTicks() == 0 && !NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p) && data.getIceTicks() == 0 && !BlockUtils.isStair(p.getLocation().add(0,-1,0).getBlock()) &&
-                !BlockUtils.isSlab(p.getLocation().add(0,-1,0).getBlock()) && data.getAirTicks() < 5) {
-            if (!data.isSpeed_YPort2_Set()) {
-                data.setSpeed_YPort2_Set(true);
-                data.setSpeed_YPort2_MS(TimerUtils.nowlong());
-            } else {
-                if (data.isSpeed_YPORT_Set()) {
-                    if (TimerUtils.elapsed(data.getSpeed_YPORT_MS(),200L)) {
-                        data.setSpeed_YPort2_Verbose(0);
+            //Type E
+            if (Differ > 0.38424 && p.getNoDamageTicks() == 0 && !NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p) && data.getIceTicks() == 0 && !BlockUtils.isStair(p.getLocation().add(0, -1, 0).getBlock()) &&
+                    !BlockUtils.isSlab(p.getLocation().add(0, -1, 0).getBlock()) && data.getAirTicks() < 5) {
+                if (!data.isSpeed_YPort2_Set()) {
+                    data.setSpeed_YPort2_Set(true);
+                    data.setSpeed_YPort2_MS(TimerUtils.nowlong());
+                } else {
+                    if (data.isSpeed_YPORT_Set()) {
+                        if (TimerUtils.elapsed(data.getSpeed_YPORT_MS(), 200L)) {
+                            data.setSpeed_YPort2_Verbose(0);
+                        }
                     }
                 }
-            }
-            //p.sendMessage(""+data.getSpeed_YPort2_Verbose());
-            int MaxVL = 1;
-            if (speedPot) {
-                MaxVL = 15;
-            }
-            if (data.getSpeed_YPort2_Verbose() > MaxVL) {
-          //   flag(p,"Type: E");
-            // setBack(p);
-            }
-            data.setSpeed_YPort2_Verbose(data.getSpeed_YPort2_Verbose()+1);
-        } else {
-            if (data.isSpeed_YPORT_Set()) {
-                if (TimerUtils.elapsed(data.getSpeed_YPORT_MS(),200L)) {
-                    data.setSpeed_YPort2_Verbose(0);
+                //p.sendMessage(""+data.getSpeed_YPort2_Verbose());
+                int MaxVL = 1;
+                if (speedPot) {
+                    MaxVL = 15;
+                }
+                if (data.getSpeed_YPort2_Verbose() > MaxVL) {
+                    //   flag(p,"Type: E");
+                    // setBack(p);
+                }
+                data.setSpeed_YPort2_Verbose(data.getSpeed_YPort2_Verbose() + 1);
+            } else {
+                if (data.isSpeed_YPORT_Set()) {
+                    if (TimerUtils.elapsed(data.getSpeed_YPORT_MS(), 200L)) {
+                        data.setSpeed_YPort2_Verbose(0);
+                    }
                 }
             }
         }
@@ -459,18 +350,4 @@ public class Speed extends Check {
         }
         return false;
     }
-    /** @EventHandler public void onPistonExpandEvent(BlockPistonExtendEvent e) {
-    for (Player p : Bukkit.getServer().getOnlinePlayers()) {
-    if (p.getLocation().distance(e.getBlock().getLocation()) < 3) {
-    PlayerData data = Dreya.getInstance().getDataManager().getData(p);
-    if (data != null) {
-    data.setSpeed_C_3_Verbose(0);
-    if (!data.isSpeed_PistonExpand_Set()) {
-    data.setSpeed_PistonExpand_Set(true);
-    data.setSpeed_PistonExpand_MS(TimerUtils.nowlong());
-    }
-    }
-    }
-    }
-    }**/
 }

@@ -33,7 +33,9 @@ public class Gravity extends Check {
             double motion = (e.getTo().getY() - e.getFrom().getY());
             if (motion < -0.399 && p.getLocation().add(0,-0.50,0).getBlock().getType() != Material.AIR) {
                 if (!BlockUtils.isNearHalfBlock(p) || BlockUtils.isHalfBlock(p.getLocation().add(0,-1,0).getBlock())) {
-                    if (!data.isHalfBlocks_MS_Set() && PlayerUtils.getDistanceToGround(p) < 3 && p.getNoDamageTicks() == 0 && !PlayerUtils.wasOnSlime(p)) {
+                    if (!data.isHalfBlocks_MS_Set() && PlayerUtils.getDistanceToGround(p) < 3 && p.getNoDamageTicks() == 0 && !PlayerUtils.wasOnSlime(p)
+                            && p.getLocation().add(0,-0.50,0).getBlock().getType() != Material.SLIME_BLOCK && !NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p)
+                    && TimerUtils.elapsed(data.getLastVelUpdate(),1500L)) {
                         flag(p, "Player's motion was changed to an unexpected value. [C2]");
                         SetBackSystem.setBack(p);
                     }
@@ -41,6 +43,10 @@ public class Gravity extends Check {
             }
             if (e.getTo().getY() < e.getFrom().getY()) {
                return;
+            }
+            if (!NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p)) {
+                data.setGravity_VL(0);
+                return;
             }
             if (NEW_Velocity_Utils.didTakeVel(p) || p.getLocation().getBlock().isLiquid() || BlockUtils.isNearLiquid(p)) {
                 data.setGravity_VL(0);

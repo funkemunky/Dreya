@@ -63,6 +63,10 @@ public class PlayerData {
     private boolean Speed_C_2_Set = false;
     private long Speed_C_2_MS = 0;
     private long GlideTicks = 0;
+    private long Speed_PistonExpand_MS = 0;
+    private boolean Speed_PistonExpand_Set = false;
+    private long BlockAbove = 0;
+    private boolean BlockAbove_Set = false;
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -77,6 +81,7 @@ public class PlayerData {
     private int TimerVerbose = 0;
     private int SpeedAC2_Verbose = 0;
     private int SpeedC_Verbose = 0;
+    private int Speed_C_3_Verbose = 0;
 
 
     public PlayerData(Player player) {
@@ -650,5 +655,45 @@ public class PlayerData {
 
     public void setGlideTicks(long glideTicks) {
         GlideTicks = glideTicks;
+    }
+
+    public int getSpeed_C_3_Verbose() {
+        return Speed_C_3_Verbose;
+    }
+
+    public void setSpeed_C_3_Verbose(int speed_C_3_Verbose) {
+        Speed_C_3_Verbose = speed_C_3_Verbose;
+    }
+
+    public long getSpeed_PistonExpand_MS() {
+        return Speed_PistonExpand_MS;
+    }
+
+    public void setSpeed_PistonExpand_MS(long speed_PistonExpand_MS) {
+        Speed_PistonExpand_MS = speed_PistonExpand_MS;
+    }
+
+    public boolean isSpeed_PistonExpand_Set() {
+        return Speed_PistonExpand_Set;
+    }
+
+    public void setSpeed_PistonExpand_Set(boolean speed_PistonExpand_Set) {
+        Speed_PistonExpand_Set = speed_PistonExpand_Set;
+    }
+
+    public long getBlockAbove() {
+        return BlockAbove;
+    }
+
+    public boolean isBlockAbove_Set() {
+        return BlockAbove_Set;
+    }
+
+    public void setBlockAbove(long blockAbove) {
+        BlockAbove = blockAbove;
+    }
+
+    public void setBlockAbove_Set(boolean blockAbove_Set) {
+        BlockAbove_Set = blockAbove_Set;
     }
 }

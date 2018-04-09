@@ -18,7 +18,6 @@ public class NEW_Velocity_Utils implements Listener {
         PlayerData data = Dreya.getInstance().getDataManager().getData(p);
         if (data != null) {
             if (data.isLastVelUpdateBoolean()) {
-
                 if (TimerUtils.elapsed(data.getLastVelUpdate(),ConfigValues.VelTimeReset_1_FORCE_RESET)) {
                     //FORCE Reset
                     data.setLastVelUpdateBoolean(false);

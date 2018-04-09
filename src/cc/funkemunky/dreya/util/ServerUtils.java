@@ -17,7 +17,6 @@ public class ServerUtils {
 	private static final Class<?> CraftEntity = ServerUtils.getCBClass("entity.CraftEntity");
 	private static final Class<?> CraftWorld = ServerUtils.getCBClass("CraftWorld");
 	private static final Class<?> World = ServerUtils.getNMSClass("World");
-	private static String spigot_id = "%%__USER__%%";
 	private static final Method getCubes = ServerUtils.getMethod(World, "a", ServerUtils.getNMSClass("AxisAlignedBB"));
 
 	public static Object getEntityPlayer(Player player) {

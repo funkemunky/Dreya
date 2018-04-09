@@ -44,35 +44,36 @@ public class Speed extends Check {
                 }
             }
             //Type A
-
-            int verbose = data.getSpeedAVerbose();
             double speed = MathUtils.getHorizontalDistance(from, to);
-            double speedEffect = PlayerUtils.getPotionEffectLevel(p, PotionEffectType.SPEED);
-            double speedAThreshold = (data.getAirTicks() > 0 ? data.getAirTicks() >= 6
-                    ? data.getAirTicks() == 13 ? 0.466 : 0.35 : (0.3447344481 * Math.pow(986938064, data.getAirTicks()))
-                    : data.getGroundTicks() > 5 ? 0.348 : data.getGroundTicks() == 3 ? 0.62 : 0.4)
-                    + (data.getAirTicks() > 0 ? (-0.001 * data.getAirTicks() + 0.014) : (0.018 - (data.getGroundTicks() >= 6 ? 0 : data.getGroundTicks() * 0.001)) * speedEffect);
+           if(!VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p)) {
+               int verbose = data.getSpeedAVerbose();
+               double speedEffect = PlayerUtils.getPotionEffectLevel(p, PotionEffectType.SPEED);
+               double speedAThreshold = (data.getAirTicks() > 0 ? data.getAirTicks() >= 6
+                       ? data.getAirTicks() == 13 ? 0.466 : 0.35 : (0.3447344481 * Math.pow(986938064, data.getAirTicks()))
+                       : data.getGroundTicks() > 5 ? 0.362 : data.getGroundTicks() == 3 ? 0.62 : 0.4)
+                       + (data.getAirTicks() > 0 ? (-0.001 * data.getAirTicks() + 0.014) : (0.018 - (data.getGroundTicks() >= 6 ? 0 : data.getGroundTicks() * 0.001)) * speedEffect);
 
-            speedAThreshold = data.getAboveBlockTicks() > 0 ? speedAThreshold + 0.25 : speedAThreshold;
-            speedAThreshold = data.getIceTicks() > 0 ? speedAThreshold + 0.14 : speedAThreshold;
-            speedAThreshold = data.getSlimeTicks() > 0 ? speedAThreshold + 0.1 : speedAThreshold;
-            speedAThreshold = data.getIceTicks() > 0 && data.getAboveBlockTicks() > 0 ? speedAThreshold + 0.24 : speedAThreshold;
+               speedAThreshold = data.getAboveBlockTicks() > 0 ? speedAThreshold + 0.25 : speedAThreshold;
+               speedAThreshold = data.getIceTicks() > 0 ? speedAThreshold + 0.14 : speedAThreshold;
+               speedAThreshold = data.getSlimeTicks() > 0 ? speedAThreshold + 0.1 : speedAThreshold;
+               speedAThreshold = data.getIceTicks() > 0 && data.getAboveBlockTicks() > 0 ? speedAThreshold + 0.24 : speedAThreshold;
 
 
-            if (speed > speedAThreshold) {
-                verbose += 8;
-                Bukkit.broadcastMessage("Verbose: " + verbose + ", " + speed + ", " + speedAThreshold + ", " + data.getGroundTicks() + ", " + data.getAirTicks() + ", " + data.getAboveBlockTicks() + ", " + data.getIceTicks());
-            } else {
-                verbose = verbose > 0 ? verbose - 1 : 0;
-            }
+               if (speed > speedAThreshold) {
+                   verbose += 6;
+                   //Bukkit.broadcastMessage("Verbose: " + verbose + ", " + speed + ", " + speedAThreshold + ", " + data.getGroundTicks() + ", " + data.getAirTicks() + ", " + data.getAboveBlockTicks() + ", " + data.getIceTicks());
+               } else {
+                   verbose = verbose > 0 ? verbose - 1 : 0;
+               }
 
-            if (verbose > 38) {
-                flag(p, "Type: A");
-                SetBackSystem.setBack(p);
-                verbose = 0;
-            }
+               if (verbose > 38) {
+                   flag(p, "Type: A");
+                   SetBackSystem.setBack(p);
+                   verbose = 0;
+               }
 
-            data.setSpeedAVerbose(verbose);
+               data.setSpeedAVerbose(verbose);
+           }
 
             //Type C
             Location l = p.getLocation();

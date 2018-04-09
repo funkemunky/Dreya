@@ -17,7 +17,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
  */
 public class LineOfSight extends Check {
       public LineOfSight() {
-        super("Line Of Sight", CheckType.WORLD, true);
+        super("LineOfSight", CheckType.WORLD, true);
     }
 
     @EventHandler

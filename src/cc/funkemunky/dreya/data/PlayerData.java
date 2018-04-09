@@ -70,10 +70,14 @@ public class PlayerData {
     private long Speed_YPORT_MS = 0;
     private boolean Speed_YPORT_Set = false;
     private int iceTicks = 0;
+<<<<<<< HEAD
     private long Speed_YPort2_MS = 0;
     private boolean Speed_YPort2_Set = false;
     private long Speed_MS_Yport = 0;
     private boolean Speed_MS_Set = false;
+=======
+
+>>>>>>> f5d1487d78c717ac6292df24dcce1e3281cf7d65
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;

@@ -109,7 +109,7 @@ public class Fly extends Check {
         }
 
         //Glide check
-        if (p.getLocation().add(0,-2.30,0).getBlock().getType() == Material.AIR) {
+        if (PlayerUtils.getDistanceToGround(p) >= 3) {
             double OffSet = e.getFrom().getY() - e.getTo().getY();
             long Time = System.currentTimeMillis();
             if (OffSet <= 0.0 || OffSet > 0.16) {
@@ -120,7 +120,6 @@ public class Fly extends Check {
                 Time = data.getGlideTicks();
             }
             long Millis = System.currentTimeMillis() - Time;
-            p.sendMessage(""+Millis);
             if (Millis > 100L) {
                 flag(p,"Flight(Type: D)");
                 setBackPlayer(p);

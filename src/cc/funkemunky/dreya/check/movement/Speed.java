@@ -5,6 +5,11 @@ import cc.funkemunky.dreya.check.Check;
 import cc.funkemunky.dreya.check.CheckType;
 import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.util.*;
+<<<<<<< HEAD
+=======
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+>>>>>>> 005fc0b970ec03caefe1df88131c18a5bd91d056
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -30,6 +35,58 @@ public class Speed extends Check {
         debugList = new ArrayList<>();
     }
 
+
+    /**@EventHandler
+    public void test(PlayerMoveEvent e) {
+        Player p = e.getPlayer();
+        PlayerData data = Dreya.getInstance().getDataManager().getData(p);
+        if (data != null) {
+            double OXZ = MathUtils.offset(getHorizontalVector(e.getFrom().toVector()), getHorizontalVector(e.getTo().toVector()));
+            double LXZ;
+            if (p.getVehicle() == null) {
+                LXZ = 0.42D;
+            } else {
+                LXZ = 2D;
+            }
+            if (data.isSpeed_TicksSet()) {
+                if (TimerUtils.elapsed(data.getSpeed_Ticks(), 500l)) {
+                    data.setSpeed_TicksSet(false);
+                    data.setNEWSpeed_Verbose(0);
+                    data.setSpeedVerbose(0);
+                }
+            }
+            for (PotionEffect effect : p.getActivePotionEffects()) {
+                if (effect.getType().equals(PotionEffectType.SPEED)) {
+                    LXZ += 0.3D;
+                }
+            }
+            if (BlockUtils.isIce(p.getLocation().add(0, 1.50, 0).getBlock())) {
+                LXZ += 0.5D;
+            } else if (BlockUtils.isNearIce(p)) {
+                LXZ += 0.5D;
+            } else if (data.isNearIce()) {
+                LXZ += 0.5D;
+            } else if (BlockUtils.isNearStiar(p)) {
+                LXZ += 0.5D;
+            }
+            if (OXZ > LXZ && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p)) {
+                if (!data.isSpeed_TicksSet()) {
+                    data.setSpeed_TicksSet(true);
+                    data.setSpeed_Ticks(TimerUtils.nowlong());
+                }
+                data.setSpeedVerbose(data.getSpeedVerbose() + 1);
+            } else if (data.getSpeedVerbose() > 0 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && p.getLocation().add(0, 1.94, 0).getBlock().getType() != Material.AIR) {
+              if (!data.isSpeed_MS_Set()) {
+                  data.setSpeed_MS_Set(true);
+                  data.setSpeed_MS_Yport(TimerUtils.nowlong());
+              }
+                flag(p, "Type: A [C1] - Player Moved Too Fast.");
+                setBack(p);
+                SetBackSystem.setBack(p);
+            }
+        }
+    }*/
+
     @EventHandler
     public void onMove(PlayerMoveEvent e) {
         Player p = e.getPlayer();
@@ -39,23 +96,134 @@ public class Speed extends Check {
         if (data != null) {
 
             if (data.isSpeed_PistonExpand_Set()) {
-                if (TimerUtils.elapsed(data.getSpeed_PistonExpand_MS(), 500L)) {
+                if (TimerUtils.elapsed(data.getSpeed_PistonExpand_MS(), 9900L)) {
                     data.setSpeed_PistonExpand_Set(false);
                 }
             }
 
             //Type A
+<<<<<<< HEAD
             double speed = MathUtils.offset(getHorizontalVector(to.toVector()), getHorizontalVector(from.toVector()));
+=======
+            double OXZ = MathUtils.offset(getHorizontalVector(e.getFrom().toVector()), getHorizontalVector(e.getTo().toVector()));
+            double LXZ;
+            if (p.getVehicle() == null) {
+                LXZ = 0.42D;
+            } else {
+                LXZ = 2D;
+            }
+            if (data.isSpeed_TicksSet()) {
+                if (TimerUtils.elapsed(data.getSpeed_Ticks(), 900L)) {
+                    data.setSpeed_TicksSet(false);
+                    data.setNEWSpeed_Verbose(0);
+                }
+            }
+            for (PotionEffect effect : p.getActivePotionEffects()) {
+                if (effect.getType().equals(PotionEffectType.SPEED)) {
+                    LXZ += 0.3D;
+                }
+            }
+            if (BlockUtils.isIce(p.getLocation().add(0, 1.50, 0).getBlock())) {
+                LXZ += 0.5D;
+            } else if (BlockUtils.isNearIce(p)) {
+                LXZ += 0.5D;
+            } else if (data.isNearIce()) {
+                LXZ += 0.5D;
+            } else if (BlockUtils.isNearStiar(p)) {
+                LXZ += 0.5D;
+            }
+
+
+                Location l = p.getLocation();
+                int x = l.getBlockX();
+                int y = l.getBlockY();
+                int z = l.getBlockZ();
+                Location loc1 = new Location(p.getWorld(), x, y + 1, z);
+                if (loc1.getBlock().getType()  == Material.AIR) {
+                    if (OXZ > 1 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && p.getLocation().add(0, 1.94, 0).getBlock().getType() == Material.AIR
+                            && !data.isAboveSpeedSet() && !PlayerUtils.hasPistonNear(p)) {
+                        flag(p, "Type: A [C2] - Player Moved Too Fast.");
+                        setBack(p);
+                        SetBackSystem.setBack(p);
+                    }
+
+                    if (OXZ > 0.380 && !NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p) && PlayerUtils.getDistanceToGround(p) <= 3) {
+                        if (!data.isSpeed_YPORT_Set()) {
+                            data.setSpeed_YPORT_Set(true);
+                            data.setSpeed_YPORT_MS(TimerUtils.nowlong());
+                        } else {
+                            if (TimerUtils.elapsed(data.getSpeed_YPORT_MS(), 1200L)) {
+                                data.setSpeed_YPORT_Verbose(0);
+                                data.setSpeed_YPORT_Set(false);
+                            }
+                        }
+                        if (data.getSpeed_YPORT_Verbose() >= 3 && data.getAboveBlockTicks() == 0) {
+                            if (TimerUtils.elapsed(data.getLastVelUpdate(), 1000L)) {
+                                flag(p, "Type: A [C4] - Player Moved Too Fast.");
+                                SetBackSystem.setBack(p);
+                            }
+                            data.setSpeed_YPORT_Verbose(data.getSpeed_YPORT_Verbose() + 1);
+                        } else {
+                            data.setSpeed_YPORT_Verbose(0);
+                        }
+                    } else {
+                        if (data.isSpeed_YPORT_Set()) {
+                            if (TimerUtils.elapsed(data.getSpeed_YPORT_MS(), 500L)) {
+                                data.setSpeed_YPORT_Verbose(0);
+                                data.setSpeed_YPORT_Set(false);
+                            }
+                        }
+                    }
+>>>>>>> 005fc0b970ec03caefe1df88131c18a5bd91d056
 
             if(debugList.size() >= 100) {
                 TxtFile file = new TxtFile(Dreya.getInstance(), "debug", p.getName() + "_debug_speed");
 
+<<<<<<< HEAD
                 for(String stringLoop : debugList) {
                     file.addLine(stringLoop);
                 }
                 file.write();
                 debugList.clear();
             }
+=======
+                    if (p.getLocation().add(0, 0.50, 0).getBlock().getType() != Material.AIR) {
+                        if (!data.isAboveSpeedSet()) {
+                            data.setAboveSpeedSet(true);
+                            data.setAboveSpeedTicks(TimerUtils.nowlong());
+                        } else {
+                            if (TimerUtils.elapsed(data.getAboveSpeedTicks(), 1000L)) {
+                                if (p.getLocation().add(0, 0.50, 0).getBlock().getType() == Material.AIR) {
+                                    data.setAboveSpeedSet(false);
+                                } else {
+                                    data.setAboveSpeedSet(true);
+                                    data.setAboveSpeedTicks(TimerUtils.nowlong());
+                                }
+                            }
+                        }
+                    }
+                    if (data.isAboveSpeedSet()) {
+                        if (TimerUtils.elapsed(data.getAboveSpeedTicks(), 1000L)) {
+                            data.setAboveSpeedSet(false);
+                        }
+                    }
+                    if (data.isAboveSpeedSet()) {
+                        return;
+                    } else {
+                        if (OXZ > 0.635 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && !BlockUtils.isNearPistion(p)) {
+                            if (TimerUtils.elapsed(data.getLastVelUpdate(), 50L) && PlayerUtils.getDistanceToGround(p) <= 3
+                                    && p.getLocation().add(0, 0.50, 0).getBlock().getType() == Material.AIR && !data.isBlockAbove_Set() && data.getAboveBlockTicks() == 0 && data.getIceTicks() == 0) {
+                                flag(p, "Type: A [C3] - Player Moved Too Fast.");
+                                setBack(p);
+                                SetBackSystem.setBack(p);
+                            }
+                        } else {
+                            data.setSpeedAC2_Verbose(0);
+                        }
+                    }
+                }
+        }
+>>>>>>> 005fc0b970ec03caefe1df88131c18a5bd91d056
 
             debugList.add(data.getAirTicks() + ", " + speed);
 
@@ -179,6 +347,7 @@ public class Speed extends Check {
                     }
                 }
             }
+<<<<<<< HEAD
             //Type D
             if (speed > 0.29 && PlayerUtils.isOnGround(p) && !data.isNearIce() && !BlockUtils.isNearStiar(p) && !NEW_Velocity_Utils.didTakeVel(p)) {
                 if (data.getSpeed_OnGround_Verbose() >= 5) {
@@ -188,8 +357,52 @@ public class Speed extends Check {
                     data.setSpeed_OnGround_Verbose(data.getSpeed_OnGround_Verbose() + 1);
                 }
                 data.setSpeed_OnGround_Reset(TimerUtils.nowlong());
+=======
+        //Type D
+        boolean speedPot = false;
+        for (PotionEffect effect : p.getActivePotionEffects()) {
+            if (effect.getType().equals(PotionEffectType.SPEED)) {
+                speedPot = true;
+            }
+        }
+        double Differ = MathUtils.offset(getHorizontalVector(e.getTo().toVector()),getHorizontalVector(from.toVector()));
+        if (Differ > 0.29 && PlayerUtils.isOnGround(p) && !data.isNearIce() && !BlockUtils.isNearStiar(p) && !NEW_Velocity_Utils.didTakeVel(p) && !speedPot) {
+            if (data.getSpeed_OnGround_Verbose() >= 5) {
+                flag(p,"Type: D");
+                setBack(p);
+>>>>>>> 005fc0b970ec03caefe1df88131c18a5bd91d056
             } else {
                 data.setSpeed_OnGround_Verbose(0);
+            }
+        }
+        //Type E
+        if (Differ > 0.38424 && p.getNoDamageTicks() == 0 && !NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p) && data.getIceTicks() == 0 && !BlockUtils.isStair(p.getLocation().add(0,-1,0).getBlock()) &&
+                !BlockUtils.isSlab(p.getLocation().add(0,-1,0).getBlock()) && data.getAirTicks() < 5) {
+            if (!data.isSpeed_YPort2_Set()) {
+                data.setSpeed_YPort2_Set(true);
+                data.setSpeed_YPort2_MS(TimerUtils.nowlong());
+            } else {
+                if (data.isSpeed_YPORT_Set()) {
+                    if (TimerUtils.elapsed(data.getSpeed_YPORT_MS(),200L)) {
+                        data.setSpeed_YPort2_Verbose(0);
+                    }
+                }
+            }
+            //p.sendMessage(""+data.getSpeed_YPort2_Verbose());
+            int MaxVL = 1;
+            if (speedPot) {
+                MaxVL = 15;
+            }
+            if (data.getSpeed_YPort2_Verbose() > MaxVL) {
+          //   flag(p,"Type: E");
+            // setBack(p);
+            }
+            data.setSpeed_YPort2_Verbose(data.getSpeed_YPort2_Verbose()+1);
+        } else {
+            if (data.isSpeed_YPORT_Set()) {
+                if (TimerUtils.elapsed(data.getSpeed_YPORT_MS(),200L)) {
+                    data.setSpeed_YPort2_Verbose(0);
+                }
             }
         }
     }

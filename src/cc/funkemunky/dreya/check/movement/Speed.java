@@ -73,6 +73,8 @@ public class Speed extends Check {
                }
 
                data.setSpeedAVerbose(verbose);
+           } else {
+               data.setSpeedAVerbose(0);
            }
 
             //Type C

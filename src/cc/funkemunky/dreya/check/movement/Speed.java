@@ -5,6 +5,7 @@ import cc.funkemunky.dreya.check.Check;
 import cc.funkemunky.dreya.check.CheckType;
 import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.util.*;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -53,12 +54,14 @@ public class Speed extends Check {
                     + (data.getAirTicks() > 0 ? (-0.001 * data.getAirTicks() + 0.014) : (0.018 - (data.getGroundTicks() >= 6 ? 0 : data.getGroundTicks() * 0.001)) * speedEffect);
 
             speedAThreshold = data.getAboveBlockTicks() > 0 ? speedAThreshold + 0.25 : speedAThreshold;
-            speedAThreshold = data.getIceTicks() > 0 ? speedAThreshold + 0.1 : speedAThreshold;
-            speedAThreshold = data.getSlimeTicks() > 0 ? speedAThreshold + 0.08 : speedAThreshold;
+            speedAThreshold = data.getIceTicks() > 0 ? speedAThreshold + 0.14 : speedAThreshold;
+            speedAThreshold = data.getSlimeTicks() > 0 ? speedAThreshold + 0.1 : speedAThreshold;
+            speedAThreshold = data.getIceTicks() > 0 && data.getAboveBlockTicks() > 0 ? speedAThreshold + 0.24 : speedAThreshold;
+
 
             if (speed > speedAThreshold) {
                 verbose += 8;
-                //Bukkit.broadcastMessage("Verbose: " + verbose + ", " + speed + ", " + speedAThreshold + ", " + data.getGroundTicks() + ", " + data.getAirTicks());
+                Bukkit.broadcastMessage("Verbose: " + verbose + ", " + speed + ", " + speedAThreshold + ", " + data.getGroundTicks() + ", " + data.getAirTicks() + ", " + data.getAboveBlockTicks() + ", " + data.getIceTicks());
             } else {
                 verbose = verbose > 0 ? verbose - 1 : 0;
             }

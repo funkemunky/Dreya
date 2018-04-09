@@ -1,11 +1,14 @@
 package cc.funkemunky.dreya.check.player;
 
+import cc.funkemunky.dreya.Dreya;
 import cc.funkemunky.dreya.PacketCore.PacketCore;
 import cc.funkemunky.dreya.check.Check;
 import cc.funkemunky.dreya.check.CheckType;
+import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.events.PluginEvents.PacketPlayerEvent;
 import cc.funkemunky.dreya.util.SetBackSystem;
 import cc.funkemunky.dreya.util.TimerUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -16,18 +19,19 @@ import java.util.*;
 /**
  * Created by Mr_JaVa_ on 2018-04-09 Package cc.funkemunky.dreya.check.player
  */
-public class Timer extends Check {
-    public Timer() {
-        super("Timer", CheckType.MISC, true);
-        packets = new HashMap<UUID, Map.Entry<Integer, Long>>();
-        verbose = new HashMap<UUID, Integer>();
-        toCancel = new ArrayList<Player>();
-        lastPacket = new HashMap<UUID, Long>();
-    }
-    private Map<UUID, Map.Entry<Integer, Long>> packets;
+public class MorePackets extends Check {
+    private Map<UUID, Integer> packets;
     private Map<UUID, Integer> verbose;
     private Map<UUID, Long> lastPacket;
     private List<Player> toCancel;
+
+    public MorePackets() {
+        super("MorePackets", CheckType.MISC, true);
+        packets = new HashMap<>();
+        verbose = new HashMap<>();
+        toCancel = new ArrayList<>();
+        lastPacket = new HashMap<>();
+    }
     @EventHandler
     public void onLogout(PlayerQuitEvent e) {
         if(packets.containsKey(e.getPlayer().getUniqueId())) {
@@ -43,44 +47,44 @@ public class Timer extends Check {
             toCancel.remove(e.getPlayer());
         }
     }
-    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
-    public void PacketPlayer(PacketPlayerEvent event) {
+    @EventHandler
+    public void packetPlayer(PacketPlayerEvent event) {
         Player player = event.getPlayer();
-        long lastPacket = this.lastPacket.getOrDefault(player.getUniqueId(), System.currentTimeMillis());
-        int packets = 0;
-        long Time = System.currentTimeMillis();
-        int verbose = this.verbose.getOrDefault(player.getUniqueId(), 0);
-        if (this.packets.containsKey(player.getUniqueId())) {
-            packets = this.packets.get(player.getUniqueId()).getKey().intValue();
-            Time = this.packets.get(player.getUniqueId()).getValue().longValue();
-        }
+        PlayerData data = Dreya.getInstance().getDataManager().getData(player);
 
-        if((System.currentTimeMillis() - lastPacket) > 100L) {
+        int packets = this.packets.getOrDefault(player.getUniqueId(), 0);
+        long Time = this.lastPacket.getOrDefault(player.getUniqueId(), System.currentTimeMillis());
+        int verbose = this.verbose.getOrDefault(player.getUniqueId(), 0);
+
+        if((System.currentTimeMillis() - data.getLastPacket()) > 100L) {
             toCancel.add(player);
         }
-        double threshold = 23;
+        double threshold = 42;
         if(TimerUtils.elapsed(Time, 1000L)) {
-            if(toCancel.remove(player) && packets <= 13) {
-                //	return;
+            if(toCancel.remove(player) && packets <= 67) {
+                this.packets.put(player.getUniqueId(), 0);
+               return;
             }
-            if(packets >= threshold + PacketCore.movePackets.getOrDefault(player.getUniqueId(), 0) && PacketCore.movePackets.getOrDefault(player.getUniqueId(), 0) < 5) {
-                verbose = (packets - threshold) > 10 ? verbose + 2 : verbose + 1;
+            if(packets > threshold + PacketCore.movePackets.getOrDefault(player.getUniqueId(), 0)) {
+                verbose++;
             } else {
                 verbose = 0;
             }
 
-            if(verbose >= 2) {
+            //Bukkit.broadcastMessage(packets + ", " + verbose);
+
+            if(verbose > 2) {
                flag(player,"Type: A");
                 SetBackSystem.setBack(player);
             }
             packets = 0;
-            Time = TimerUtils.nowlong();
+            Time = System.currentTimeMillis();
             PacketCore.movePackets.remove(player.getUniqueId());
         }
         packets++;
 
-        this.lastPacket.put(player.getUniqueId(), System.currentTimeMillis());
-        this.packets.put(player.getUniqueId(), new AbstractMap.SimpleEntry<Integer, Long>(packets, Time));
+        this.packets.put(player.getUniqueId(), packets);
         this.verbose.put(player.getUniqueId(), verbose);
+        this.lastPacket.put(player.getUniqueId(), Time);
     }
 }

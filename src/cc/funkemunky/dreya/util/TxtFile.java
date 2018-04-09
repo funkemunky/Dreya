@@ -15,7 +15,7 @@ public class TxtFile
 {
     private File File;
     private String Name;
-    private List<String> Lines = new ArrayList<String>();
+    private List<String> Lines = new ArrayList<>();
 
     public TxtFile(JavaPlugin Plugin, String Path, String Name)
     {

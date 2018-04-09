@@ -108,6 +108,28 @@ public class Fly extends Check {
             data.setFlyHoverVerbose(verbose);
         }
 
+        //Glide check
+        if (p.getLocation().add(0,-1.40,0).getBlock().getType() == Material.AIR && e.getTo().getY() < e.getFrom().getY() && !PlayerUtils.isOnGround4(p)) {
+            double OffSet = e.getFrom().getY() - e.getTo().getY();
+            long Time = System.currentTimeMillis();
+            if (OffSet <= 0.0 || OffSet > 0.16) {
+                data.setGlideTicks(0);
+                return;
+            }
+            if (data.getGlideTicks() != 0) {
+                Time = data.getGlideTicks();
+            }
+            long Millis = System.currentTimeMillis() - Time;
+            if (Millis > 200L) {
+                data.setGlideTicks(0);
+                flag(p,"Type: D");
+                SetBackSystem.setBack(p);
+            }
+            data.setGlideTicks(Time);
+        } else {
+            data.setGlideTicks(0);
+        }
+
         //Velocity Diff check
         double diffY = Math.abs(from.getY() - to.getY());
         double lastDiffY = data.getLastVelocityFlyY();

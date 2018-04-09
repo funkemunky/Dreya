@@ -194,6 +194,29 @@ public class Speed extends Check {
                 setBack(p);
                 SetBackSystem.setBack(p);
             }
+            //4
+        if (speed > 0.38424) {
+            if (data.getSpeedC_Verbose() > 2) {
+                flag(p,"Type: C [3] - Player Moved Too Fast.");
+                SetBackSystem.setBack(p);
+            } else {
+                data.setSpeedC_Verbose(data.getSpeedC_Verbose()+1);
+            }
+                if (!data.isSpeed_C_2_Set()) {
+                    data.setSpeed_C_2_Set(true);
+                    data.setSpeed_C_2_MS(TimerUtils.nowlong());
+                } else {
+                    if (TimerUtils.elapsed(data.getSpeed_C_2_MS(),500L)) {
+                        data.setSpeed_C_2_Set(false);
+                        data.setSpeedC_Verbose(0);
+                    }
+                }
+        } else {
+            if (TimerUtils.elapsed(data.getSpeed_C_2_MS(),500L) && data.isSpeed_C_2_Set()) {
+                data.setSpeed_C_2_Set(false);
+                data.setSpeedC_Verbose(0);
+            }
+        }
         //Type D
         double Differ = MathUtils.offset(getHorizontalVector(e.getTo().toVector()),getHorizontalVector(from.toVector()));
         if (Differ > 0.29 && PlayerUtils.isOnGround(p) && !data.isNearIce() && !BlockUtils.isNearStiar(p) && !NEW_Velocity_Utils.didTakeVel(p)) {

@@ -33,7 +33,7 @@ public class Gravity extends Check {
             double motion = (e.getTo().getY() - e.getFrom().getY());
             if (motion < -0.399 && p.getLocation().add(0,-0.50,0).getBlock().getType() != Material.AIR) {
                 if (!BlockUtils.isNearHalfBlock(p) || BlockUtils.isHalfBlock(p.getLocation().add(0,-1,0).getBlock())) {
-                    if (!data.isHalfBlocks_MS_Set()) {
+                    if (!data.isHalfBlocks_MS_Set() && PlayerUtils.getDistanceToGround(p) < 3 && p.getNoDamageTicks() == 0) {
                         flag(p, "Player's motion was changed to an unexpected value. [C2]");
                         SetBackSystem.setBack(p);
                     }

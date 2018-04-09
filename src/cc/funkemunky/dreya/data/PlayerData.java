@@ -60,6 +60,9 @@ public class PlayerData {
     private boolean AboveSpeedSet = false;
     private long HalfBlocks_MS = 0;
     private boolean HalfBlocks_MS_Set = false;
+    private boolean Speed_C_2_Set = false;
+    private long Speed_C_2_MS = 0;
+    private long GlideTicks = 0;
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -73,6 +76,7 @@ public class PlayerData {
     private int Speed_OnGround_Verbose = 0;
     private int TimerVerbose = 0;
     private int SpeedAC2_Verbose = 0;
+    private int SpeedC_Verbose = 0;
 
 
     public PlayerData(Player player) {
@@ -614,5 +618,37 @@ public class PlayerData {
 
     public void setHalfBlocks_MS_Set(boolean halfBlocks_MS_Set) {
         HalfBlocks_MS_Set = halfBlocks_MS_Set;
+    }
+
+    public boolean isSpeed_C_2_Set() {
+        return Speed_C_2_Set;
+    }
+
+    public void setSpeed_C_2_Set(boolean speed_C_2_Set) {
+        Speed_C_2_Set = speed_C_2_Set;
+    }
+
+    public long getSpeed_C_2_MS() {
+        return Speed_C_2_MS;
+    }
+
+    public void setSpeed_C_2_MS(long speed_C_2_MS) {
+        Speed_C_2_MS = speed_C_2_MS;
+    }
+
+    public int getSpeedC_Verbose() {
+        return SpeedC_Verbose;
+    }
+
+    public void setSpeedC_Verbose(int speedC_Verbose) {
+        SpeedC_Verbose = speedC_Verbose;
+    }
+
+    public long getGlideTicks() {
+        return GlideTicks;
+    }
+
+    public void setGlideTicks(long glideTicks) {
+        GlideTicks = glideTicks;
     }
 }

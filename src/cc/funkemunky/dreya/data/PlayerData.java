@@ -48,7 +48,25 @@ public class PlayerData {
     private long LastVelUpdate = 0;
     private boolean LastVelUpdateBoolean = false;
     private double lastKillauraYawDif = 0;
-
+    private long Speed_OnGround_Reset = 0;
+    private long lastPacketTimer = 0;
+    private long LastTimeTimer = 0;
+    private int LastPacketTimer = 0;
+    private int LastPACKETSTimer = 0;
+    private long WebFloatMS = 0;
+    private boolean WebFloatMS_Set = false;
+    private int WebFloat_BlockCount = 0;
+    private long AboveSpeedTicks = 0;
+    private boolean AboveSpeedSet = false;
+    private long HalfBlocks_MS = 0;
+    private boolean HalfBlocks_MS_Set = false;
+    private boolean Speed_C_2_Set = false;
+    private long Speed_C_2_MS = 0;
+    private long GlideTicks = 0;
+    private long Speed_PistonExpand_MS = 0;
+    private boolean Speed_PistonExpand_Set = false;
+    private long BlockAbove = 0;
+    private boolean BlockAbove_Set = false;
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -59,6 +77,11 @@ public class PlayerData {
     private int killauraAVerbose = 0;
     private int SpeedVerbose = 0;
     private int Speed2Verbose = 0;
+    private int Speed_OnGround_Verbose = 0;
+    private int TimerVerbose = 0;
+    private int SpeedAC2_Verbose = 0;
+    private int SpeedC_Verbose = 0;
+    private int Speed_C_3_Verbose = 0;
 
 
     public PlayerData(Player player) {
@@ -484,5 +507,193 @@ public class PlayerData {
 
     public void setSpeed2Verbose(int speed2Verbose) {
         Speed2Verbose = speed2Verbose;
+    }
+
+    public long getSpeed_OnGround_Reset() {
+        return Speed_OnGround_Reset;
+    }
+
+    public void setSpeed_OnGround_Reset(long speed_OnGround_Reset) {
+        Speed_OnGround_Reset = speed_OnGround_Reset;
+    }
+
+    public int getSpeed_OnGround_Verbose() {
+        return Speed_OnGround_Verbose;
+    }
+
+    public void setSpeed_OnGround_Verbose(int speed_OnGround_Verbose) {
+        Speed_OnGround_Verbose = speed_OnGround_Verbose;
+    }
+
+    public long getLastPacketTimer() {
+        return lastPacketTimer;
+    }
+
+    public void setLastPacketTimer(long lastPacketTimer) {
+        this.lastPacketTimer = lastPacketTimer;
+    }
+
+    public long getLastTimeTimer() {
+        return LastTimeTimer;
+    }
+
+    public void setLastTimeTimer(long lastTimeTimer) {
+        LastTimeTimer = lastTimeTimer;
+    }
+
+    public void setLastPacketTimer(int lastPacketTimer) {
+        LastPacketTimer = lastPacketTimer;
+    }
+
+    public int getTimerVerbose() {
+        return TimerVerbose;
+    }
+
+    public void setTimerVerbose(int timerVerbose) {
+        TimerVerbose = timerVerbose;
+    }
+
+    public int getLastPACKETSTimer() {
+        return LastPACKETSTimer;
+    }
+
+    public void setLastPACKETSTimer(int lastPACKETSTimer) {
+        LastPACKETSTimer = lastPACKETSTimer;
+    }
+
+    public long getWebFloatMS() {
+        return WebFloatMS;
+    }
+
+    public void setWebFloatMS(long webFloatMS) {
+        WebFloatMS = webFloatMS;
+    }
+
+    public boolean isWebFloatMS_Set() {
+        return WebFloatMS_Set;
+    }
+
+    public void setWebFloatMS_Set(boolean webFloatMS_Set) {
+        WebFloatMS_Set = webFloatMS_Set;
+    }
+
+    public int getWebFloat_BlockCount() {
+        return WebFloat_BlockCount;
+    }
+
+    public void setWebFloat_BlockCount(int webFloat_BlockCount) {
+        WebFloat_BlockCount = webFloat_BlockCount;
+    }
+
+    public long getAboveSpeedTicks() {
+        return AboveSpeedTicks;
+    }
+
+    public void setAboveSpeedTicks(long aboveSpeedTicks) {
+        AboveSpeedTicks = aboveSpeedTicks;
+    }
+
+    public boolean isAboveSpeedSet() {
+        return AboveSpeedSet;
+    }
+
+    public void setAboveSpeedSet(boolean aboveSpeedSet) {
+        AboveSpeedSet = aboveSpeedSet;
+    }
+
+    public int getSpeedAC2_Verbose() {
+        return SpeedAC2_Verbose;
+    }
+
+    public void setSpeedAC2_Verbose(int speedAC2_Verbose) {
+        SpeedAC2_Verbose = speedAC2_Verbose;
+    }
+
+    public long getHalfBlocks_MS() {
+        return HalfBlocks_MS;
+    }
+
+    public void setHalfBlocks_MS(long halfBlocks_MS) {
+        HalfBlocks_MS = halfBlocks_MS;
+    }
+
+    public boolean isHalfBlocks_MS_Set() {
+        return HalfBlocks_MS_Set;
+    }
+
+    public void setHalfBlocks_MS_Set(boolean halfBlocks_MS_Set) {
+        HalfBlocks_MS_Set = halfBlocks_MS_Set;
+    }
+
+    public boolean isSpeed_C_2_Set() {
+        return Speed_C_2_Set;
+    }
+
+    public void setSpeed_C_2_Set(boolean speed_C_2_Set) {
+        Speed_C_2_Set = speed_C_2_Set;
+    }
+
+    public long getSpeed_C_2_MS() {
+        return Speed_C_2_MS;
+    }
+
+    public void setSpeed_C_2_MS(long speed_C_2_MS) {
+        Speed_C_2_MS = speed_C_2_MS;
+    }
+
+    public int getSpeedC_Verbose() {
+        return SpeedC_Verbose;
+    }
+
+    public void setSpeedC_Verbose(int speedC_Verbose) {
+        SpeedC_Verbose = speedC_Verbose;
+    }
+
+    public long getGlideTicks() {
+        return GlideTicks;
+    }
+
+    public void setGlideTicks(long glideTicks) {
+        GlideTicks = glideTicks;
+    }
+
+    public int getSpeed_C_3_Verbose() {
+        return Speed_C_3_Verbose;
+    }
+
+    public void setSpeed_C_3_Verbose(int speed_C_3_Verbose) {
+        Speed_C_3_Verbose = speed_C_3_Verbose;
+    }
+
+    public long getSpeed_PistonExpand_MS() {
+        return Speed_PistonExpand_MS;
+    }
+
+    public void setSpeed_PistonExpand_MS(long speed_PistonExpand_MS) {
+        Speed_PistonExpand_MS = speed_PistonExpand_MS;
+    }
+
+    public boolean isSpeed_PistonExpand_Set() {
+        return Speed_PistonExpand_Set;
+    }
+
+    public void setSpeed_PistonExpand_Set(boolean speed_PistonExpand_Set) {
+        Speed_PistonExpand_Set = speed_PistonExpand_Set;
+    }
+
+    public long getBlockAbove() {
+        return BlockAbove;
+    }
+
+    public boolean isBlockAbove_Set() {
+        return BlockAbove_Set;
+    }
+
+    public void setBlockAbove(long blockAbove) {
+        BlockAbove = blockAbove;
+    }
+
+    public void setBlockAbove_Set(boolean blockAbove_Set) {
+        BlockAbove_Set = blockAbove_Set;
     }
 }

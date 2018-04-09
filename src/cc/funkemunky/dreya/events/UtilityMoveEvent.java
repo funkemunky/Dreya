@@ -6,6 +6,8 @@ import cc.funkemunky.dreya.util.BlockUtils;
 import cc.funkemunky.dreya.util.MathUtils;
 import cc.funkemunky.dreya.util.PlayerUtils;
 import cc.funkemunky.dreya.util.TimerUtils;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -28,7 +30,62 @@ public class UtilityMoveEvent implements Listener {
                 }
             }
         }
+        Location l = player.getLocation();
+        int x = l.getBlockX();
+        int y = l.getBlockY();
+        int z = l.getBlockZ();
+        Location loc1 = new Location(player.getWorld(), x, y + 1, z);
+        if (loc1.getBlock().getType() != Material.AIR) {
+            if (!data.isBlockAbove_Set()) {
+                data.setBlockAbove_Set(true);
+                data.setBlockAbove(TimerUtils.nowlong());
+            } else {
+                if (TimerUtils.elapsed(data.getBlockAbove(),1000L)) {
+                    if (loc1.getBlock().getType() == Material.AIR) {
+                        data.setBlockAbove_Set(false);
+                    } else {
+                        data.setBlockAbove_Set(true);
+                        data.setBlockAbove(TimerUtils.nowlong());
+                    }
+                }
+            }
+        } else {
+            if (data.isBlockAbove_Set()) {
+                if (TimerUtils.elapsed(data.getBlockAbove(), 1000L)) {
+                    if (loc1.getBlock().getType() == Material.AIR) {
+                        data.setBlockAbove_Set(false);
+                    } else {
+                        data.setBlockAbove_Set(true);
+                        data.setBlockAbove(TimerUtils.nowlong());
+                    }
+                }
+            }
+        }
 
+        if (BlockUtils.isHalfBlock(player.getLocation().add(0,-0.50,0).getBlock()) || BlockUtils.isNearHalfBlock(player)) {
+            if (!data.isHalfBlocks_MS_Set()) {
+                data.setHalfBlocks_MS_Set(true);
+                data.setHalfBlocks_MS(TimerUtils.nowlong());
+            } else {
+                if (TimerUtils.elapsed(data.getHalfBlocks_MS(),900L)) {
+                    if (BlockUtils.isHalfBlock(player.getLocation().add(0,-0.50,0).getBlock()) || BlockUtils.isNearHalfBlock(player)) {
+                        data.setHalfBlocks_MS_Set(true);
+                        data.setHalfBlocks_MS(TimerUtils.nowlong());
+                    } else {
+                        data.setHalfBlocks_MS_Set(false);
+                    }
+                }
+            }
+        } else {
+            if (TimerUtils.elapsed(data.getHalfBlocks_MS(),900L)) {
+                if (BlockUtils.isHalfBlock(player.getLocation().add(0,-0.50,0).getBlock()) || BlockUtils.isNearHalfBlock(player)) {
+                    data.setHalfBlocks_MS_Set(true);
+                    data.setHalfBlocks_MS(TimerUtils.nowlong());
+                } else {
+                    data.setHalfBlocks_MS_Set(false);
+                }
+            }
+        }
         if (BlockUtils.isNearIce(player) && !data.isNearIce()) {
             data.setNearIce(true);
             data.setIsNearIceTicks(TimerUtils.nowlong());
@@ -38,7 +95,7 @@ public class UtilityMoveEvent implements Listener {
 
         double distance = MathUtils.getVerticalDistance(e.getFrom(), e.getTo());
 
-        boolean onGround = PlayerUtils.isOnGround(player);
+        boolean onGround = PlayerUtils.isOnGround4(player);
         if(!onGround
                 && e.getFrom().getY() > e.getTo().getY()) {
             data.setFallDistance(data.getFallDistance() + distance);
@@ -55,7 +112,7 @@ public class UtilityMoveEvent implements Listener {
         }
 
         if(PlayerUtils.isOnGround(player.getLocation().add(0, 2, 0))) {
-            data.setAboveBlockTicks(data.getAboveBlockTicks() + 1);
+            data.setAboveBlockTicks(data.getAboveBlockTicks() + 2);
         } else if(data.getAboveBlockTicks() > 0) {
             data.setAboveBlockTicks(data.getAboveBlockTicks() - 1);
         }

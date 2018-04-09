@@ -323,5 +323,32 @@ public class BlockUtils {
 		}
 		return out;
 	}
+	public static boolean isNearLiquid(Player p) {
+		boolean out = false;
+		for (Block b : getNearbyBlocks(p.getLocation(), 1)) {
+			if (isLiquid(b)) {
+				out = true;
+			}
+		}
+		return out;
+	}
+    public static boolean isNearLadder(Player p) {
+        boolean out = false;
+        for (Block b : getNearbyBlocks(p.getLocation(), 1)) {
+            if (b.getType() == Material.LADDER) {
+                out = true;
+            }
+        }
+        return out;
+    }
+    public static boolean isNearPistion(Player p) {
+        boolean out = false;
+        for (Block b : getNearbyBlocks(p.getLocation(), 1)) {
+           if (b.getType() == Material.PISTON_BASE || b.getType() == Material.PISTON_MOVING_PIECE || b.getType() == Material.PISTON_STICKY_BASE || b.getType() == Material.PISTON_EXTENSION) {
+               out = true;
+           }
+        }
+        return out;
+    }
 
 }

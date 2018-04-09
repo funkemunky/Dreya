@@ -44,7 +44,7 @@ public class GroundSpoofCheck extends Check {
                  data.setGroundSpoofVL(0);
                  return;
              }
-             if (e.getTo().getY() > e.getFrom().getY() || PlayerUtils.isOnGround3(p) || VelocityUtils.didTakeVelocity(p)) {
+             if (e.getTo().getY() > e.getFrom().getY() || PlayerUtils.isOnGround4(p) || VelocityUtils.didTakeVelocity(p)) {
                  data.setGroundSpoofVL(0);
                  return;
              }

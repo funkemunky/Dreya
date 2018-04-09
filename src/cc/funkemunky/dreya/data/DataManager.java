@@ -8,9 +8,8 @@ import cc.funkemunky.dreya.check.movement.Fly;
 import cc.funkemunky.dreya.check.movement.Gravity;
 import cc.funkemunky.dreya.check.movement.ImpossibleMovements;
 import cc.funkemunky.dreya.check.movement.Speed;
-import cc.funkemunky.dreya.check.player.GroundSpoofCheck;
-import cc.funkemunky.dreya.check.player.ImpossiblePitch;
-import cc.funkemunky.dreya.check.player.LineOfSight;
+import cc.funkemunky.dreya.check.player.*;
+import cc.funkemunky.dreya.check.player.Timer;
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -40,6 +39,8 @@ public class DataManager {
         addCheck(new KillAura());
         addCheck(new KillAura());
         addCheck(new Speed());
+        addCheck(new Timer());
+        addCheck(new TimerB());
     }
 
     public void removeCheck(Check check) {

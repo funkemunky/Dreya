@@ -12,14 +12,13 @@ public class DreyaCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(!sender.hasPermission("dreya.admin")) {
-            sender.sendMessage(ChatColor.RED + "No permission.");
-            return true;
-        }
-
         if(args.length == 0) {
-            sender.sendMessage(ChatColor.RED + "Invalid arguments.");
+            sender.sendMessage(ChatColor.RED + "Dreya : Created By " + ChatColor.AQUA + "[Mr_JaVa_ , funkemunky]");
         } else if(args[0].equalsIgnoreCase("toggle")) {
+            if(!sender.hasPermission("dreya.admin")) {
+                sender.sendMessage(ChatColor.RED + "No permission.");
+                return true;
+            }
             if(args.length == 2) {
                 Check checkName = Dreya.getInstance().getDataManager().getCheckByName(args[1]);
 

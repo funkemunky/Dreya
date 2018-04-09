@@ -42,7 +42,7 @@ public class Fly extends Check {
             return;
         }
         //Ascension Check
-        if (!NEW_Velocity_Utils.didTakeVel(p)) {
+        if (!NEW_Velocity_Utils.didTakeVel(p) && !PlayerUtils.wasOnSlime(p)) {
             Vector vec = new Vector(to.getX(), to.getY(), to.getZ());
             double Distance = vec.distance(new Vector(from.getX(), from.getY(), from.getZ()));
             if (p.getFallDistance() == 0.0f && p.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.AIR && p.getLocation().getBlock().getRelative(BlockFace.UP).getType() == Material.AIR) {
@@ -61,12 +61,12 @@ public class Fly extends Check {
                 }
             }
         }
-        if (!NEW_Velocity_Utils.didTakeVel(p)) {
+        if (!NEW_Velocity_Utils.didTakeVel(p) && !PlayerUtils.wasOnSlime(p)) {
             if (e.getTo().getY() > e.getFrom().getY() && data.getAirTicks() > 2 && !VelocityUtils.didTakeVelocity(p)) {
-                if (!PlayerUtils.isOnGround3(p) && !PlayerUtils.onGround2(p) && !PlayerUtils.isOnGround(p)) {
+                if (!PlayerUtils.isOnGround4(p) && !PlayerUtils.onGround2(p) && !PlayerUtils.isOnGround(p)) {
                     if (PlayerUtils.getDistanceToGround(p) > 2) {
-                        if (data.getGoingUp_Blocks() >= 3 && data.getAirTicks() >= 10) {
-                            flag(p, "Type: A [5]");
+                        if (data.getGoingUp_Blocks() >= 3 && data.getAirTicks() >= 10 && TimerUtils.elapsed(data.getLastVelUpdate(),500L)) {
+                        //    flag(p, "Type: A [5]");
                             setBackPlayer(p);
                         } else {
                             data.setGoingUp_Blocks(data.getGoingUp_Blocks() + 1);
@@ -108,6 +108,28 @@ public class Fly extends Check {
             data.setFlyHoverVerbose(verbose);
         }
 
+        //Glide check
+        if (p.getLocation().add(0,-1.40,0).getBlock().getType() == Material.AIR && e.getTo().getY() < e.getFrom().getY() && !PlayerUtils.isOnGround4(p) && !PlayerUtils.wasOnSlime(p)) {
+            double OffSet = e.getFrom().getY() - e.getTo().getY();
+            long Time = System.currentTimeMillis();
+            if (OffSet <= 0.0 || OffSet > 0.16) {
+                data.setGlideTicks(0);
+                return;
+            }
+            if (data.getGlideTicks() != 0) {
+                Time = data.getGlideTicks();
+            }
+            long Millis = System.currentTimeMillis() - Time;
+            if (Millis > 200L) {
+                data.setGlideTicks(0);
+                flag(p,"Type: D");
+                SetBackSystem.setBack(p);
+            }
+            data.setGlideTicks(Time);
+        } else {
+            data.setGlideTicks(0);
+        }
+
         //Velocity Diff check
         double diffY = Math.abs(from.getY() - to.getY());
         double lastDiffY = data.getLastVelocityFlyY();
@@ -119,7 +141,7 @@ public class Fly extends Check {
 
         if(finalDifference < 0.08
                 && e.getFrom().getY() < e.getTo().getY()
-                && !PlayerUtils.isOnGround(p)) {
+                && !PlayerUtils.isOnGround(p) && !p.getLocation().getBlock().isLiquid() && !BlockUtils.isNearLiquid(p)) {
             if(++verboseC > 2) {
                 flag(p, "Type: C");
                 SetBackSystem.setBack(p);

@@ -42,3 +42,6 @@ PaperSpigot-Server
 PaperSpigot-API
 *.xml
 .idea/workspace.xml
+*.xml
+*.xml
+.idea/workspace.xml

@@ -184,6 +184,7 @@ public class Speed extends Check {
                     if (data.isAboveSpeedSet()) {
                         if (TimerUtils.elapsed(data.getAboveSpeedTicks(), 1000L)) {
                             data.setAboveSpeedSet(false);
+                            data.setSpeed_C3_Verbose(0);
                         }
                     }
                     if (data.isAboveSpeedSet()) {
@@ -191,13 +192,19 @@ public class Speed extends Check {
                     } else {
                         if (OXZ > 0.635 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && !BlockUtils.isNearPistion(p)) {
                             if (TimerUtils.elapsed(data.getLastVelUpdate(), 50L) && PlayerUtils.getDistanceToGround(p) <= 3
-                                    && p.getLocation().add(0, 0.50, 0).getBlock().getType() == Material.AIR && !data.isBlockAbove_Set() && data.getAboveBlockTicks() == 0 && data.getIceTicks() == 0) {
-                                flag(p, "Type: A [C3] - Player Moved Too Fast.");
-                                setBack(p);
-                                SetBackSystem.setBack(p);
+                                    && p.getLocation().add(0, 0.50, 0).getBlock().getType() == Material.AIR && !data.isBlockAbove_Set()
+                                    && data.getAboveBlockTicks() == 0 && data.getIceTicks() == 0 && !BlockUtils.isNearIce(p)) {
+                                if (data.getSpeed_C3_Verbose() >= 3) {
+                                    flag(p, "Type: A [C3] - Player Moved Too Fast.");
+                                    setBack(p);
+                                    SetBackSystem.setBack(p);
+                                } else {
+                                    data.setSpeed_C3_Verbose(data.getSpeed_C3_Verbose()+1);
+                                }
                             }
                         } else {
                             data.setSpeedAC2_Verbose(0);
+                            data.setSpeed_C3_Verbose(0);
                         }
                     }
                 }

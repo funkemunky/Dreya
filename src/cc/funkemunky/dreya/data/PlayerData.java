@@ -67,6 +67,8 @@ public class PlayerData {
     private boolean Speed_PistonExpand_Set = false;
     private long BlockAbove = 0;
     private boolean BlockAbove_Set = false;
+    private long Speed_YPORT_MS = 0;
+    private boolean Speed_YPORT_Set = false;
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -82,6 +84,7 @@ public class PlayerData {
     private int SpeedAC2_Verbose = 0;
     private int SpeedC_Verbose = 0;
     private int Speed_C_3_Verbose = 0;
+    private int Speed_YPORT_Verbose = 0;
 
 
     public PlayerData(Player player) {
@@ -695,5 +698,29 @@ public class PlayerData {
 
     public void setBlockAbove_Set(boolean blockAbove_Set) {
         BlockAbove_Set = blockAbove_Set;
+    }
+
+    public int getSpeed_YPORT_Verbose() {
+        return Speed_YPORT_Verbose;
+    }
+
+    public void setSpeed_YPORT_Verbose(int speed_YPORT_Verbose) {
+        Speed_YPORT_Verbose = speed_YPORT_Verbose;
+    }
+
+    public long getSpeed_YPORT_MS() {
+        return Speed_YPORT_MS;
+    }
+
+    public void setSpeed_YPORT_MS(long speed_YPORT_MS) {
+        Speed_YPORT_MS = speed_YPORT_MS;
+    }
+
+    public boolean isSpeed_YPORT_Set() {
+        return Speed_YPORT_Set;
+    }
+
+    public void setSpeed_YPORT_Set(boolean speed_YPORT_Set) {
+        Speed_YPORT_Set = speed_YPORT_Set;
     }
 }

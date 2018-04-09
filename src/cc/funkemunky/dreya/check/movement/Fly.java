@@ -65,9 +65,9 @@ public class Fly extends Check {
             if (e.getTo().getY() > e.getFrom().getY() && data.getAirTicks() > 2 && !VelocityUtils.didTakeVelocity(p)) {
                 if (!PlayerUtils.isOnGround4(p) && !PlayerUtils.onGround2(p) && !PlayerUtils.isOnGround(p)) {
                     if (PlayerUtils.getDistanceToGround(p) > 2) {
-                        if (data.getGoingUp_Blocks() >= 3 && data.getAirTicks() >= 10 && TimerUtils.elapsed(data.getLastVelUpdate(),500L)) {
-                        //    flag(p, "Type: A [5]");
-                            setBackPlayer(p);
+                        if (data.getGoingUp_Blocks() >= 3 && data.getAirTicks() >= 10) {
+                       //     flag(p, "Type: A [5]");
+                         //   setBackPlayer(p);
                         } else {
                             data.setGoingUp_Blocks(data.getGoingUp_Blocks() + 1);
                         }
@@ -109,7 +109,7 @@ public class Fly extends Check {
         }
 
         //Glide check
-        if (p.getLocation().add(0,-1.40,0).getBlock().getType() == Material.AIR && e.getTo().getY() < e.getFrom().getY() && !PlayerUtils.isOnGround4(p) && !PlayerUtils.wasOnSlime(p)) {
+        if (p.getLocation().add(0,-2.30,0).getBlock().getType() == Material.AIR) {
             double OffSet = e.getFrom().getY() - e.getTo().getY();
             long Time = System.currentTimeMillis();
             if (OffSet <= 0.0 || OffSet > 0.16) {
@@ -120,14 +120,15 @@ public class Fly extends Check {
                 Time = data.getGlideTicks();
             }
             long Millis = System.currentTimeMillis() - Time;
-            if (Millis > 200L) {
+            p.sendMessage(""+Millis);
+            if (Millis > 100L) {
+                flag(p,"Flight(Type: D)");
+                setBackPlayer(p);
                 data.setGlideTicks(0);
-                flag(p,"Type: D");
-                SetBackSystem.setBack(p);
             }
             data.setGlideTicks(Time);
         } else {
-            data.setGlideTicks(0);
+           data.setGlideTicks(0);
         }
 
         //Velocity Diff check

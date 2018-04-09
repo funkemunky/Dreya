@@ -69,7 +69,7 @@ public class Speed extends Check {
             } else if (BlockUtils.isNearStiar(p)) {
                 LXZ += 0.5D;
             }
-            //  p.sendMessage(""+OXZ + " " + LXZ);
+         //     p.sendMessage(""+OXZ + " " + LXZ);
             if (p.getNoDamageTicks() == 0) {
                 if (OXZ > LXZ && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p)) {
                     if (!data.isSpeed_TicksSet()) {
@@ -94,8 +94,36 @@ public class Speed extends Check {
                         setBack(p);
                         SetBackSystem.setBack(p);
                     }
-                }
-                if (p.getLocation().add(0, 0.50, 0).getBlock().getType() == Material.AIR && data.getAboveBlockTicks() <= 0) {
+
+                    if (OXZ > 0.380 && !NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p) && PlayerUtils.getDistanceToGround(p) <= 3) {
+                        if (!data.isSpeed_YPORT_Set()) {
+                            data.setSpeed_YPORT_Set(true);
+                            data.setSpeed_YPORT_MS(TimerUtils.nowlong());
+                        } else {
+                            if (TimerUtils.elapsed(data.getSpeed_YPORT_MS(),1200L)) {
+                                data.setSpeed_YPORT_Verbose(0);
+                                data.setSpeed_YPORT_Set(false);
+                            }
+                        }
+                        if (data.getSpeed_YPORT_Verbose() >= 3  && data.getAboveBlockTicks() == 0) {
+                            if (TimerUtils.elapsed(data.getLastVelUpdate(), 1000L)) {
+                                flag(p, "Type: A [C4] - Player Moved Too Fast.");
+                                SetBackSystem.setBack(p);
+                            }
+                            data.setSpeed_YPORT_Verbose(data.getSpeed_YPORT_Verbose()+1);
+                        } else {
+                            data.setSpeed_YPORT_Verbose(0);
+                        }
+                    } else {
+                        if (data.isSpeed_YPORT_Set()) {
+                            if (TimerUtils.elapsed(data.getSpeed_YPORT_MS(), 500L)) {
+                                data.setSpeed_YPORT_Verbose(0);
+                                data.setSpeed_YPORT_Set(false);
+                            }
+                        }
+                    }
+
+
                     if (p.getLocation().add(0, 0.50, 0).getBlock().getType() != Material.AIR) {
                         if (!data.isAboveSpeedSet()) {
                             data.setAboveSpeedSet(true);
@@ -119,10 +147,9 @@ public class Speed extends Check {
                     if (data.isAboveSpeedSet()) {
                         return;
                     } else {
-                        if (loc1.getBlock().getType() == Material.AIR) {
                             if (OXZ > 0.635 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && !BlockUtils.isNearPistion(p)) {
                                 if (TimerUtils.elapsed(data.getLastVelUpdate(), 50L) && PlayerUtils.getDistanceToGround(p) <= 3
-                                        && p.getLocation().add(0, 0.50, 0).getBlock().getType() == Material.AIR && !data.isBlockAbove_Set()) {
+                                        && p.getLocation().add(0, 0.50, 0).getBlock().getType() == Material.AIR && !data.isBlockAbove_Set() && data.getAboveBlockTicks() == 0) {
                                     flag(p, "Type: A [C3] - Player Moved Too Fast.");
                                     setBack(p);
                                     SetBackSystem.setBack(p);
@@ -130,7 +157,6 @@ public class Speed extends Check {
                             } else {
                                 data.setSpeedAC2_Verbose(0);
                             }
-                        }
                     }
                 }
             }

@@ -1,6 +1,7 @@
 package cc.funkemunky.dreya;
 
 import cc.funkemunky.dreya.PacketCore.PacketCore;
+import cc.funkemunky.dreya.check.Check;
 import cc.funkemunky.dreya.command.DreyaCommand;
 import cc.funkemunky.dreya.data.DataManager;
 import cc.funkemunky.dreya.events.UtilityJoinQuitEvent;
@@ -22,6 +23,7 @@ public class Dreya extends JavaPlugin {
         new Config();
         registerCommands();
         registerListeners();
+        loadChecks();
         new Ping(this);
         addDataPlayers();
         PacketCore.init();
@@ -29,8 +31,30 @@ public class Dreya extends JavaPlugin {
         coreVersion = Bukkit.getServer().getClass().getPackage().getName().substring(23);
     }
 
+    public void onDisable() {
+        saveChecks();
+    }
+
     private void registerCommands() {
         getCommand("dreya").setExecutor(new DreyaCommand());
+    }
+
+    private void loadChecks() {
+        for(Check check : getDataManager().getChecks()) {
+            if(getConfig().get("checks." + check.getName() + ".enabled") != null) {
+                check.setEnabled(getConfig().getBoolean("checks." + check.getName() + ".enabled"));
+            } else {
+                getConfig().set("checks." + check.getName() + ".enabled", check.isEnabled());
+                saveConfig();
+            }
+        }
+    }
+
+    private void saveChecks() {
+        for(Check check : getDataManager().getChecks()) {
+            getConfig().set("checks." + check.getName() + ".enabled", check.isEnabled());
+            saveConfig();
+        }
     }
 
     private void registerListeners() {

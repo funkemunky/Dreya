@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
  */
 public class ImpossiblePitch extends Check {
       public ImpossiblePitch() {
-        super("Impossible Pitch", CheckType.MOVEMENT, true);
+        super("ImpossiblePitch", CheckType.MOVEMENT, true);
     }
     @EventHandler
     public void onMove(PlayerMoveEvent e) {

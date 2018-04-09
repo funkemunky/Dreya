@@ -67,13 +67,10 @@ public class PlayerData {
     private boolean Speed_PistonExpand_Set = false;
     private long BlockAbove = 0;
     private boolean BlockAbove_Set = false;
-<<<<<<< HEAD
     private long Speed_YPORT_MS = 0;
     private boolean Speed_YPORT_Set = false;
-=======
     private int iceTicks = 0;
 
->>>>>>> a8a6fece0ee6e83831c18d98935a0c436b2943da
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;

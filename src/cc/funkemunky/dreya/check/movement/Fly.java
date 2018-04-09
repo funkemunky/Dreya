@@ -109,7 +109,7 @@ public class Fly extends Check {
         }
 
         //Glide check
-        if (p.getLocation().add(0,-1.40,0).getBlock().getType() == Material.AIR && e.getTo().getY() < e.getFrom().getY() && !PlayerUtils.isOnGround4(p)) {
+        if (p.getLocation().add(0,-1.40,0).getBlock().getType() == Material.AIR && e.getTo().getY() < e.getFrom().getY() && !PlayerUtils.isOnGround4(p) && !PlayerUtils.wasOnSlime(p)) {
             double OffSet = e.getFrom().getY() - e.getTo().getY();
             long Time = System.currentTimeMillis();
             if (OffSet <= 0.0 || OffSet > 0.16) {

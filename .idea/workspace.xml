@@ -20,11 +20,11 @@
       <file leaf-file-name="Fly.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
+            <state relative-caret-position="68">
+              <caret line="111" column="156" lean-forward="true" selection-start-line="111" selection-start-column="156" selection-end-line="111" selection-end-column="156" />
               <folding>
-                <element signature="e#7204#7205#0" expanded="true" />
-                <element signature="e#7244#7245#0" expanded="true" />
+                <element signature="e#7234#7235#0" expanded="true" />
+                <element signature="e#7274#7275#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -824,11 +824,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
+        <state relative-caret-position="68">
+          <caret line="111" column="156" lean-forward="true" selection-start-line="111" selection-start-column="156" selection-end-line="111" selection-end-column="156" />
           <folding>
-            <element signature="e#7204#7205#0" expanded="true" />
-            <element signature="e#7244#7245#0" expanded="true" />
+            <element signature="e#7234#7235#0" expanded="true" />
+            <element signature="e#7274#7275#0" expanded="true" />
           </folding>
         </state>
       </provider>

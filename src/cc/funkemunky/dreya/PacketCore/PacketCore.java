@@ -49,7 +49,6 @@ public class PacketCore {
                     }
                 });
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(), PacketType.Play.Client.LOOK) {
-
             public void onPacketReceiving(PacketEvent packetEvent) {
                 Player player = packetEvent.getPlayer();
                 if (player == null) {
@@ -65,7 +64,6 @@ public class PacketCore {
             }
         });
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(), PacketType.Play.Client.POSITION) {
-
             public void onPacketReceiving(PacketEvent packetEvent) {
                 Player player = packetEvent.getPlayer();
                 if (player == null) {
@@ -81,7 +79,6 @@ public class PacketCore {
             }
         });
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(), PacketType.Play.Client.POSITION_LOOK) {
-
             public void onPacketReceiving(PacketEvent packetEvent) {
                 Player player = packetEvent.getPlayer();
                 if (player == null) {
@@ -93,14 +90,13 @@ public class PacketCore {
                 PlayerData data = Dreya.getInstance().getDataManager().getData(player);
 
                 if(data != null) {
-                    data.setLastPacket(System.currentTimeMillis());
                     data.setLastKillauraPitch(packetEvent.getPacket().getFloat().read(1));
                     data.setLastKillauraYaw(packetEvent.getPacket().getFloat().read(0));
+                    data.setLastPacket(System.currentTimeMillis());
                 }
             }
         });
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(), PacketType.Play.Client.FLYING) {
-
             public void onPacketReceiving(PacketEvent packetEvent) {
                 Player player = packetEvent.getPlayer();
                 if (player == null) {
@@ -116,7 +112,6 @@ public class PacketCore {
             }
         });
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(Dreya.getInstance(), PacketType.Play.Client.KEEP_ALIVE) {
-
             public void onPacketReceiving(PacketEvent packetEvent) {
                 Player player = packetEvent.getPlayer();
                 if (player == null) {

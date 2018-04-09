@@ -2,8 +2,10 @@ package cc.funkemunky.dreya.events;
 
 import cc.funkemunky.dreya.Dreya;
 import cc.funkemunky.dreya.data.PlayerData;
+import cc.funkemunky.dreya.util.BlockUtils;
 import cc.funkemunky.dreya.util.MathUtils;
 import cc.funkemunky.dreya.util.PlayerUtils;
+import cc.funkemunky.dreya.util.TimerUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -16,6 +18,23 @@ public class UtilityMoveEvent implements Listener {
     public void onMove(PlayerMoveEvent e) {
         Player player = e.getPlayer();
         PlayerData data = Dreya.getInstance().getDataManager().getData(player);
+
+        if (data.isNearIce()) {
+            if (TimerUtils.elapsed(data.getIsNearIceTicks(),500L)) {
+                if (!BlockUtils.isNearIce(player)) {
+                    data.setNearIce(false);
+                } else {
+                    data.setIsNearIceTicks(TimerUtils.nowlong());
+                }
+            }
+        }
+
+        if (BlockUtils.isNearIce(player) && !data.isNearIce()) {
+            data.setNearIce(true);
+            data.setIsNearIceTicks(TimerUtils.nowlong());
+        } else if (BlockUtils.isNearIce(player)) {
+            data.setIsNearIceTicks(TimerUtils.nowlong());
+        }
 
         double distance = MathUtils.getVerticalDistance(e.getFrom(), e.getTo());
 

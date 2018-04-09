@@ -40,6 +40,15 @@ public class PlayerData {
     private double lastKillauraYaw = 0;
     private long lastPacket = 0;
     private long lastAimTime = System.currentTimeMillis();
+    private double NoFall_Falling_Ticks = 0;
+    private long Speed_Ticks = 0;
+    private boolean Speed_TicksSet = false;
+    private boolean isNearIce = false;
+    private long isNearIceTicks = 0;
+    private long LastVelUpdate = 0;
+    private boolean LastVelUpdateBoolean = false;
+    private double lastKillauraYawDif = 0;
+
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -48,6 +57,8 @@ public class PlayerData {
     private int PingSpoof_VL2 = 0;
     private int SlowPingSpoof_Count = 0;
     private int killauraAVerbose = 0;
+    private int SpeedVerbose = 0;
+    private int Speed2Verbose = 0;
 
 
     public PlayerData(Player player) {
@@ -96,6 +107,14 @@ public class PlayerData {
 
     public void setCriticalsVerbose(int criticalsVerbose) {
         this.criticalsVerbose = criticalsVerbose;
+    }
+
+    public double getLastKillauraYawDif() {
+        return lastKillauraYawDif;
+    }
+
+    public void setLastKillauraYawDif(double lastKillauraYawDif) {
+        this.lastKillauraYawDif = lastKillauraYawDif;
     }
 
     public double getLastKillauraPitch() {
@@ -359,6 +378,14 @@ public class PlayerData {
         return GoingUp_MS;
     }
 
+    public double getNoFall_Falling_Ticks() {
+        return NoFall_Falling_Ticks;
+    }
+
+    public void setNoFall_Falling_Ticks(double noFall_Falling_Ticks) {
+        NoFall_Falling_Ticks = noFall_Falling_Ticks;
+    }
+
     public void setGoingUp_MS(long goingUp_MS) {
         GoingUp_MS = goingUp_MS;
     }
@@ -393,5 +420,69 @@ public class PlayerData {
 
     public void setAntiCactus_VL(int antiCactus_VL) {
         AntiCactus_VL = antiCactus_VL;
+    }
+
+    public long getSpeed_Ticks() {
+        return Speed_Ticks;
+    }
+
+    public void setSpeed_Ticks(long speed_Ticks) {
+        Speed_Ticks = speed_Ticks;
+    }
+
+    public int getSpeedVerbose() {
+        return SpeedVerbose;
+    }
+
+    public void setSpeedVerbose(int speedVerbose) {
+        SpeedVerbose = speedVerbose;
+    }
+
+    public boolean isSpeed_TicksSet() {
+        return Speed_TicksSet;
+    }
+
+    public void setSpeed_TicksSet(boolean speed_TicksSet) {
+        Speed_TicksSet = speed_TicksSet;
+    }
+
+    public boolean isNearIce() {
+        return isNearIce;
+    }
+
+    public void setNearIce(boolean nearIce) {
+        isNearIce = nearIce;
+    }
+
+    public long getIsNearIceTicks() {
+        return isNearIceTicks;
+    }
+
+    public void setIsNearIceTicks(long isNearIceTicks) {
+        this.isNearIceTicks = isNearIceTicks;
+    }
+
+    public long getLastVelUpdate() {
+        return LastVelUpdate;
+    }
+
+    public void setLastVelUpdate(long lastVelUpdate) {
+        LastVelUpdate = lastVelUpdate;
+    }
+
+    public boolean isLastVelUpdateBoolean() {
+        return LastVelUpdateBoolean;
+    }
+
+    public void setLastVelUpdateBoolean(boolean lastVelUpdateBoolean) {
+        LastVelUpdateBoolean = lastVelUpdateBoolean;
+    }
+
+    public int getSpeed2Verbose() {
+        return Speed2Verbose;
+    }
+
+    public void setSpeed2Verbose(int speed2Verbose) {
+        Speed2Verbose = speed2Verbose;
     }
 }

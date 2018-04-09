@@ -23,11 +23,11 @@ public class Check implements Listener {
     }
 
     protected void flag(Player player, String data) {
-        Dreya.getInstance().getDataManager().addViolation(player, this);
+     Dreya.getInstance().getDataManager().addViolation(player, this);
         for(Player playerLoop : Bukkit.getOnlinePlayers()) {
             if(playerLoop.hasPermission("dreya.alerts")) {
-                playerLoop.sendMessage(Config.ALERTS_MESSAGE.replaceAll("%player%", player.getName()
-                        .replaceAll("%data%", data != null ? ChatColor.DARK_GRAY + "(" + ChatColor.RED + data + ChatColor.DARK_GRAY + ")" : ""))
+                playerLoop.sendMessage(Config.ALERTS_MESSAGE.replaceAll("%player%", player.getName())
+                        .replaceAll("%data%", data != null ? ChatColor.DARK_GRAY + "(" + ChatColor.RED + data + ChatColor.DARK_GRAY + ")" : "")
                 .replaceAll("%check%", getName())
                 .replaceAll("%vl%", Dreya.getInstance().getDataManager().getViolatonsPlayer(player, this) + ""));
             }

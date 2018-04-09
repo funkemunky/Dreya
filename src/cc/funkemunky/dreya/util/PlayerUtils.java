@@ -2,6 +2,8 @@ package cc.funkemunky.dreya.util;
 
 import java.util.*;
 
+import cc.funkemunky.dreya.Dreya;
+import cc.funkemunky.dreya.data.PlayerData;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import org.bukkit.Bukkit;
@@ -156,6 +158,20 @@ public class PlayerUtils {
 			Block block = new Location(player.getWorld(), x, y, z).getBlock();
 
 			if(BlockUtils.isIce(block)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public static boolean wasOnSlime(Player player) {
+		PlayerData user = Dreya.getInstance().getDataManager().getData(player);
+
+		if(user != null
+				&&user.getSetbackLocation() != null) {
+			Location location = user.getSetbackLocation().clone().subtract(0.0D, 1.0D, 0.0D);
+
+			if(location.getBlock().getTypeId() == 165){
 				return true;
 			}
 		}

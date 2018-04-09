@@ -53,6 +53,13 @@ public class PlayerData {
     private long LastTimeTimer = 0;
     private int LastPacketTimer = 0;
     private int LastPACKETSTimer = 0;
+    private long WebFloatMS = 0;
+    private boolean WebFloatMS_Set = false;
+    private int WebFloat_BlockCount = 0;
+    private long AboveSpeedTicks = 0;
+    private boolean AboveSpeedSet = false;
+    private long HalfBlocks_MS = 0;
+    private boolean HalfBlocks_MS_Set = false;
     /** Violation fields **/
     private int criticalsVerbose = 0;
     private int flyHoverVerbose = 0;
@@ -65,6 +72,7 @@ public class PlayerData {
     private int Speed2Verbose = 0;
     private int Speed_OnGround_Verbose = 0;
     private int TimerVerbose = 0;
+    private int SpeedAC2_Verbose = 0;
 
 
     public PlayerData(Player player) {
@@ -542,5 +550,69 @@ public class PlayerData {
 
     public void setLastPACKETSTimer(int lastPACKETSTimer) {
         LastPACKETSTimer = lastPACKETSTimer;
+    }
+
+    public long getWebFloatMS() {
+        return WebFloatMS;
+    }
+
+    public void setWebFloatMS(long webFloatMS) {
+        WebFloatMS = webFloatMS;
+    }
+
+    public boolean isWebFloatMS_Set() {
+        return WebFloatMS_Set;
+    }
+
+    public void setWebFloatMS_Set(boolean webFloatMS_Set) {
+        WebFloatMS_Set = webFloatMS_Set;
+    }
+
+    public int getWebFloat_BlockCount() {
+        return WebFloat_BlockCount;
+    }
+
+    public void setWebFloat_BlockCount(int webFloat_BlockCount) {
+        WebFloat_BlockCount = webFloat_BlockCount;
+    }
+
+    public long getAboveSpeedTicks() {
+        return AboveSpeedTicks;
+    }
+
+    public void setAboveSpeedTicks(long aboveSpeedTicks) {
+        AboveSpeedTicks = aboveSpeedTicks;
+    }
+
+    public boolean isAboveSpeedSet() {
+        return AboveSpeedSet;
+    }
+
+    public void setAboveSpeedSet(boolean aboveSpeedSet) {
+        AboveSpeedSet = aboveSpeedSet;
+    }
+
+    public int getSpeedAC2_Verbose() {
+        return SpeedAC2_Verbose;
+    }
+
+    public void setSpeedAC2_Verbose(int speedAC2_Verbose) {
+        SpeedAC2_Verbose = speedAC2_Verbose;
+    }
+
+    public long getHalfBlocks_MS() {
+        return HalfBlocks_MS;
+    }
+
+    public void setHalfBlocks_MS(long halfBlocks_MS) {
+        HalfBlocks_MS = halfBlocks_MS;
+    }
+
+    public boolean isHalfBlocks_MS_Set() {
+        return HalfBlocks_MS_Set;
+    }
+
+    public void setHalfBlocks_MS_Set(boolean halfBlocks_MS_Set) {
+        HalfBlocks_MS_Set = halfBlocks_MS_Set;
     }
 }

@@ -20,19 +20,12 @@
       <file leaf-file-name="Speed.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Speed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlockUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/util/BlockUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="776">
-              <caret line="337" column="46" lean-forward="false" selection-start-line="337" selection-start-column="46" selection-end-line="337" selection-end-column="46" />
-              <folding />
+            <state relative-caret-position="232">
+              <caret line="72" column="31" lean-forward="true" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+              <folding>
+                <element signature="e#11904#11905#0" expanded="true" />
+                <element signature="e#11944#11945#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,19 +33,62 @@
       <file leaf-file-name="Gravity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Gravity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+            <state relative-caret-position="204">
+              <caret line="32" column="68" lean-forward="false" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java">
+      <file leaf-file-name="UtilityMoveEvent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityMoveEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+            <state relative-caret-position="153">
+              <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5468">
+              <caret line="589" column="0" lean-forward="true" selection-start-line="589" selection-start-column="0" selection-end-line="589" selection-end-column="0" />
+              <folding>
+                <element signature="e#14064#14065#0" expanded="true" />
+                <element signature="e#14097#14098#0" expanded="true" />
+                <element signature="e#14147#14148#0" expanded="true" />
+                <element signature="e#14186#14187#0" expanded="true" />
+                <element signature="e#14227#14228#0" expanded="true" />
+                <element signature="e#14264#14265#0" expanded="true" />
+                <element signature="e#14325#14326#0" expanded="true" />
+                <element signature="e#14372#14373#0" expanded="true" />
+                <element signature="e#14415#14416#0" expanded="true" />
+                <element signature="e#14457#14458#0" expanded="true" />
+                <element signature="e#14524#14525#0" expanded="true" />
+                <element signature="e#14581#14582#0" expanded="true" />
+                <element signature="e#14621#14622#0" expanded="true" />
+                <element signature="e#14659#14660#0" expanded="true" />
+                <element signature="e#14719#14720#0" expanded="true" />
+                <element signature="e#14768#14769#0" expanded="true" />
+                <element signature="e#14808#14809#0" expanded="true" />
+                <element signature="e#14844#14845#0" expanded="true" />
+                <element signature="e#14903#14904#0" expanded="true" />
+                <element signature="e#14948#14949#0" expanded="true" />
+                <element signature="e#14988#14989#0" expanded="true" />
+                <element signature="e#15027#15028#0" expanded="true" />
+                <element signature="e#15088#15089#0" expanded="true" />
+                <element signature="e#15139#15140#0" expanded="true" />
+                <element signature="e#15177#15178#0" expanded="true" />
+                <element signature="e#15213#15214#0" expanded="true" />
+                <element signature="e#15269#15270#0" expanded="true" />
+                <element signature="e#15314#15315#0" expanded="true" />
+                <element signature="e#15358#15359#0" expanded="true" />
+                <element signature="e#15398#15399#0" expanded="true" />
+                <element signature="e#15465#15466#0" expanded="true" />
+                <element signature="e#15518#15519#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,7 +125,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/player/LineOfSight.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/player/TimerChecks/TimerA.java" />
-        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/events/PluginEvents/PacketPlayerType.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/events/PluginEvents/PacketPlayerEvent2.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/PacketCore/PacketCore.java" />
@@ -99,17 +134,20 @@
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/player/Timer.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/command/DreyaCommand.java" />
-        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityMoveEvent.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/util/ServerUtils.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/util/PlayerUtils.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/util/BlockUtils.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/util/DebugUtils.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/ImpossibleMovements.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Speed.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java" />
+        <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityMoveEvent.java" />
         <option value="$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Gravity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -130,6 +168,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -166,22 +205,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dreya" type="462c0819:PsiDirectoryNode" />
               <item name="check" type="462c0819:PsiDirectoryNode" />
-              <item name="combat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Dreya" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dreya" type="462c0819:PsiDirectoryNode" />
-              <item name="check" type="462c0819:PsiDirectoryNode" />
               <item name="movement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Dreya" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dreya" type="462c0819:PsiDirectoryNode" />
-              <item name="command" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
@@ -202,34 +226,18 @@
               <item name="Dreya" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dreya" type="462c0819:PsiDirectoryNode" />
-              <item name="events" type="462c0819:PsiDirectoryNode" />
-              <item name="PluginEvents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Dreya" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dreya" type="462c0819:PsiDirectoryNode" />
-              <item name="PacketCore" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dreya" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Dreya" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dreya" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="BlockU&#9;FILE&#9;file://C:/Users/Rhys Jones/Documents/GitHub/Dreya/src/cc/funkemunky/dreya/util/BlockUtils.java&#10;isOnGround&#9;PSI&#9;JAVA://cc.funkemunky.dreya.util.PlayerUtils#isOnGround&#10;ServerU&#9;PSI&#9;JAVA://cc.funkemunky.dreya.util.ServerUtils&#10;Dre&#9;PSI&#9;JAVA://cc.funkemunky.dreya.Dreya&#10;Speed&#9;FILE&#9;file://C:/Users/Rhys Jones/Documents/GitHub/Dreya/src/cc/funkemunky/dreya/check/movement/Speed.java&#10;Grav&#9;FILE&#9;file://C:/Users/Rhys Jones/Documents/GitHub/Dreya/src/cc/funkemunky/dreya/check/movement/Gravity.java&#10;PacketCo&#9;FILE&#9;file://C:/Users/Rhys Jones/Documents/GitHub/Dreya/src/cc/funkemunky/dreya/PacketCore/PacketCore.java&#10;Player&#9;FILE&#9;file://C:/Users/Rhys Jones/Documents/GitHub/Dreya/src/cc/funkemunky/dreya/data/PlayerData.java&#10;Pla&#9;PSI&#9;JAVA://cc.funkemunky.dreya.data.PlayerData&#10;Slime&#9;PSI&#9;JAVA://cc.funkemunky.dreya.check.movement.Gravity#isOnSlime" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Rhys Jones/Documents/GitHub/Dreya/src/cc/funkemunky/dreya/data/PlayerData.java&#10;Grav&#9;FILE&#9;file://C:/Users/Rhys Jones/Documents/GitHub/Dreya/src/cc/funkemunky/dreya/check/movement/Gravity.java&#10;BlockU&#9;FILE&#9;file://C:/Users/Rhys Jones/Documents/GitHub/Dreya/src/cc/funkemunky/dreya/util/BlockUtils.java&#10;isOnGround&#9;PSI&#9;JAVA://cc.funkemunky.dreya.util.PlayerUtils#isOnGround&#10;ServerU&#9;PSI&#9;JAVA://cc.funkemunky.dreya.util.ServerUtils&#10;Dre&#9;PSI&#9;JAVA://cc.funkemunky.dreya.Dreya&#10;Speed&#9;FILE&#9;file://C:/Users/Rhys Jones/Documents/GitHub/Dreya/src/cc/funkemunky/dreya/check/movement/Speed.java&#10;PacketCo&#9;FILE&#9;file://C:/Users/Rhys Jones/Documents/GitHub/Dreya/src/cc/funkemunky/dreya/PacketCore/PacketCore.java&#10;Player&#9;FILE&#9;file://C:/Users/Rhys Jones/Documents/GitHub/Dreya/src/cc/funkemunky/dreya/data/PlayerData.java&#10;Pla&#9;PSI&#9;JAVA://cc.funkemunky.dreya.data.PlayerData&#10;Slime&#9;PSI&#9;JAVA://cc.funkemunky.dreya.check.movement.Gravity#isOnSlime" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15327565" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -348,7 +356,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -387,14 +395,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/Dreya.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/command/DreyaCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -606,14 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/ImpossibleMovements.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/combat/Reach.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -634,7 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -666,64 +657,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="485" column="0" lean-forward="true" selection-start-line="485" selection-start-column="0" selection-end-line="485" selection-end-column="0" />
-          <folding>
-            <element signature="e#12477#12478#0" expanded="false" />
-            <element signature="e#12520#12521#0" expanded="false" />
-            <element signature="e#12590#12591#0" expanded="false" />
-            <element signature="e#12649#12650#0" expanded="false" />
-            <element signature="e#12695#12696#0" expanded="false" />
-            <element signature="e#12740#12741#0" expanded="false" />
-            <element signature="e#12916#12917#0" expanded="false" />
-            <element signature="e#12954#12955#0" expanded="false" />
-            <element signature="e#13014#13015#0" expanded="false" />
-            <element signature="e#13068#13069#0" expanded="false" />
-            <element signature="e#13106#13107#0" expanded="false" />
-            <element signature="e#13142#13143#0" expanded="false" />
-            <element signature="e#13198#13199#0" expanded="false" />
-            <element signature="e#13243#13244#0" expanded="false" />
-            <element signature="e#13302#13303#0" expanded="false" />
-            <element signature="e#13351#13352#0" expanded="false" />
-            <element signature="e#13387#13388#0" expanded="false" />
-            <element signature="e#13422#13423#0" expanded="false" />
-            <element signature="e#13475#13476#0" expanded="false" />
-            <element signature="e#13518#13519#0" expanded="false" />
-            <element signature="e#13558#13559#0" expanded="false" />
-            <element signature="e#13597#13598#0" expanded="false" />
-            <element signature="e#13658#13659#0" expanded="false" />
-            <element signature="e#13709#13710#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/events/PluginEvents/PacketPlayerEvent2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="623">
           <caret line="58" column="25" lean-forward="true" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#900#901#0" expanded="false" />
-            <element signature="e#934#935#0" expanded="false" />
-            <element signature="e#962#963#0" expanded="false" />
-            <element signature="e#991#992#0" expanded="false" />
-            <element signature="e#1019#1020#0" expanded="false" />
-            <element signature="e#1048#1049#0" expanded="false" />
-            <element signature="e#1076#1077#0" expanded="false" />
-            <element signature="e#1105#1106#0" expanded="false" />
-            <element signature="e#1134#1135#0" expanded="false" />
-            <element signature="e#1165#1166#0" expanded="false" />
-            <element signature="e#1196#1197#0" expanded="false" />
-            <element signature="e#1229#1230#0" expanded="false" />
-            <element signature="e#1270#1271#0" expanded="false" />
-            <element signature="e#1302#1303#0" expanded="false" />
-            <element signature="e#1342#1343#0" expanded="false" />
-            <element signature="e#1392#1393#0" expanded="false" />
-            <element signature="e#1442#1443#0" expanded="false" />
-            <element signature="e#1492#1493#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -782,29 +719,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="117" column="96" lean-forward="false" selection-start-line="117" selection-start-column="96" selection-end-line="117" selection-end-column="96" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityMoveEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/util/ServerUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
           <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
-            <element signature="e#2666#2667#0" expanded="true" />
-            <element signature="e#2728#2729#0" expanded="true" />
+            <element signature="e#2666#2667#0" expanded="false" />
+            <element signature="e#2728#2729#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -814,42 +735,120 @@
         <state relative-caret-position="17">
           <caret line="183" column="84" lean-forward="false" selection-start-line="183" selection-start-column="84" selection-end-line="183" selection-end-column="84" />
           <folding>
-            <element signature="e#19357#19358#0" expanded="true" />
-            <element signature="e#19402#19403#0" expanded="true" />
-            <element signature="e#24617#24618#0" expanded="true" />
-            <element signature="e#24653#24654#0" expanded="true" />
+            <element signature="e#19357#19358#0" expanded="false" />
+            <element signature="e#19402#19403#0" expanded="false" />
+            <element signature="e#24617#24618#0" expanded="false" />
+            <element signature="e#24653#24654#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/util/BlockUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5542">
+          <caret line="337" column="46" lean-forward="false" selection-start-line="337" selection-start-column="46" selection-end-line="337" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Fly.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/DataManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+          <caret line="38" column="33" lean-forward="false" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/util/BlockUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/util/DebugUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="776">
-          <caret line="337" column="46" lean-forward="false" selection-start-line="337" selection-start-column="46" selection-end-line="337" selection-end-column="46" />
+        <state relative-caret-position="255">
+          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/ImpossibleMovements.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Speed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        <state relative-caret-position="232">
+          <caret line="72" column="31" lean-forward="true" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+          <folding>
+            <element signature="e#11904#11905#0" expanded="true" />
+            <element signature="e#11944#11945#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/data/PlayerData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5468">
+          <caret line="589" column="0" lean-forward="true" selection-start-line="589" selection-start-column="0" selection-end-line="589" selection-end-column="0" />
+          <folding>
+            <element signature="e#14064#14065#0" expanded="true" />
+            <element signature="e#14097#14098#0" expanded="true" />
+            <element signature="e#14147#14148#0" expanded="true" />
+            <element signature="e#14186#14187#0" expanded="true" />
+            <element signature="e#14227#14228#0" expanded="true" />
+            <element signature="e#14264#14265#0" expanded="true" />
+            <element signature="e#14325#14326#0" expanded="true" />
+            <element signature="e#14372#14373#0" expanded="true" />
+            <element signature="e#14415#14416#0" expanded="true" />
+            <element signature="e#14457#14458#0" expanded="true" />
+            <element signature="e#14524#14525#0" expanded="true" />
+            <element signature="e#14581#14582#0" expanded="true" />
+            <element signature="e#14621#14622#0" expanded="true" />
+            <element signature="e#14659#14660#0" expanded="true" />
+            <element signature="e#14719#14720#0" expanded="true" />
+            <element signature="e#14768#14769#0" expanded="true" />
+            <element signature="e#14808#14809#0" expanded="true" />
+            <element signature="e#14844#14845#0" expanded="true" />
+            <element signature="e#14903#14904#0" expanded="true" />
+            <element signature="e#14948#14949#0" expanded="true" />
+            <element signature="e#14988#14989#0" expanded="true" />
+            <element signature="e#15027#15028#0" expanded="true" />
+            <element signature="e#15088#15089#0" expanded="true" />
+            <element signature="e#15139#15140#0" expanded="true" />
+            <element signature="e#15177#15178#0" expanded="true" />
+            <element signature="e#15213#15214#0" expanded="true" />
+            <element signature="e#15269#15270#0" expanded="true" />
+            <element signature="e#15314#15315#0" expanded="true" />
+            <element signature="e#15358#15359#0" expanded="true" />
+            <element signature="e#15398#15399#0" expanded="true" />
+            <element signature="e#15465#15466#0" expanded="true" />
+            <element signature="e#15518#15519#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/events/UtilityMoveEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/funkemunky/dreya/check/movement/Gravity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        <state relative-caret-position="204">
+          <caret line="32" column="68" lean-forward="false" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
           <folding />
         </state>
       </provider>

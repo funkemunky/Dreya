@@ -28,7 +28,30 @@ public class UtilityMoveEvent implements Listener {
                 }
             }
         }
-
+        if (BlockUtils.isHalfBlock(player.getLocation().add(0,-0.50,0).getBlock()) || BlockUtils.isNearHalfBlock(player)) {
+            if (!data.isHalfBlocks_MS_Set()) {
+                data.setHalfBlocks_MS_Set(true);
+                data.setHalfBlocks_MS(TimerUtils.nowlong());
+            } else {
+                if (TimerUtils.elapsed(data.getHalfBlocks_MS(),900L)) {
+                    if (BlockUtils.isHalfBlock(player.getLocation().add(0,-0.50,0).getBlock()) || BlockUtils.isNearHalfBlock(player)) {
+                        data.setHalfBlocks_MS_Set(true);
+                        data.setHalfBlocks_MS(TimerUtils.nowlong());
+                    } else {
+                        data.setHalfBlocks_MS_Set(false);
+                    }
+                }
+            }
+        } else {
+            if (TimerUtils.elapsed(data.getHalfBlocks_MS(),900L)) {
+                if (BlockUtils.isHalfBlock(player.getLocation().add(0,-0.50,0).getBlock()) || BlockUtils.isNearHalfBlock(player)) {
+                    data.setHalfBlocks_MS_Set(true);
+                    data.setHalfBlocks_MS(TimerUtils.nowlong());
+                } else {
+                    data.setHalfBlocks_MS_Set(false);
+                }
+            }
+        }
         if (BlockUtils.isNearIce(player) && !data.isNearIce()) {
             data.setNearIce(true);
             data.setIsNearIceTicks(TimerUtils.nowlong());

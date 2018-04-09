@@ -3,6 +3,7 @@ package cc.funkemunky.dreya.check.movement;
 import cc.funkemunky.dreya.Dreya;
 import cc.funkemunky.dreya.check.Check;
 import cc.funkemunky.dreya.check.CheckType;
+import cc.funkemunky.dreya.check.player.Timer;
 import cc.funkemunky.dreya.data.PlayerData;
 import cc.funkemunky.dreya.util.*;
 import org.bukkit.Location;
@@ -59,7 +60,7 @@ public class Speed extends Check {
             } else if (BlockUtils.isNearStiar(p)) {
                 LXZ += 0.5D;
             }
-       //     p.sendMessage(""+OXZ + " " + LXZ);
+            //  p.sendMessage(""+OXZ + " " + LXZ);
             if (p.getNoDamageTicks() == 0) {
                 if (OXZ > LXZ && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p)) {
                     if (!data.isSpeed_TicksSet()) {
@@ -67,10 +68,46 @@ public class Speed extends Check {
                         data.setSpeed_Ticks(TimerUtils.nowlong());
                     }
                     data.setSpeedVerbose(data.getSpeedVerbose() + 1);
-                } else if (data.getSpeedVerbose() >= 6 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && p.getLocation().add(0,1.94,0).getBlock().getType() != Material.AIR) {
-                    flag(p, "Type: A - Player Moved Too Fast.");
+                } else if (data.getSpeedVerbose() >= 6 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && p.getLocation().add(0, 1.94, 0).getBlock().getType() != Material.AIR) {
+                    flag(p, "Type: A [C1] - Player Moved Too Fast.");
                     setBack(p);
                     SetBackSystem.setBack(p);
+                }
+                if (OXZ > 1 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p) && p.getLocation().add(0, 1.94, 0).getBlock().getType() == Material.AIR && !data.isAboveSpeedSet()) {
+                    flag(p, "Type: A [C2] - Player Moved Too Fast.");
+                    setBack(p);
+                    SetBackSystem.setBack(p);
+                }
+                if (p.getLocation().add(0, 0.50, 0).getBlock().getType() != Material.AIR) {
+                    if (!data.isAboveSpeedSet()) {
+                        data.setAboveSpeedSet(true);
+                        data.setAboveSpeedTicks(TimerUtils.nowlong());
+                    } else {
+                        if (TimerUtils.elapsed(data.getAboveSpeedTicks(), 1000L)) {
+                            if (p.getLocation().add(0, 0.50, 0).getBlock().getType() == Material.AIR) {
+                                data.setAboveSpeedSet(false);
+                            } else {
+                                data.setAboveSpeedSet(true);
+                                data.setAboveSpeedTicks(TimerUtils.nowlong());
+                            }
+                        }
+                    }
+                }
+                if (data.isAboveSpeedSet()) {
+                    if (TimerUtils.elapsed(data.getAboveSpeedTicks(), 1000L)) {
+                        data.setAboveSpeedSet(false);
+                    }
+                }
+                if (data.isAboveSpeedSet()) {
+                    return;
+                } else {
+                    if (OXZ > 0.635 && !VelocityUtils.didTakeVelocity(p) && !NEW_Velocity_Utils.didTakeVel(p)) {
+                        flag(p, "Type: A [C3] - Player Moved Too Fast.");
+                        setBack(p);
+                        SetBackSystem.setBack(p);
+                    } else {
+                        data.setSpeedAC2_Verbose(0);
+                    }
                 }
             }
         }

@@ -49,7 +49,7 @@ public class Speed extends Check {
                int verbose = data.getSpeedAVerbose();
                double speedEffect = PlayerUtils.getPotionEffectLevel(p, PotionEffectType.SPEED);
                double speedAThreshold = (data.getAirTicks() > 0 ? data.getAirTicks() >= 6
-                       ? data.getAirTicks() == 13 ? 0.466 : 0.35 : (0.3447344481 * Math.pow(986938064, data.getAirTicks()))
+                       ? data.getAirTicks() == 13 ? 0.466 : 0.35 : (0.345 * Math.pow(0.986938064, data.getAirTicks()))
                        : data.getGroundTicks() > 5 ? 0.362 : data.getGroundTicks() == 3 ? 0.62 : 0.4)
                        + (data.getAirTicks() > 0 ? (-0.001 * data.getAirTicks() + 0.014) : (0.018 - (data.getGroundTicks() >= 6 ? 0 : data.getGroundTicks() * 0.001)) * speedEffect);
 
@@ -60,8 +60,8 @@ public class Speed extends Check {
 
 
                if (speed > speedAThreshold) {
-                   verbose += 6;
-                   //Bukkit.broadcastMessage("Verbose: " + verbose + ", " + speed + ", " + speedAThreshold + ", " + data.getGroundTicks() + ", " + data.getAirTicks() + ", " + data.getAboveBlockTicks() + ", " + data.getIceTicks());
+                   verbose += 8;
+                   Bukkit.broadcastMessage("Verbose: " + verbose + ", " + speed + ", " + speedAThreshold + ", " + data.getGroundTicks() + ", " + data.getAirTicks() + ", " + data.getAboveBlockTicks() + ", " + data.getIceTicks());
                } else {
                    verbose = verbose > 0 ? verbose - 1 : 0;
                }

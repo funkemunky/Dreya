@@ -61,7 +61,7 @@ public class Speed extends Check {
 
                if (speed > speedAThreshold) {
                    verbose += 8;
-                   Bukkit.broadcastMessage("Verbose: " + verbose + ", " + speed + ", " + speedAThreshold + ", " + data.getGroundTicks() + ", " + data.getAirTicks() + ", " + data.getAboveBlockTicks() + ", " + data.getIceTicks());
+                  // Bukkit.broadcastMessage("Verbose: " + verbose + ", " + speed + ", " + speedAThreshold + ", " + data.getGroundTicks() + ", " + data.getAirTicks() + ", " + data.getAboveBlockTicks() + ", " + data.getIceTicks());
                } else {
                    verbose = verbose > 0 ? verbose - 1 : 0;
                }

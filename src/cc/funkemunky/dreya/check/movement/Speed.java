@@ -58,6 +58,11 @@ public class Speed extends Check {
                speedAThreshold = data.getSlimeTicks() > 0 ? speedAThreshold + 0.1 : speedAThreshold;
                speedAThreshold = data.getIceTicks() > 0 && data.getAboveBlockTicks() > 0 ? speedAThreshold + 0.24 : speedAThreshold;
 
+               if(PlayerUtils.isOnStair(p.getLocation())
+                       || PlayerUtils.isOnSlab(p.getLocation())) {
+                   speedAThreshold+= 0.12;
+               }
+
 
                if (speed > speedAThreshold) {
                    verbose += 8;

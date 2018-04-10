@@ -30,60 +30,34 @@ public class Gravity extends Check {
                 data.setGravity_VL(0);
                 return;
             }
-            double motion = (e.getTo().getY() - e.getFrom().getY());
-            if (motion < -0.399 && p.getLocation().add(0,-0.50,0).getBlock().getType() != Material.AIR) {
-                if (!BlockUtils.isNearHalfBlock(p) || BlockUtils.isHalfBlock(p.getLocation().add(0,-1,0).getBlock())) {
-                    if (!data.isHalfBlocks_MS_Set() && PlayerUtils.getDistanceToGround(p) < 3 && p.getNoDamageTicks() == 0 && !PlayerUtils.wasOnSlime(p)
-                            && p.getLocation().add(0,-0.50,0).getBlock().getType() != Material.SLIME_BLOCK && !NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p)
-                    && TimerUtils.elapsed(data.getLastVelUpdate(),1500L)) {
-                     //   flag(p, "Player's motion was changed to an unexpected value. [C2]");
-                       // SetBackSystem.setBack(p);
-                    }
-                }
-            }
             if (e.getTo().getY() < e.getFrom().getY()) {
-               return;
+                return;
             }
-            if (!NEW_Velocity_Utils.didTakeVel(p) && !VelocityUtils.didTakeVelocity(p)) {
+            if (BlockUtils.isHalfBlock(p.getLocation().add(0, -1.50, 0).getBlock()) || BlockUtils.isNearHalfBlock(p) || BlockUtils.isStair(p.getLocation().add(0,1.50,0).getBlock()) || BlockUtils.isNearStiar(p) || NEW_Velocity_Utils.didTakeVel(p)
+                    || PlayerUtils.wasOnSlime(p)) {
                 data.setGravity_VL(0);
                 return;
             }
-            if (NEW_Velocity_Utils.didTakeVel(p) || p.getLocation().getBlock().isLiquid() || BlockUtils.isNearLiquid(p)) {
-                data.setGravity_VL(0);
-                return;
-            }
-            if (BlockUtils.isHalfBlock(p.getLocation().add(0, -1.50, 0).getBlock()) || BlockUtils.isNearHalfBlock(p) || BlockUtils.isStair(p.getLocation().add(0,1.50,0).getBlock())
-                    || BlockUtils.isStair(p.getLocation().add(0,1,0).getBlock())
-                    || BlockUtils.isStair(p.getLocation().add(0,2,0).getBlock()) || BlockUtils.isNearStiar(p) || NEW_Velocity_Utils.didTakeVel(p)) {
-                data.setGravity_VL(0);
-                return;
-            }
-            if (!PlayerUtils.isOnGround4(p) || !PlayerUtils.isOnGround(p) || p.getLocation().getBlock().getType() != Material.CHEST ||
-                    p.getLocation().getBlock().getType() != Material.TRAPPED_CHEST || p.getLocation().getBlock().getType() != Material.ENDER_CHEST
-                    || p.getLocation().add(0, 1, 0).getBlock().getType() == Material.AIR) {
-                if (!PlayerUtils.onGround2(p) || !PlayerUtils.isOnGround4(p) || !PlayerUtils.isOnGround(p)) {
+            if (p.getLocation().getBlock().getType() != Material.CHEST &&
+                    p.getLocation().getBlock().getType() != Material.TRAPPED_CHEST && p.getLocation().getBlock().getType() != Material.ENDER_CHEST && data.getAboveBlockTicks() == 0) {
+                if (!PlayerUtils.onGround2(p) && !PlayerUtils.isOnGround3(p) && !PlayerUtils.isOnGround(p)) {
                     if ((((ServerUtils.isBukkitVerison("1_7") || ServerUtils.isBukkitVerison("1_8")) && Math.abs(p.getVelocity().getY() - LastY) > 0.000001)
                             || (!ServerUtils.isBukkitVerison("1_7") && !ServerUtils.isBukkitVerison("1_8") && Math.abs(p.getVelocity().getY() - diff) > 0.000001))
-                            && !PlayerUtils.isOnGround4(p)
+                            && !PlayerUtils.onGround2(p)
                             && e.getFrom().getY() < e.getTo().getY()
                             && (p.getVelocity().getY() >= 0 || p.getVelocity().getY() < (-0.0784 * 5)) && !VelocityUtils.didTakeVelocity(p) && p.getNoDamageTicks() == 0.0) {
                         if (data.getGravity_VL() >= MaxG) {
-                            flag(p, "Player's motion was changed to an unexpected value. [C1]");
+                            flag(p, "Player's motion was changed to an unexpected value.");
                             SetBackSystem.setBack(p);
                         } else {
                             data.setGravity_VL(data.getGravity_VL() + 1);
                         }
+                    } else {
+                        data.setGravity_VL(0);
                     }
-                    data.setLastY_Gravity(diff);
                 }
-            } else {
-                data.setGravity_VL(0);
             }
+            data.setLastY_Gravity(diff);
         }
-    }
-    private boolean isOnSlime(Player p) {
-        boolean out = false;
-
-        return out;
     }
 }
